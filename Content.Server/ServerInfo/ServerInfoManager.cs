@@ -13,11 +13,11 @@ public sealed class ServerInfoManager
     private static readonly (CVarDef<string> cVar, string icon, string name)[] Vars =
     {
         // @formatter:off
-        (CCVars.InfoLinksDiscord, "discord", "info-link-discord"),
+        (CCVars.InfoLinksDiscord, "discord", "https://discord.gg/EHKCDmNXNF"),
         (CCVars.InfoLinksForum,   "forum",   "info-link-forum"),
-        (CCVars.InfoLinksGithub,  "github",  "info-link-github"),
+        (CCVars.InfoLinksGithub,  "github",  "https://github.com/RonRonstation/ronstation"),
         (CCVars.InfoLinksWebsite, "web",     "info-link-website"),
-        (CCVars.InfoLinksWiki,    "wiki",    "info-link-wiki")
+        (CCVars.InfoLinksWiki,    "wiki",    "http://ronstation.wikidot.com/")
         // @formatter:on
     };
 
