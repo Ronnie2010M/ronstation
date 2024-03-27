@@ -1,19 +1,14 @@
-[color=#ff0000]YOU MUST BE AT LEAST 16 YEARS OF AGE TO PLAY ON WIZARD'S DEN SERVERS. ANY USERS SUSPECTED OF BEING UNDER 16 YEARS OF AGE WILL BE BANNED UNTIL THEY ARE OF AGE.[/color]
+WELCOME TO RONSTATION 
+
+[color=#ff0000]YOU MUST BE AT LEAST 14 YEARS OF AGE TO PLAY ON RONSTATION. ANY USERS SUSPECTED OF BEING UNDER 14 YEARS OF AGE WILL BE BANNED UNTIL THEY ARE OF AGE.[/color]
 
 [color=#ff0000]DISCONNECTING FROM OR IGNORING/EVADING ADMIN-HELPS WILL RESULT IN AN APPEAL ONLY BAN.[/color]
 
-This is the "short" form of the rules, which has all the information any regular player should need. You can find the "long" form of the rules with more examples & clarifications of any ambiguity on our wiki at [color=#a4885c]wiki.spacestation14.io[/color], should you need it.
-
-[color=#ff0000]Recent Changes[/color]
-    - Revolutionary rules have been added (#12, #15)
-    - Silicon rules have been added (#22)
-    - Security/command rules have been updated to address forced borging (#21)
-
-[color=#a4885c]01.[/color] [color=#a4885c]The[/color] [color=#ffd700]Golden[/color] [color=#a4885c]Rule.[/color] Admins may excercise discretion with rules as they see fit. If you rule lawyer or line skirt, you will get removed. Admins will answer for use of this privilege.
+[color=#a4885c]01.[/color] [color=#a4885c]The[/color] [color=#ffd700]Golden[/color] [color=#a4885c]Rule.[/color] Admins may excercise discretion with rules as they see fit. If you rule lawyer or line skirt, you will get removed. Admins will answer for use of this privilege. The admins decide what is right and wrong. Do not try to argue with the admin. If you have a complaint, you can dm RonRonstation on the Ronstation discord.
 
 [color=#ff0000]ZERO TOLERANCE RULES[/color]
 
-[color=#a4885c]02.[/color] Absolutely no hate speech, slurs, bigotry, racism, specism (demeaning other characters in-game due to their in-game race), sexism, disability-related or anything even remotely similar. (YOU WILL GET PERMABANNED)
+[color=#a4885c]02.[/color] Absolutely no hate speech, slurs, bigotry, racism, sexism, disability-related or anything even remotely similar. Speciesm can be role-played if done properly, but don't push it too far. (Like denying people access as Hop because they're a lizard) (YOU WILL GET PERMABANNED)
 
 [color=#a4885c]03.[/color] Absolutely no Erotic Roleplay (ERP) or sexual content, including direct or indirect mentions of sexual behavior or actions. (YOU WILL GET PERMABANNED) (Leeway is given to insults, ex: 'You are a dickhead', do not push it)
 
@@ -27,23 +22,24 @@ This is the "short" form of the rules, which has all the information any regular
 
 [color=#a4885c]07.[/color] Don't use exploits or external programs to play, gain an advantage, or disrupt/crash the round/server. This includes autoclickers and scripts to automate the game or evade AFK detection. Intentionally attempting to lag/crash the server will result in an immediate appeal-only ban.
 
-[color=#a4885c]08.[/color] Don't use multiple SS14 accounts to play (referred to as "multi-keying"). Users knowingly using multiple SS14 accounts will have all of their accounts banned.
+[color=#a4885c]08.[/color] Don't use multiple SS14 accounts to play (referred to as "multi-keying"). Users knowingly using multiple SS14 accounts will have all of their accounts banned. Exceptions can be made if you for some reason absolutely MUST, but create a ticket on the discord and ask about it first.
 
-[color=#a4885c]09.[/color] Do not ignore the admin help relay or abuse it by flooding it with garbage, checking for admins before stating a problem (ex: "hello?", "any admins?"), using it as a chatroom, or sending messages of no substance. Hostility to administators in the relay will likely result in your removal. All admin helps are sent to the SS14 Discord.
+[color=#a4885c]09.[/color] Do not ignore the admin help relay or abuse it by flooding it with garbage, checking for admins before stating a problem (ex: "hello?", "any admins?"), using it as a chatroom, or sending messages of no substance. Hostility to administators in the relay will likely result in your removal. All admin helps are sent to the Ronstation Discord.
 
 [color=#ff0000]IN GAME & ROLEPLAY RULES[/color]
 
 [color=#a4885c]10.[/color] Pick a realistic name that could appear on a birth certificate with at least a first and last name (leeway is given to this for Clowns, Mimes, and non-human races).
     - Names of notable famous or fictional persons or names that resemble/parody them are strictly forbidden. You are not clever if you slightly change a famous name around. Terrible names open you up to being politely reminded to change it, smited, or instantly banned, depending on severity.
     - Names resulting in inappropriate phonetic play-on-words are forbidden (ex: "Mike Oxlong", "Ben Dover", "Dixie Normus"). They are also extremely overdone.
+    - Some leeway can be given for special circumstances.
 
-[color=#a4885c]11.[/color] Act like an actual human being on a space station in a low-roleplay (LRP) environment. Do not use text speak or emoticons IC, and do not refer to OOC things like admins in-game. Do not threaten players that you are calling the admins on them. Do not use emotes to bypass speech filters or muteness. You are not required to write a backstory or follow strict procedure; however, you are expected to at least make an effort to act like your role.
+[color=#a4885c]11.[/color] Act like an actual being on a space station in a low-roleplay (LRP) environment. Do not use text speak or emoticons IC, and do not refer to OOC things like admins in-game. Do not threaten players that you are calling the admins on them. Do not use emotes to bypass speech filters or muteness. You are not required to write a backstory or follow strict procedure; however, you are expected to at least make an effort to act like your role.
 
 [color=#a4885c]12.[/color] Don't be a dick. You are playing a multiplayer game with other people who also want to enjoy the game.
     - [color=#ff0000]The arrivals station, shuttle, and general arrivals docking area are completely off-limits to any hostile activity, including activity by antagonists. Attacking newly spawned players in these areas or damaging/sabotaging these areas is strictly forbidden.[/color]
     - Do not intentionally make other players' lives hell for your own amusement.
     - [color=#ff0000]THE ROUND IS NOT OVER UNTIL THE END-ROUND SUMMARY APPEARS. KILLING SOMEONE FOR NO REASON BEFORE THIS WILL BE HANDLED ACCORDINGLY.[/color]
-    - Antagonists have a lot of leeway with this rule and may kill/sabotage as they see fit, however if your behavior degrades the experience for the majority of the server you will be told to stop. Antagonists are still generally forbidden from causing massive station damage early into the round (less than 30 minutes) and are forbidden from needlessly prolonging rounds. For antagonist specific rules, see the "long" form of the rules at [color=#a4885c]wiki.spacestation14.io[/color].
+    - Antagonists have a lot of leeway with this rule and may kill/sabotage as they see fit, however if your behavior degrades the experience for the majority of the server you will be told to stop. Antagonists are still generally forbidden from causing massive station damage early into the round (less than 30 minutes) and are forbidden from needlessly prolonging rounds.
 
 [color=#a4885c]13.[/color] Don't harass or target players across rounds for actions in prior rounds or for actions outside of the game (this is referred to as "Metagrudging".)
     - Annoying players for IC reasons in the current round is fine; doing it across rounds or as a ghost role after they kill you is not.
@@ -51,7 +47,7 @@ This is the "short" form of the rules, which has all the information any regular
 [color=#a4885c]14.[/color] Don't use information gained from outside your character's knowledge to gain an advantage (this is referred to as "Metagaming").
     - Using information you gain from outside your own character (such as spectating while a ghost, metacomms, or other means) to your advantage is strictly forbidden. You remember all events up until you fall unconscious, even after cloning. If you take a ghost role, unless otherwise stated, you DO NOT REMEMBER ANYTHING from your past life.
 
-[color=#a4885c]15.[/color] Follow escalation rules and don't murder someone for slipping you, use common sense. Do not make Cargonia.
+[color=#a4885c]15.[/color] Follow escalation rules and don't murder someone for slipping you, use common sense. 
     - You can defend yourself to the extent of protecting your own life.
     - Security may use less-lethal force to effect arrests of criminals.
     - Don't outright leave people to die if you get in a fight, make an effort to heal them or bring them to Medbay.
@@ -69,7 +65,7 @@ This is the "short" form of the rules, which has all the information any regular
     - Don't manufacture or prepare things for the "end of the round" when the shuttle docks with Central Command.
 
 [color=#a4885c]18.[/color] Intentionally making yourself a major problem/annoyance/disruption for the crew or other players at large while not an antagonist is forbidden (referred to as "self-antagging").
-    - Don't openly try to cooperate with obvious or known antagonists as a non-antagonist.
+    - Cooperating with known antagonists as a non-antag is frowned upon. Leeway is given if you have a roleplay reason, or if it's for the safety of the station.
 
 [color=#ff0000]SECURITY & COMMAND RULES[/color]
 If you regularly play Security or Command roles and got this far, we applaud you for reading. These rules also apply to any individual who is promoted or is acting in the place of a Security/Command role (unless they are an antagonist).
@@ -113,3 +109,15 @@ These rules also apply to any individual who is a silicon, including cyborgs and
     - "Harm" is at minimum seen as physical violence or damage against someone or something. If the player wishes, they may choose to interpret psychological harm or similar aspects as harm as well. If two actions are likely to cause harm via action or inaction, silicons will be expected to try and pursue the option with the least potential for harm, however silicons instructed to prevent harm are still forbidden from directly causing harm. You can take an action or not act in cases that might result in eventual harm if it minimizes harm, but you cannot do so if it results in immediate harm. Silicons should default to inaction if neither action nor inaction can prevent harm.
     - When receiving orders or directives from crewmembers and with a law that instructs you must obey, conflicting orders typically defer the choice to the silicon player of which directive you choose to obey if they conflict (taking into account the priorities of your other laws).
     - Orders to silicons that are clearly unreasonable or obnoxious are a violation of the "Don't be a dick" rule. They can be ignored and can be ahelped.
+
+SANDBOX SPECIFIC RULES:
+    - You are free to do as you wish, however, causing massive damage to both the station, the arrivals system, and other player’s builds is strictly prohibited. It is also strictly prohibited to spawn large amounts of entities, as too much entities can cause severe lag.
+    - Rules on metacommunications are usually exempt, unless otherwise noted.
+    - Don't be a dick and go around murdering people or deleting them. Rule 12 still applies to Sandbox.
+    - You don't have to RP in sandbox.
+
+OTHER RULES
+    - No loopholes allowed. (Don't try to do bad stuff and claim it isn't in rules) Admins and staff decide what are loopholes.
+    - When captured as antag or if captured by syndicates, do not just suicide. It is not fun, and boring to do.
+
+Enjoy your stay on Ronstation
