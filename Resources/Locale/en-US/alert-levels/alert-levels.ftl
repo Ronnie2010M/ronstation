@@ -5,7 +5,7 @@ alert-level-unknown-instructions = Unknown.
 
 alert-level-green = Green
 alert-level-green-announcement = It is now safe to return to your workplaces.
-alert-level-green-instructions = Do your job.
+alert-level-green-instructions = Resume regular duties.
 
 alert-level-blue = Blue
 alert-level-blue-announcement = There is a confirmed threat to the station. Security should perform random checks. Crewmembers are advised to be vigilant and report suspicious activity to security.
@@ -32,5 +32,5 @@ alert-level-delta-announcement = The station is currently under threat of immine
 alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
 
 alert-level-epsilon = Epsilon
-alert-level-epsilon-announcement = Central Command has ordered the Epsilon security level on the station. Consider all contracts terminated.
-alert-level-epsilon-instructions = Consider all contracts terminated.
+alert-level-epsilon-announcement = Central Command has ordered the Epsilon security level on the station. Please present yourself at arrivals immediately.
+alert-level-epsilon-instructions = Meet up with Central Command in arrivals with your coworkers. Allow them to do their job.
