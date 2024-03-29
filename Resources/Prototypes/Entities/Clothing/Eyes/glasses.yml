@@ -228,3 +228,32 @@
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
   - type: FlashImmunity
+
+  - type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesAdmin
+  name: admin goggles #don't give thsi to anyone
+  description: Green-tinted goggles using a plasteel that provides protection from eye damage of all types. Equipped with timeline erasing function. You feel powerful seeing these.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/meson.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/meson.rsi
+   - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 9999999999
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 100
+        Slash: 100
+        Piercing: 100
+        Shock: 100
+        Caustic: 100
+        Radiation: 100
+  - type: EyeProtection
+  - type: FlashImmunity
+  - type: SolutionScanner
+  - type: ShowSecurityIcons
+  - type: IdentityBlocker

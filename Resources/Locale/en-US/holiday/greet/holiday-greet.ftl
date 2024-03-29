@@ -69,7 +69,7 @@ holiday-name-festive-season = Festive Season
 holiday-name-boxing-day = Boxing Day
 holiday-name-friday-thirteenth = Friday the 13th
 holiday-name-national-coming-out-day = National Coming Out Day
-
+holiday-name-ronstation-day = Official Ronstation Day
 ## Custom congrats
 
 holiday-custom-cosmonautics-day = On this day over 600 years ago, Comrade Yuri Gagarin first ventured into space!
@@ -81,3 +81,4 @@ holiday-custom-halloween = Have a spooky Halloween!
 holiday-custom-kindness-day = Go do some random acts of kindness for a stranger!
 holiday-custom-christmas = Have a merry Christmas!
 holiday-custom-festive-season = Have a nice festive season!
+holiday-custom-ronstation-day = Today is Ronstation day! Please take a moment to thank Ron and the server staff.
