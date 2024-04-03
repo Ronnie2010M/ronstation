@@ -345,6 +345,7 @@
     graph: BoneHelmet
     node: helmet
 
+#Ironclad Helmet
 - type: entity
   parent: ClothingHeadHelmetBasic
   id: ClothingHeadHelmetPodWars
@@ -355,3 +356,25 @@
     sprite: Clothing/Head/Helmets/podwars_helmet.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/podwars_helmet.rsi
+
+
+# Cooper Helmet
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetCooper
+  name: pilot's helmet
+  description: The helmet of an operator of a Titan.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/cooper_helmet.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/cooper_helmet.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.2
