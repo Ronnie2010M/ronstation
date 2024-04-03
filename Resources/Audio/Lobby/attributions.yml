@@ -68,3 +68,18 @@
   license: "CC-BY-NC-SA-3.0"
   copyright: "every light is blinking at once by Alexander Divine."
   source: "https://soundcloud.com/alexanderdivine/every-light-is-blinking-at-once"
+
+- files: ["Monument.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "monument by unknown author"
+  source: "unknown"
+
+- files: ["vibe_ace.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "vibe ace by unknown author"
+  source: "unknown"
+
+- files: ["marhaba.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "marhaba by unknown author"
+  source: "unknown"
