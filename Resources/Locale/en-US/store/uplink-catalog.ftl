@@ -130,6 +130,9 @@ uplink-reinforcement-radio-desc =  Radio in a reinforcement agent of extremely q
 uplink-reinforcement-radio-cyborg-assault-name = Syndicate Assault Cyborg Teleporter
 uplink-reinforcement-radio-cyborg-assault-desc =  A lean, mean killing machine with access to an Energy Sword, LMG, Cryptographic Sequencer, and a Pinpointer.
 
+uplink-MobSyndicateMothroach-radio-name = Syndicate Mothroach
+uplink-MobSyndicateMothroach-microbomb-desc =  A Mothroach equipped with a microbomb implant. Explodes when seriously injured.
+
 uplink-stealth-box-name = Stealth Box
 uplink-stealth-box-desc = A box outfitted with stealth technology, sneak around with this and don't move too fast now!
 

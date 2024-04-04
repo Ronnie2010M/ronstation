@@ -990,6 +990,17 @@
           - NukeOpsUplink
 
 - type: listing
+  id: UplinkMobSyndicateMothroachMicrobomb
+  name: Syndicate Mothroach
+  description: A syndicate mothroach with a microbomb implant.
+  icon: { sprite: /Textures/Mobs/Animals/syndiemothroach.rsi, state: syndiemothroach }
+  productEntity: MobSyndicateMothroach
+  cost:
+    Telecrystal: 8
+  categories:
+    - UplinkAllies
+
+- type: listing
   id: UplinkSyndicatePersonalAI
   name: uplink-syndicate-pai-name
   description: uplink-syndicate-pai-desc
