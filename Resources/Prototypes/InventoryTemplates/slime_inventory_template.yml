@@ -91,7 +91,6 @@
       uiWindowPos: 0,4
       strippingWindowPos: 0,4
       displayName: Pocket 3
-      stripHidden: true
     - name: suitstorage
       slotTexture: suit_storage
       slotFlags:   SUITSTORAGE
