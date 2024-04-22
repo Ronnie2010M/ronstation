@@ -77,6 +77,8 @@
     spawned:
     - id: FoodMeatSlime
       amount: 5
+  - type: Inventory
+    templateId: slime
   - type: Respirator
     damage:
       types:
