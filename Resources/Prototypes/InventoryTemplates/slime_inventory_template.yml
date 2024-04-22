@@ -1,5 +1,5 @@
 - type: inventoryTemplate
-  id: human
+  id: slime
   slots:
     - name: shoes
       slotTexture: shoes
