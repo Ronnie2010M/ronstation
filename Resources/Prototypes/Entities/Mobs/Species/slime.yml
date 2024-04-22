@@ -12,17 +12,7 @@
   - type: Body
     prototype: Slime
     requiredLegs: 2
-  # they like eat it idk lol
-  - type: Storage
-    grid:
-    - 0,0,1,2
-    maxItemSize: Large
-    storageInsertSound:
-      path: /Audio/Voice/Slime/slime_squish.ogg
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
+    #Storage is removed until a bug fix to medical items being pushed instead of applied happens. To counterbalance this, extra pockets from arachnids are to be implemented instead.
   - type: HumanoidAppearance
     species: SlimePerson
   - type: Speech
