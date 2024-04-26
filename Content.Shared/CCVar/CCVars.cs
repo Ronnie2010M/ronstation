@@ -371,7 +371,7 @@ namespace Content.Shared.CCVar
         /// URL of the Discord webhook which will relay all ahelp messages.
         /// </summary>
         public static readonly CVarDef<string> DiscordAHelpWebhook =
-            CVarDef.Create("discord.ahelp_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+            CVarDef.Create("discord.ahelp_webhook", "https://discord.com/api/webhooks/1221879593460564058/CK34mjO0EMcPvIb2L6tcWxdpsFsONgjeTWiANp2ExMnk4r_sDqd6keEBhuXnoAtx2lhR", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
         /// <summary>
         /// The server icon to use in the Discord ahelp embed footer.
