@@ -48,6 +48,10 @@
   - type: SpawnItemsOnUse
     items:
       - id: PresentTrash
+      - id: PlushieBlackburna
+        orGroup: GiftPool
+      - id: PlushiePlyushkina
+        orGroup: GiftPool
       - id: Bucket
         orGroup: GiftPool
       - id: JetpackMiniFilled
