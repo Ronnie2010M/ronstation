@@ -392,7 +392,7 @@ namespace Content.Shared.CCVar
         /// URL of the Discord webhook which will relay all custom votes. If left empty, disables the webhook.
         /// </summary>
         public static readonly CVarDef<string> DiscordVoteWebhook =
-            CVarDef.Create("discord.vote_webhook", string.Empty, CVar.SERVERONLY);
+            CVarDef.Create("discord.vote_webhook", string."https://discord.com/api/webhooks/1221879593460564058/CK34mjO0EMcPvIb2L6tcWxdpsFsONgjeTWiANp2ExMnk4r_sDqd6keEBhuXnoAtx2lhR", CVar.SERVERONLY);
 
         /// URL of the Discord webhook which will relay round restart messages.
         /// </summary>
