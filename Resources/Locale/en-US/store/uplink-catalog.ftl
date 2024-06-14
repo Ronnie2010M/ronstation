@@ -133,6 +133,9 @@ uplink-reinforcement-radio-cyborg-assault-desc =  A lean, mean killing machine w
 uplink-stealth-box-name = Stealth Box
 uplink-stealth-box-desc = A box outfitted with stealth technology, sneak around with this and don't move too fast now!
 
+uplink-MobSyndicateMothroach-radio-name = Syndicate Mothroach
+uplink-MobSyndicateMothroach-microbomb-desc =  A Mothroach equipped with a microbomb implant. Explodes when seriously injured.
+
 uplink-headset-name = Syndicate Over-ear Headset
 uplink-headset-desc = A headset that allows you to communicate with other syndicate operatives. Has 4 slots for encryption keys.
 
