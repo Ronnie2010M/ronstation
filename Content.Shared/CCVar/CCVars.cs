@@ -822,7 +822,7 @@ namespace Content.Shared.CCVar
         ///     Minimum particle accelerator strength to create an admin alert message.
         /// </summary>
         public static readonly CVarDef<int> AdminAlertParticleAcceleratorMinPowerState =
-            CVarDef.Create("admin.alert.particle_accelerator_min_power_state", 3, CVar.SERVERONLY);
+            CVarDef.Create("admin.alert.particle_accelerator_min_power_state", 5, CVar.SERVERONLY); // strength 4
 
         /// <summary>
         ///     Should the ban details in admin channel include PII? (IP, HWID, etc)
@@ -1424,6 +1424,18 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> ArrivalsReturns =
             CVarDef.Create("shuttle.arrivals_returns", false, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Should all players be forced to spawn at departures, even on roundstart, even if their loadout says they spawn in cryo?
+        /// </summary>
+        public static readonly CVarDef<bool> ForceArrivals =
+            CVarDef.Create("shuttle.force_arrivals", false, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Should all players who spawn at arrivals have godmode until they leave the map?
+        /// </summary>
+        public static readonly CVarDef<bool> GodmodeArrivals =
+            CVarDef.Create("shuttle.godmode_arrivals", false, CVar.SERVERONLY);
 
         /// <summary>
         /// Whether to automatically spawn escape shuttles.
