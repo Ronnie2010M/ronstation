@@ -28,6 +28,12 @@
       - id: OxygenTankFilled
         prob: 0.20
         orGroup: EmergencyTankOrRegularTank
+      - id: NitrogenTankFilled
+        prob: 0.80
+        orGroup: EmergencyNitrogenOrRegularNitrogen
+      - id: EmergencyNitrogenTankFilled
+        prob: 0.20
+        orGroup: EmergencyNitrogenOrRegularNitrogen
       - id: ToolboxEmergencyFilled
         prob: 0.4
       - id: MedkitOxygenFilled
@@ -52,6 +58,12 @@
       - id: OxygenTankFilled
         prob: 0.20
         orGroup: EmergencyTankOrRegularTank
+      - id: NitrogenTankFilled
+        prob: 0.80
+        orGroup: EmergencyNitrogenOrRegularNitrogen
+      - id: EmergencyNitrogenTankFilled
+        prob: 0.20
+        orGroup: EmergencyNitrogenOrRegularNitrogen
       - id: ToolboxEmergencyFilled
         prob: 0.4
       - id: MedkitOxygenFilled
@@ -86,7 +98,7 @@
         - id: ClothingOuterSuitFire
         - id: ClothingHeadHelmetFire
         - id: ClothingMaskGas
-        - id: OxygenTankFilled
+        - id: AirTankFilled
         - id: FireExtinguisher
           prob: 0.25
 - type: entity
@@ -99,7 +111,7 @@
         - id: ClothingOuterSuitFire
         - id: ClothingHeadHelmetFire
         - id: ClothingMaskGas
-        - id: OxygenTankFilled
+        - id: AirTankFilled
         - id: FireExtinguisher
           prob: 0.25
 - type: entity
@@ -131,6 +143,12 @@
         - id: PlushieCarp
           prob: 0.2
           orGroup: carp
+        - id: PlushieBlackburn
+          prob: 0.05
+        - id: PlushiePlyushkina
+          prob: 0.05
+        - id: PlushieMatryoshka
+          prob: 0.05
         - id: PlushieHolocarp
           prob: 0.05
           orGroup: carp
@@ -239,6 +257,12 @@
         - id: PlushieCarp
           prob: 0.2
           orGroup: carp
+        - id: PlushieBlackburn
+          prob: 0.05
+        - id: PlushiePlyushkina
+          prob: 0.05
+        - id: PlushieMatryoshka
+          prob: 0.05
         - id: PlushieHolocarp
           prob: 0.05
           orGroup: carp

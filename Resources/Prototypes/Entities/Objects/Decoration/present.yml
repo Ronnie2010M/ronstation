@@ -52,6 +52,12 @@
         orGroup: GiftPool
       - id: JetpackMiniFilled
         orGroup: GiftPool
+      - id: PlushieBlackburn
+        orGroup: GiftPool
+      - id: PlushiePlyushkina
+        orGroup: GiftPool
+      - id: PlushieMatryoshka
+        orGroup: GiftPool
       - id: PlushieGhost
         orGroup: GiftPool
       - id: PlushieBee

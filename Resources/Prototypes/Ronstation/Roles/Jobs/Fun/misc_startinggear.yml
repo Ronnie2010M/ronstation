@@ -1,0 +1,12 @@
+#Closet Skeleton Outfit
+- type: startingGear
+  id: SkeletonPassengerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    back: ClothingBackpack
+    ears: ClothingHeadsetGrey
+    shoes: ClothingShoesColorBlack
+    id: PassengerPDA
+  storage:
+    back:
+    - BoxSurvival
