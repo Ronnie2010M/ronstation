@@ -1,0 +1,34 @@
+#When adding new hardsuits, please try to keep the organization consistent with hardsuit-helmets.yml (if possible.)
+
+#CENTCOMM / ERT HARDSUITS
+#Central commander's Hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitCentcom
+  name: central commander's armored spacesuit
+  description: A formal armored spacesuit, made for the highest authorities within Central Command.
+  components:
+  - type: Sprite
+    sprite: Ronstation/Clothing/OuterClothing/Hardsuits/comspace.rsi
+  - type: Clothing
+    sprite: Ronstation/Clothing/OuterClothing/Hardsuits/comspace.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.6
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCentcom
