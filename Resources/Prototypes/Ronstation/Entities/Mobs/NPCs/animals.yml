@@ -34,14 +34,14 @@
     sprite: Ronstation/Entities/Mobs/Animals/Pets/syndimothroach.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
-      state: mothroach
+      state: syndimothroach
   - type: SpriteMovement
     movementLayers:
       movement:
-        state: mothroach-moving
+        state: syndimothroach-moving
     noMovementLayers:
       movement:
-        state: mothroach
+        state: syndimothroach
   - type: Item
     size: Normal
   - type: Clothing
@@ -54,11 +54,11 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: mothroach
+        Base: syndimothroach
       Critical:
-        Base: mothroach_dead
+        Base: syndimothroach_dead
       Dead:
-        Base: mothroach_dead
+        Base: syndimothroach_dead
   - type: MobThresholds
     thresholds:
       0: Alive
