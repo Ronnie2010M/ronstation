@@ -31,6 +31,7 @@
       - id: PlushieBlackburn
       - id: PlushiePlyushkina
       - id: PlushieMatryoshka
+      - id: PlushieDesislava
 
 - type: entity
   id: CrateFunLizardPlushieBulk
