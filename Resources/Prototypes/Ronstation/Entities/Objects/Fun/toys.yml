@@ -89,4 +89,34 @@
       wideAnimationRotation: 180
       soundHit:
         path: /Audio/Ronstation/Items/Toys/fox.ogg
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieDesislava
+  name: Desislava Plushie
+  description: A stuffed toy that resembles a sub-species of blackburn created to pilot small vehicles. The vehicle looks like a generic tank.
+  components:
+    - type: Sprite
+      sprite: Ronstation/Objects/Fun/bkplushie.rsi
+      state: plushie_bkv4
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: Food
+      requiresSpecialDigestion: true
+      useSound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: MeleeWeapon
+      wideAnimationRotation: 180
+      soundHit:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
 # caldera items
