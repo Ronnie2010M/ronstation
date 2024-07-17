@@ -149,6 +149,8 @@
           prob: 0.05
         - id: PlushieMatryoshka
           prob: 0.05
+        - id: PlushieDesislava
+          prob: 0.05
         - id: PlushieHolocarp
           prob: 0.05
           orGroup: carp
