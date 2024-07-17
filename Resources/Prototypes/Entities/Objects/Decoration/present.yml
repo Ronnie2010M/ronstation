@@ -58,6 +58,8 @@
         orGroup: GiftPool
       - id: PlushieMatryoshka
         orGroup: GiftPool
+      - id: PlushieDesislava
+        orGroup: GiftPool
       - id: PlushieGhost
         orGroup: GiftPool
       - id: PlushieBee
