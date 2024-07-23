@@ -1,0 +1,138 @@
+- type: entity
+  name: syndimothroach
+  parent: MobCockroach
+  id: MobMothroachSyndy
+  description: Fast, scary mothroach.
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-SyndiMothroach-name
+    description: ghost-role-information-SyndiMothroach-description
+    rules: ghost-role-information-SyndiMothroach-rules
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 120
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: GhostTakeoverAvailable
+  - type: Speech
+    speechVerb: Moth
+    speechSounds: Squeak
+    allowedEmotes: ['Chitter', 'Squeak']
+  - type: FaxableObject
+    insertingState: inserting_mothroach
+  - type: MothAccent
+  - type: Sprite
+    sprite: Ronstation/Entities/Mobs/Animals/Pets/syndimothroach.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: syndimothroach
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: syndimothroach-moving
+    noMovementLayers:
+      movement:
+        state: syndimothroach
+  - type: Item
+    size: Normal
+  - type: Clothing
+    quickEquip: false
+    sprite: Ronstation/Entities/Mobs/Animals/Pets/syndimothroach.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: syndimothroach
+      Critical:
+        Base: syndimothroach_dead
+      Dead:
+        Base: syndimothroach_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Critical
+      60: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4.5
+    baseSprintSpeed : 6
+    weightlessAcceleration: 2.5
+    weightlessFriction: 1
+    weightlessModifier: 1
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Moth
+  - type: Bloodstream
+    bloodReagent: InsectBlood
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 0.5
+    damageRecovery:
+      types:
+        Asphyxiation: -0.5
+  - type: CombatMode
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSlime
+      amount: 2
+  - type: Extractable
+    grindableSolutionName: food
+  - type: ReplacementAccent
+    accent: mothroach
+  - type: ZombieAccentOverride
+    accent: zombieMoth
+  - type: Vocal
+    sounds:
+      Male: UnisexMoth
+      Female: UnisexMoth
+      Unsexed: UnisexMoth
+    wilhelmProbability: 0.001
+  - type: MobPrice
+    price: 150
+  - type: Tag
+    tags:
+    - Trash
+    - CannotSuicide
+    - VimPilot
+  - type: CanEscapeInventory
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Slash: 6
+        Piercing: 6
+        Structural: 15
+  - type: Body
+    prototype: Mothroach
+  - type: TypingIndicator
+    proto: moth
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 60
+      behaviors:
+      - !type:GibBehavior { }
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
