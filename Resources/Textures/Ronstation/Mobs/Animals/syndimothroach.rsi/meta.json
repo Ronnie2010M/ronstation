@@ -11,11 +11,11 @@
       "name": "icon"
     },
     {
-      "name": "syndiemothroach",
+      "name": "syndimothroach",
       "directions": 4
     },
     {
-      "name": "syndiemothroach-moving",
+      "name": "syndimothroach-moving",
       "directions": 4,
       "delays": [
         [
@@ -41,15 +41,15 @@
       ]
     },
     {
-      "name": "syndiemothroach_lazy",
+      "name": "syndimothroach_lazy",
       "directions": 4
     },
     {
-      "name": "syndiemothroach_sleep",
+      "name": "syndimothroach_sleep",
       "directions": 4
     },
     {
-      "name": "syndiemothroach_dead",
+      "name": "syndimothroach_dead",
       "directions": 4
     },
     {
