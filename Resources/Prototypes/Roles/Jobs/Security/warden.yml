@@ -6,7 +6,7 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 600 #10 hrs
+      time: 21600 #6 hrs
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

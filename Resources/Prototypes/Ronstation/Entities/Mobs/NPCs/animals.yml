@@ -31,7 +31,7 @@
     insertingState: inserting_mothroach
   - type: MothAccent
   - type: Sprite
-    sprite: Ronstation/Entities/Mobs/Animals/Pets/syndimothroach.rsi
+    sprite: Ronstation/Mobs/Animals/syndimothroach.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: syndimothroach
@@ -46,7 +46,7 @@
     size: Normal
   - type: Clothing
     quickEquip: false
-    sprite: Ronstation/Entities/Mobs/Animals/Pets/syndimothroach.rsi
+    sprite: Ronstation/Mobs/Animals/syndimothroach.rsi
     equippedPrefix: 0
     slots:
     - HEAD
