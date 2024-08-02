@@ -58,7 +58,7 @@ namespace Content.Shared.Cuffs
         {
             base.Initialize();
 
-            SubscribeLocalEvent<CuffableComponent, HandCountChangedEvent>(OnHandCountChanged);
+            SubscribeLocalEvent<HandCountChangedEvent>(OnHandCountChanged);
             SubscribeLocalEvent<UncuffAttemptEvent>(OnUncuffAttempt);
 
             SubscribeLocalEvent<CuffableComponent, EntRemovedFromContainerMessage>(OnCuffsRemovedFromContainer);
@@ -380,24 +380,33 @@ namespace Content.Shared.Cuffs
         /// <summary>
         ///     Check the current amount of hands the owner has, and if there's less hands than active cuffs we remove some cuffs.
         /// </summary>
-        private void OnHandCountChanged(Entity<CuffableComponent> ent, ref HandCountChangedEvent message)
+        private void OnHandCountChanged(HandCountChangedEvent message)
         {
-            var dirty = false;
-            var handCount = CompOrNull<HandsComponent>(ent.Owner)?.Count ?? 0;
+            var owner = message.Sender;
 
-            while (ent.Comp.CuffedHandCount > handCount && ent.Comp.CuffedHandCount > 0)
+            if (!TryComp(owner, out CuffableComponent? cuffable) ||
+                !cuffable.Initialized)
+            {
+                return;
+            }
+
+            var dirty = false;
+            var handCount = CompOrNull<HandsComponent>(owner)?.Count ?? 0;
+
+            while (cuffable.CuffedHandCount > handCount && cuffable.CuffedHandCount > 0)
             {
                 dirty = true;
 
-                var handcuffContainer = ent.Comp.Container;
-                var handcuffEntity = handcuffContainer.ContainedEntities[^1];
+                var container = cuffable.Container;
+                var entity = container.ContainedEntities[^1];
 
-                _transform.PlaceNextTo(handcuffEntity, ent.Owner);
+                _container.Remove(entity, container);
+                _transform.SetWorldPosition(entity, _transform.GetWorldPosition(owner));
             }
 
             if (dirty)
             {
-                UpdateCuffState(ent.Owner, ent.Comp);
+                UpdateCuffState(owner, cuffable);
             }
         }
 
@@ -518,25 +527,6 @@ namespace Content.Shared.Cuffs
             }
 
             _audio.PlayPredicted(handcuffComponent.StartCuffSound, handcuff, user);
-            return true;
-        }
-
-        /// <summary>
-        /// Checks if the target is handcuffed.
-        /// </summary>
-        /// <param name="requireFullyCuffed">when true, return false if the target is only partially cuffed (for things with more than 2 hands)</param>
-        /// <returns></returns>
-        public bool IsCuffed(Entity<CuffableComponent> target, bool requireFullyCuffed = true)
-        {
-            if (!TryComp<HandsComponent>(target, out var hands))
-                return false;
-
-            if (target.Comp.CuffedHandCount <= 0)
-                return false;
-
-            if (requireFullyCuffed && hands.Count > target.Comp.CuffedHandCount)
-                return false;
-
             return true;
         }
 

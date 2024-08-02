@@ -116,9 +116,7 @@ namespace Content.Client.Radiation.Overlays
                     var shaderInstance = _pulses[pulseEntity];
                     shaderInstance.instance.CurrentMapCoords = _transform.GetMapCoordinates(pulseEntity);
                     shaderInstance.instance.Range = pulse.VisualRange;
-                }
-                else
-                {
+                } else {
                     _pulses[pulseEntity].shd.Dispose();
                     _pulses.Remove(pulseEntity);
                 }
@@ -131,7 +129,7 @@ namespace Content.Client.Radiation.Overlays
             var transformComponent = _entityManager.GetComponent<TransformComponent>(pulseEntity);
             var transformSystem = _entityManager.System<SharedTransformSystem>();
             return transformComponent.MapID == currentEyeLoc.MapId
-                && transformSystem.InRange(transformComponent.Coordinates, transformSystem.ToCoordinates(transformComponent.ParentUid, currentEyeLoc), MaxDist);
+                && transformComponent.Coordinates.InRange(_entityManager, transformSystem, EntityCoordinates.FromMap(transformComponent.ParentUid, currentEyeLoc, transformSystem, _entityManager), MaxDist);
         }
 
         private sealed record RadiationShaderInstance(MapCoordinates CurrentMapCoords, float Range, TimeSpan Start, float Duration)

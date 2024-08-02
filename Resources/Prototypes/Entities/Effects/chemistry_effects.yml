@@ -36,7 +36,7 @@
   parent: BaseFoam
   id: Smoke
   name: smoke
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Occluder
   - type: Sprite
@@ -52,7 +52,7 @@
   parent: BaseFoam
   id: Foam
   name: foam
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Sprite
     color: "#ffffffcc"
@@ -70,6 +70,7 @@
       state: foam-west
   - type: SmoothEdge
   - type: IconSmooth
+    key: walls
     mode: NoSprite
   - type: FoamVisuals
     animationTime: 0.6
@@ -83,7 +84,7 @@
 - type: entity
   id: MetalFoam
   name: metal foam
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   parent: Foam
   components:
   - type: Sprite
@@ -100,8 +101,6 @@
       state: m_foam-north
     - map: [ "enum.EdgeLayer.West" ]
       state: m_foam-west
-  - type: EdgeSpreader
-    id: MetalFoam
   - type: FoamVisuals
     animationTime: 0.6
     animationState: m_foam-dissolve
@@ -109,7 +108,7 @@
 - type: entity
   id: IronMetalFoam
   name: iron metal foam
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   parent: MetalFoam
   components:
   - type: SpawnOnDespawn
@@ -118,7 +117,7 @@
 - type: entity
   id: AluminiumMetalFoam
   name: aluminium metal foam
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   parent: MetalFoam
   components:
   - type: SpawnOnDespawn
@@ -136,7 +135,7 @@
   - type: RCDDeconstructable
     cost: 2
     delay: 2
-    fx: EffectRCDDeconstruct2
+    fx: EffectRCDDeconstruct2  
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
@@ -160,13 +159,6 @@
   - type: Transform
     anchored: true
   - type: Airtight
-  - type: ReplaceFloorOnSpawn
-    replaceableTiles:
-    - Plating
-    - Lattice
-    - TrainLattice
-    replacementTiles:
-    - FloorMetalFoam
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic

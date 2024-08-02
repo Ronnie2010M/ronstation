@@ -31,24 +31,24 @@ namespace Content.Server.Nutrition.EntitySystems
         /// <summary>
         /// Clicked with utensil
         /// </summary>
-        private void OnAfterInteract(Entity<UtensilComponent> entity, ref AfterInteractEvent ev)
+        private void OnAfterInteract(EntityUid uid, UtensilComponent component, AfterInteractEvent ev)
         {
             if (ev.Handled || ev.Target == null || !ev.CanReach)
                 return;
 
-            var result = TryUseUtensil(ev.User, ev.Target.Value, entity);
+            var result = TryUseUtensil(ev.User, ev.Target.Value, component);
             ev.Handled = result.Handled;
         }
 
-        public (bool Success, bool Handled) TryUseUtensil(EntityUid user, EntityUid target, Entity<UtensilComponent> utensil)
+        public (bool Success, bool Handled) TryUseUtensil(EntityUid user, EntityUid target, UtensilComponent component)
         {
             if (!EntityManager.TryGetComponent(target, out FoodComponent? food))
                 return (false, true);
 
             //Prevents food usage with a wrong utensil
-            if ((food.Utensil & utensil.Comp.Types) == 0)
+            if ((food.Utensil & component.Types) == 0)
             {
-                _popupSystem.PopupEntity(Loc.GetString("food-system-wrong-utensil", ("food", target), ("utensil", utensil.Owner)), user, user);
+                _popupSystem.PopupEntity(Loc.GetString("food-system-wrong-utensil", ("food", target), ("utensil", component.Owner)), user, user);
                 return (false, true);
             }
 

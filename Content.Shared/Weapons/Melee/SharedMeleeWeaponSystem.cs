@@ -12,7 +12,7 @@ using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
-using Content.Shared.Inventory.VirtualItem;
+using Content.Shared.Item;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
@@ -27,6 +27,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Toolshed.Syntax;
 using ItemToggleMeleeWeaponComponent = Content.Shared.Item.ItemToggle.Components.ItemToggleMeleeWeaponComponent;
 
 namespace Content.Shared.Weapons.Melee;
@@ -275,8 +276,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                 return true;
             }
 
-            if (!HasComp<VirtualItemComponent>(held))
-                return false;
+            return false;
         }
 
         // Use hands clothing if applicable.
@@ -485,7 +485,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         var weapon = GetEntity(ev.Weapon);
 
-        // We skip weapon -> target interaction, as forensics system applies DNA on hit
+        Interaction.DoContactInteraction(weapon, target);
         Interaction.DoContactInteraction(user, weapon);
 
         // If the user is using a long-range weapon, this probably shouldn't be happening? But I'll interpret melee as a
@@ -616,7 +616,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         // For stuff that cares about it being attacked.
         foreach (var target in targets)
         {
-            // We skip weapon -> target interaction, as forensics system applies DNA on hit
+            Interaction.DoContactInteraction(weapon, target);
 
             // If the user is using a long-range weapon, this probably shouldn't be happening? But I'll interpret melee as a
             // somewhat messy scuffle. See also, light attacks.

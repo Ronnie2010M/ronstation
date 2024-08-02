@@ -155,12 +155,7 @@ public sealed class AccessReaderSystem : EntitySystem
             return IsAllowedInternal(access, stationKeys, reader);
 
         if (!_containerSystem.TryGetContainer(target, reader.ContainerAccessProvider, out var container))
-            return false;
-
-        // If entity is paused then always allow it at this point.
-        // Door electronics is kind of a mess but yeah, it should only be an unpaused ent interacting with it
-        if (Paused(target))
-            return true;
+            return Paused(target); // when mapping, containers with electronics arent spawned
 
         foreach (var entity in container.ContainedEntities)
         {

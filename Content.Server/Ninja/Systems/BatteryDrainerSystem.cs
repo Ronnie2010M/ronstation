@@ -33,17 +33,16 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
     /// Start do after for draining a power source.
     /// Can't predict PNBC existing so only done on server.
     /// </summary>
-    private void OnBeforeInteractHand(Entity<BatteryDrainerComponent> ent, ref BeforeInteractHandEvent args)
+    private void OnBeforeInteractHand(EntityUid uid, BatteryDrainerComponent comp, BeforeInteractHandEvent args)
     {
-        var (uid, comp) = ent;
         var target = args.Target;
-        if (args.Handled || comp.BatteryUid is not {} battery || !HasComp<PowerNetworkBatteryComponent>(target))
+        if (args.Handled || comp.BatteryUid == null || !HasComp<PowerNetworkBatteryComponent>(target))
             return;
 
         // handles even if battery is full so you can actually see the poup
         args.Handled = true;
 
-        if (_battery.IsFull(battery))
+        if (_battery.IsFull(comp.BatteryUid.Value))
         {
             _popup.PopupEntity(Loc.GetString("battery-drainer-full"), uid, uid, PopupType.Medium);
             return;
@@ -60,24 +59,23 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
         _doAfter.TryStartDoAfter(doAfterArgs);
     }
 
-    private void OnBatteryChanged(Entity<BatteryDrainerComponent> ent, ref NinjaBatteryChangedEvent args)
+    private void OnBatteryChanged(EntityUid uid, BatteryDrainerComponent comp, ref NinjaBatteryChangedEvent args)
     {
-        SetBattery((ent, ent.Comp), args.Battery);
+        SetBattery(uid, args.Battery, comp);
     }
 
     /// <inheritdoc/>
-    protected override void OnDoAfterAttempt(Entity<BatteryDrainerComponent> ent, ref DoAfterAttemptEvent<DrainDoAfterEvent> args)
+    protected override void OnDoAfterAttempt(EntityUid uid, BatteryDrainerComponent comp, DoAfterAttemptEvent<DrainDoAfterEvent> args)
     {
-        base.OnDoAfterAttempt(ent, ref args);
+        base.OnDoAfterAttempt(uid, comp, args);
 
-        if (ent.Comp.BatteryUid is not {} battery || _battery.IsFull(battery))
+        if (comp.BatteryUid == null || _battery.IsFull(comp.BatteryUid.Value))
             args.Cancel();
     }
 
     /// <inheritdoc/>
-    protected override bool TryDrainPower(Entity<BatteryDrainerComponent> ent, EntityUid target)
+    protected override bool TryDrainPower(EntityUid uid, BatteryDrainerComponent comp, EntityUid target)
     {
-        var (uid, comp) = ent;
         if (comp.BatteryUid == null || !TryComp<BatteryComponent>(comp.BatteryUid.Value, out var battery))
             return false;
 
@@ -100,7 +98,6 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
 
         var output = input * comp.DrainEfficiency;
         _battery.SetCharge(comp.BatteryUid.Value, battery.CurrentCharge + output, battery);
-        // TODO: create effect message or something
         Spawn("EffectSparks", Transform(target).Coordinates);
         _audio.PlayPvs(comp.SparkSound, target);
         _popup.PopupEntity(Loc.GetString("battery-drainer-success", ("battery", target)), uid, uid);

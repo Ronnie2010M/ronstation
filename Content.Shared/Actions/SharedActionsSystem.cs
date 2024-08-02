@@ -25,6 +25,7 @@ public abstract class SharedActionsSystem : EntitySystem
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
+    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly RotateToFaceSystem _rotateToFaceSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
@@ -237,7 +238,7 @@ public abstract class SharedActionsSystem : EntitySystem
     }
 
     #region ComponentStateManagement
-    public virtual void UpdateAction(EntityUid? actionId, BaseActionComponent? action = null)
+    protected virtual void UpdateAction(EntityUid? actionId, BaseActionComponent? action = null)
     {
         // See client-side code.
     }
@@ -426,7 +427,7 @@ public abstract class SharedActionsSystem : EntitySystem
                 }
 
                 var entityCoordinatesTarget = GetCoordinates(netCoordinatesTarget);
-                _rotateToFaceSystem.TryFaceCoordinates(user, _transformSystem.ToMapCoordinates(entityCoordinatesTarget).Position);
+                _rotateToFaceSystem.TryFaceCoordinates(user, entityCoordinatesTarget.ToMapPos(EntityManager, _transformSystem));
 
                 if (!ValidateWorldTarget(user, entityCoordinatesTarget, (actionEnt, worldAction)))
                     return;
@@ -532,7 +533,7 @@ public abstract class SharedActionsSystem : EntitySystem
             if (action.Range <= 0)
                 return true;
 
-            return _transformSystem.InRange(coords, Transform(user).Coordinates, action.Range);
+            return coords.InRange(EntityManager, _transformSystem, Transform(user).Coordinates, action.Range);
         }
 
         return _interactionSystem.InRangeUnobstructed(user, coords, range: action.Range);
