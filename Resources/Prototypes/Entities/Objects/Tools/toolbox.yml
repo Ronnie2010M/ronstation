@@ -155,10 +155,10 @@
     state: icon
   - type: ThiefUndeterminedBackpack
     possibleSets:
-    # TODO Thief pinpointer needed
+    # - TO DO Thief pinpointer needed
     - ChemistrySet
     - ToolsSet
-    - ChameleonSet # TODO Chameleon stump PR needed
+    - ChameleonSet # - TO DO Chameleon stump PR needed
     - SyndieSet
     - SleeperSet
     - CommunicatorSet

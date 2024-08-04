@@ -105,7 +105,7 @@
   parent: BaseHumanOrgan
   name: liver
   description: "Pairing suggestion: chianti and fava beans."
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Sprite
     state: liver
@@ -122,7 +122,7 @@
   parent: BaseHumanOrgan
   name: kidneys
   description: "Filters toxins from the bloodstream."
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Sprite
     layers:

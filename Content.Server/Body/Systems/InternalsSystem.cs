@@ -100,9 +100,9 @@ public sealed class InternalsSystem : EntitySystem
         // Toggle off if they're on
         if (AreInternalsWorking(internals))
         {
-            if (force)
+            if (force || user == uid)
             {
-                DisconnectTank((uid, internals));
+                DisconnectTank(internals);
                 return;
             }
 
@@ -199,13 +199,16 @@ public sealed class InternalsSystem : EntitySystem
         _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
     }
 
-    public void DisconnectTank(Entity<InternalsComponent> ent)
+    public void DisconnectTank(InternalsComponent? component)
     {
-        if (TryComp(ent.Comp.GasTankEntity, out GasTankComponent? tank))
-            _gasTank.DisconnectFromInternals((ent.Comp.GasTankEntity.Value, tank));
+        if (component is null)
+            return;
 
-        ent.Comp.GasTankEntity = null;
-        _alerts.ShowAlert(ent.Owner, ent.Comp.InternalsAlert, GetSeverity(ent.Comp));
+        if (TryComp(component.GasTankEntity, out GasTankComponent? tank))
+            _gasTank.DisconnectFromInternals((component.GasTankEntity.Value, tank));
+
+        component.GasTankEntity = null;
+        _alerts.ShowAlert(component.Owner, component.InternalsAlert, GetSeverity(component));
     }
 
     public bool TryConnectTank(Entity<InternalsComponent> ent, EntityUid tankEntity)
@@ -264,21 +267,21 @@ public sealed class InternalsSystem : EntitySystem
 
         if (_inventory.TryGetSlotEntity(user, "back", out var backEntity, user.Comp2, user.Comp3) &&
             TryComp<GasTankComponent>(backEntity, out var backGasTank) &&
-            _gasTank.CanConnectToInternals((backEntity.Value, backGasTank)))
+            _gasTank.CanConnectToInternals(backGasTank))
         {
             return (backEntity.Value, backGasTank);
         }
 
         if (_inventory.TryGetSlotEntity(user, "suitstorage", out var entity, user.Comp2, user.Comp3) &&
             TryComp<GasTankComponent>(entity, out var gasTank) &&
-            _gasTank.CanConnectToInternals((entity.Value, gasTank)))
+            _gasTank.CanConnectToInternals(gasTank))
         {
             return (entity.Value, gasTank);
         }
 
         foreach (var item in _inventory.GetHandOrInventoryEntities((user.Owner, user.Comp1, user.Comp2)))
         {
-            if (TryComp(item, out gasTank) && _gasTank.CanConnectToInternals((item, gasTank)))
+            if (TryComp(item, out gasTank) && _gasTank.CanConnectToInternals(gasTank))
                 return (item, gasTank);
         }
 

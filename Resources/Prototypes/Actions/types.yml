@@ -37,7 +37,6 @@
   description: Turn the light on and off.
   components:
   - type: InstantAction
-    useDelay: 1
     icon: { sprite: Objects/Tools/flashlight.rsi, state: flashlight }
     iconOn: { sprite: Objects/Tools/flashlight.rsi, state: flashlight-on }
     event: !type:ToggleActionEvent
@@ -166,8 +165,6 @@
   name: Morph into Geras
   description:  Morphs you into a Geras - a miniature version of you which allows you to move fast, at the cost of your inventory.
   components:
-  - type: ConfirmableAction
-    popup: gera-transformation-popup
   - type: InstantAction
     itemIconStyle: BigAction
     useDelay: 10 # prevent spam

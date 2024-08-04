@@ -906,7 +906,7 @@
   productEntity: ReinforcementRadioSyndicate
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-urist }
   cost:
-    Telecrystal: 14
+    Telecrystal: 16
   categories:
   - UplinkAllies
   conditions:
@@ -922,7 +922,7 @@
   productEntity: ReinforcementRadioSyndicateNukeops
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-urist }
   cost:
-    Telecrystal: 35
+    Telecrystal: 16
   categories:
   - UplinkAllies
   conditions:
@@ -1004,7 +1004,7 @@
     Telecrystal: 6
   categories:
     - UplinkAllies
-
+  
 - type: listing
   id: UplinkMobMothroachSyndicate
   name: uplink-mobmothroach-syndicate-name
@@ -1316,7 +1316,7 @@
   icon: { sprite: /Textures/Clothing/OuterClothing/Hardsuits/syndieelite.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateEliteHardsuitBundle
   cost:
-    Telecrystal: 12
+    Telecrystal: 10
   categories:
   - UplinkWearables
 
