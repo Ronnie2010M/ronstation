@@ -1,5 +1,4 @@
 using Content.Shared.Random;
-using Content.Shared.Random.Rules;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;

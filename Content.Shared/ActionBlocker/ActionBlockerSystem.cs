@@ -120,13 +120,7 @@ namespace Content.Shared.ActionBlocker
             var ev = new ThrowAttemptEvent(user, itemUid);
             RaiseLocalEvent(user, ev);
 
-            if (ev.Cancelled)
-                return false;
-
-            var itemEv = new ThrowItemAttemptEvent(user);
-            RaiseLocalEvent(itemUid, ref itemEv);
-
-            return !itemEv.Cancelled;
+            return !ev.Cancelled;
         }
 
         public bool CanSpeak(EntityUid uid)

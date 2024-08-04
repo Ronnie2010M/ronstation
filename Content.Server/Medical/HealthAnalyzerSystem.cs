@@ -5,14 +5,10 @@ using Content.Server.PowerCell;
 using Content.Server.Temperature.Components;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
-using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Item.ItemToggle;
-using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.MedicalScanner;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Popups;
 using Content.Shared.PowerCell;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
@@ -28,18 +24,16 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     [Dependency] private readonly PowerCellSystem _cell = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly ItemToggleSystem _toggle = default!;
     [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
 
     public override void Initialize()
     {
         SubscribeLocalEvent<HealthAnalyzerComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<HealthAnalyzerComponent, HealthAnalyzerDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<HealthAnalyzerComponent, EntGotInsertedIntoContainerMessage>(OnInsertedIntoContainer);
-        SubscribeLocalEvent<HealthAnalyzerComponent, ItemToggledEvent>(OnToggled);
+        SubscribeLocalEvent<HealthAnalyzerComponent, PowerCellSlotEmptyEvent>(OnPowerCellSlotEmpty);
         SubscribeLocalEvent<HealthAnalyzerComponent, DroppedEvent>(OnDropped);
     }
 
@@ -65,7 +59,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
 
             //Get distance between health analyzer and the scanned entity
             var patientCoordinates = Transform(patient).Coordinates;
-            if (!_transformSystem.InRange(patientCoordinates, transform.Coordinates, component.MaxScanRange))
+            if (!patientCoordinates.InRange(EntityManager, _transformSystem, transform.Coordinates, component.MaxScanRange))
             {
                 //Range too far, disable updates
                 StopAnalyzingEntity((uid, component), patient);
@@ -91,9 +85,6 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             NeedHand = true,
             BreakOnMove = true
         });
-
-        var msg = Loc.GetString("health-analyzer-popup-scan-target", ("user", Identity.Entity(args.User, EntityManager)));
-        _popupSystem.PopupEntity(msg, args.Target.Value, args.Target.Value, PopupType.Medium);
     }
 
     private void OnDoAfter(Entity<HealthAnalyzerComponent> uid, ref HealthAnalyzerDoAfterEvent args)
@@ -114,16 +105,16 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     private void OnInsertedIntoContainer(Entity<HealthAnalyzerComponent> uid, ref EntGotInsertedIntoContainerMessage args)
     {
         if (uid.Comp.ScannedEntity is { } patient)
-            _toggle.TryDeactivate(uid.Owner);
+            StopAnalyzingEntity(uid, patient);
     }
 
     /// <summary>
-    /// Disable continuous updates once turned off
+    /// Disable continuous updates once battery is dead
     /// </summary>
-    private void OnToggled(Entity<HealthAnalyzerComponent> ent, ref ItemToggledEvent args)
+    private void OnPowerCellSlotEmpty(Entity<HealthAnalyzerComponent> uid, ref PowerCellSlotEmptyEvent args)
     {
-        if (!args.Activated && ent.Comp.ScannedEntity is { } patient)
-            StopAnalyzingEntity(ent, patient);
+        if (uid.Comp.ScannedEntity is { } patient)
+            StopAnalyzingEntity(uid, patient);
     }
 
     /// <summary>
@@ -132,7 +123,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     private void OnDropped(Entity<HealthAnalyzerComponent> uid, ref DroppedEvent args)
     {
         if (uid.Comp.ScannedEntity is { } patient)
-            _toggle.TryDeactivate(uid.Owner);
+            StopAnalyzingEntity(uid, patient);
     }
 
     private void OpenUserInterface(EntityUid user, EntityUid analyzer)
@@ -153,7 +144,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         //Link the health analyzer to the scanned entity
         healthAnalyzer.Comp.ScannedEntity = target;
 
-        _toggle.TryActivate(healthAnalyzer.Owner);
+        _cell.SetPowerCellDrawEnabled(healthAnalyzer, true);
 
         UpdateScannedUser(healthAnalyzer, target, true);
     }
@@ -168,7 +159,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         //Unlink the analyzer
         healthAnalyzer.Comp.ScannedEntity = null;
 
-        _toggle.TryDeactivate(healthAnalyzer.Owner);
+        _cell.SetPowerCellDrawEnabled(target, false);
 
         UpdateScannedUser(healthAnalyzer, target, false);
     }

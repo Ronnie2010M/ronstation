@@ -40,7 +40,6 @@ namespace Content.Server.Cargo.Systems
             SubscribeLocalEvent<CargoOrderConsoleComponent, BoundUIOpenedEvent>(OnOrderUIOpened);
             SubscribeLocalEvent<CargoOrderConsoleComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<CargoOrderConsoleComponent, InteractUsingEvent>(OnInteractUsing);
-            SubscribeLocalEvent<CargoOrderConsoleComponent, BankBalanceUpdatedEvent>(OnOrderBalanceUpdated);
             Reset();
         }
 
@@ -177,10 +176,6 @@ namespace Content.Server.Cargo.Systems
             RaiseLocalEvent(ref ev);
             ev.FulfillmentEntity ??= station.Value;
 
-            _idCardSystem.TryFindIdCard(player, out var idCard);
-            // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
-            order.SetApproverData(idCard.Comp?.FullName, idCard.Comp?.JobTitle);
-
             if (!ev.Handled)
             {
                 ev.FulfillmentEntity = TryFulfillOrder((station.Value, stationData), order, orderDatabase);
@@ -193,13 +188,18 @@ namespace Content.Server.Cargo.Systems
                 }
             }
 
-            order.Approved = true;
+            _idCardSystem.TryFindIdCard(player, out var idCard);
+            // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
+            order.SetApproverData(idCard.Comp?.FullName, idCard.Comp?.JobTitle);
             _audio.PlayPvs(component.ConfirmSound, uid);
 
+            var approverName = idCard.Comp?.FullName ?? Loc.GetString("access-reader-unknown-id");
+            var approverJob = idCard.Comp?.JobTitle ?? Loc.GetString("access-reader-unknown-id");
             var message = Loc.GetString("cargo-console-unlock-approved-order-broadcast",
                 ("productName", Loc.GetString(order.ProductName)),
                 ("orderAmount", order.OrderQuantity),
-                ("approver", order.Approver ?? string.Empty),
+                ("approverName", approverName),
+                ("approverJob", approverJob),
                 ("cost", cost));
             _radio.SendRadioMessage(uid, message, component.AnnouncementChannel, uid, escapeMarkup: false);
             ConsolePopup(args.Actor, Loc.GetString("cargo-console-trade-station", ("destination", MetaData(ev.FulfillmentEntity.Value).EntityName)));
@@ -315,15 +315,6 @@ namespace Content.Server.Cargo.Systems
 
         #endregion
 
-
-        private void OnOrderBalanceUpdated(Entity<CargoOrderConsoleComponent> ent, ref BankBalanceUpdatedEvent args)
-        {
-            if (!_uiSystem.IsUiOpen(ent.Owner, CargoConsoleUiKey.Orders))
-                return;
-
-            UpdateOrderState(ent, args.Station);
-        }
-
         private void UpdateOrderState(EntityUid consoleUid, EntityUid? station)
         {
             if (station == null ||
@@ -420,7 +411,6 @@ namespace Content.Server.Cargo.Systems
 
             // Approve it now
             order.SetApproverData(dest, sender);
-            order.Approved = true;
 
             // Log order addition
             _adminLogger.Add(LogType.Action, LogImpact.Low,

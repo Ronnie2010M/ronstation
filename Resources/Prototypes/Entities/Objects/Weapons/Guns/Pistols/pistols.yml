@@ -47,7 +47,6 @@
         whitelist:
           tags:
             - MagazinePistol
-        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgePistol
@@ -76,6 +75,9 @@
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+    availableModes:
+    - FullAuto
+    - SemiAuto
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -88,7 +90,6 @@
           tags:
             - MagazinePistol
             - MagazinePistolHighCapacity
-        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgePistol
@@ -100,41 +101,6 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
-
-- type: entity
-  name: echis
-  parent: BaseItem
-  id: WeaponPistolEchis
-  description: A viper for use by cyborgs. Creates .35 ammo on the fly from an internal ammo fabricator, which slowly self-charges.
-  components:
-  - type: Gun
-    fireRate: 5
-    selectedMode: SemiAuto
-    availableModes:
-      - SemiAuto
-      - FullAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Pistols/viper.rsi
-    layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-0
-        map: ["enum.GunVisualLayers.Mag"]
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
-  - type: ProjectileBatteryAmmoProvider
-    proto: BulletPistol
-    fireCost: 100
-  - type: Battery
-    maxCharge: 1000
-    startingCharge: 1000
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: 25
-  - type: AmmoCounter
 
 - type: entity
   name: cobra
@@ -172,7 +138,6 @@
         whitelist:
           tags:
             - MagazinePistolCaselessRifle
-        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgeCaselessRifle
@@ -243,7 +208,6 @@
         whitelist:
           tags:
             - MagazineMagnum
-        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgeMagnum

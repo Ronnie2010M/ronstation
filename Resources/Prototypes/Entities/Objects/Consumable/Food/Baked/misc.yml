@@ -257,12 +257,14 @@
 
 - type: entity
   name: blueberry pancake
-  parent: FoodBakedPancake
+  parent: FoodBakedBase
   id: FoodBakedPancakeBb
   description: A fluffy and delicious blueberry pancake.
   components:
   - type: Stack
-    stackType: PancakeBb
+    stackType: Pancake
+    count: 1
+    composite: true
     layerStates:
     - pancakesbb1
     - pancakesbb2
@@ -279,6 +281,7 @@
     - state: pancakesbb3
       map: ["pancakesbb3"]
       visible: false
+  - type: Appearance
   - type: Tag
     tags:
     - Pancake
@@ -286,12 +289,14 @@
 
 - type: entity
   name: chocolate chip pancake
-  parent: FoodBakedPancake
+  parent: FoodBakedBase
   id: FoodBakedPancakeCc
   description: A fluffy and delicious chocolate chip pancake.
   components:
   - type: Stack
-    stackType: PancakeCc
+    stackType: Pancake
+    count: 1
+    composite: true
     layerStates:
     - pancakescc1
     - pancakescc2
@@ -308,6 +313,7 @@
     - state: pancakescc3
       map: ["pancakescc3"]
       visible: false
+  - type: Appearance
   - type: SolutionContainerManager
     solutions:
       food:
@@ -317,6 +323,9 @@
           Quantity: 5
         - ReagentId: Theobromine
           Quantity: 1
+  - type: Tag
+    tags:
+    - Pancake
 
 - type: entity
   name: waffles

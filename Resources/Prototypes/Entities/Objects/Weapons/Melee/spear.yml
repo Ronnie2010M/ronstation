@@ -5,10 +5,9 @@
   description: Definition of a Classic. Keeping murder affordable since 200,000 BCE.
   components:
   - type: EmbeddableProjectile
-    offset: -0.15,0.0
+    offset: 0.15,0.15
   - type: ThrowingAngle
     angle: 225
-  - type: LandAtCursor
   - type: Tag
     tags:
     - Spear
@@ -112,11 +111,6 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 1
     fillBaseName: spear
-    inHandsFillBaseName: -fill-
-    inHandsMaxFillLevels: 1
-    equippedFillBaseName: -fill-
-    equippedMaxFillLevels: 1
-
 
 - type: entity
   name: reinforced spear

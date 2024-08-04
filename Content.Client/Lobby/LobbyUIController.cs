@@ -46,7 +46,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
     private CharacterSetupGui? _characterSetup;
     private HumanoidProfileEditor? _profileEditor;
-    private CharacterSetupGuiSavePanel? _savePanel;
 
     /// <summary>
     /// This is the characher preview panel in the chat. This should only update if their character updates.
@@ -215,46 +214,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         ReloadCharacterSetup();
     }
 
-    private void CloseProfileEditor()
-    {
-        if (_profileEditor == null)
-            return;
-
-        _profileEditor.SetProfile(null, null);
-        _profileEditor.Visible = false;
-
-        if (_stateManager.CurrentState is LobbyState lobbyGui)
-        {
-            lobbyGui.SwitchState(LobbyGui.LobbyGuiState.Default);
-        }
-    }
-
-    private void OpenSavePanel()
-    {
-        if (_savePanel is { IsOpen: true })
-            return;
-
-        _savePanel = new CharacterSetupGuiSavePanel();
-
-        _savePanel.SaveButton.OnPressed += _ =>
-        {
-            SaveProfile();
-
-            _savePanel.Close();
-
-            CloseProfileEditor();
-        };
-
-        _savePanel.NoSaveButton.OnPressed += _ =>
-        {
-            _savePanel.Close();
-
-            CloseProfileEditor();
-        };
-
-        _savePanel.OpenCentered();
-    }
-
     private (CharacterSetupGui, HumanoidProfileEditor) EnsureGui()
     {
         if (_characterSetup != null && _profileEditor != null)
@@ -272,7 +231,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _logManager,
             _playerManager,
             _prototypeManager,
-            _resourceCache,
             _requirements,
             _markings);
 
@@ -282,16 +240,14 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         _characterSetup.CloseButton.OnPressed += _ =>
         {
-            // Open the save panel if we have unsaved changes.
-            if (_profileEditor.Profile != null && _profileEditor.IsDirty)
-            {
-                OpenSavePanel();
-
-                return;
-            }
-
             // Reset sliders etc.
-            CloseProfileEditor();
+            _profileEditor.SetProfile(null, null);
+            _profileEditor.Visible = false;
+
+            if (_stateManager.CurrentState is LobbyState lobbyGui)
+            {
+                lobbyGui.SwitchState(LobbyGui.LobbyGuiState.Default);
+            }
         };
 
         _profileEditor.Save += SaveProfile;
