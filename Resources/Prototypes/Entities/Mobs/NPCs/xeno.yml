@@ -57,10 +57,10 @@
     allowedStates:
     - Alive
     - Dead
-  - type: MobThresholds
+  - type: MobThresholds 
     thresholds:
       0: Alive
-      50: Dead
+      65: Dead  # RonStation - Xeno change
   - type: SlowOnDamage
     speedModifierThresholds:
       25: 0.5
@@ -119,6 +119,8 @@
     molsPerSecondPerUnitMass: 0.0005
   - type: Speech
     speechVerb: LargeMob
+  - type: StaticPrice # RonStation - Xeno change
+    price: 2500
 
 - type: entity
   name: Praetorian
