@@ -896,7 +896,7 @@
         - BulletFoam
     capacity: 1
     soundInsert:
-      path: /Audio/Items/bow_pull.ogg
+      path: /Audio/Weapons/drawbow2.ogg
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
