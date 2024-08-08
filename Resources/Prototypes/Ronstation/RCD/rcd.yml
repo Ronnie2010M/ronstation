@@ -1,0 +1,11 @@
+- type: rcd
+  id: FanTiny
+  category: Airlocks
+  sprite: /Textures/Ronstation/Interface/Radial/RCD/tinyfan.png
+  mode: ConstructObject
+  prototype: AtmosDeviceFanTiny
+  cost: 20
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: Camera
+  fx: EffectRCDConstruct4
