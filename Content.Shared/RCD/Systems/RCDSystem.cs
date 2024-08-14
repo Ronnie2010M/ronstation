@@ -572,6 +572,8 @@ public class RCDSystem : EntitySystem
                 return false;
         }
 
+        gridUid = mapGrid.Owner;
+
         var tile = _mapSystem.GetTileRef(gridUid.Value, mapGrid, location);
         var position = _mapSystem.TileIndicesFor(gridUid.Value, mapGrid, location);
         mapGridData = new MapGridData(gridUid.Value, mapGrid, location, tile, position);

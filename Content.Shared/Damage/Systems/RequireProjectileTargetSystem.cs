@@ -2,14 +2,11 @@ using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Standing;
 using Robust.Shared.Physics.Events;
-using Robust.Shared.Containers;
 
 namespace Content.Shared.Damage.Components;
 
 public sealed class RequireProjectileTargetSystem : EntitySystem
 {
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-
     public override void Initialize()
     {
         SubscribeLocalEvent<RequireProjectileTargetComponent, PreventCollideEvent>(PreventCollide);
@@ -26,16 +23,10 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
             return;
 
         var other = args.OtherEntity;
-        if (TryComp(other, out ProjectileComponent? projectile) &&
+        if (HasComp<ProjectileComponent>(other) &&
             CompOrNull<TargetedProjectileComponent>(other)?.Target != ent)
         {
-            // Prevents shooting out of while inside of crates
-            var shooter = projectile.Shooter;
-            if (!shooter.HasValue)
-                return;
-
-            if (!_container.IsEntityOrParentInContainer(shooter.Value))
-               args.Cancelled = true;
+            args.Cancelled = true;
         }
     }
 

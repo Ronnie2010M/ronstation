@@ -10,7 +10,6 @@
     offset: 0.0,0.0
   - type: ThrowingAngle
     angle: 315
-  - type: LandAtCursor
   - type: Fixtures
     fixtures:
       fix1:
@@ -84,7 +83,6 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: BalloonPopper
 
 - type: entity
   parent: Dart

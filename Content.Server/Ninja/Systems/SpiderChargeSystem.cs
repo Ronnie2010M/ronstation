@@ -4,10 +4,9 @@ using Content.Server.Mind;
 using Content.Server.Objectives.Components;
 using Content.Server.Popups;
 using Content.Server.Roles;
+using Content.Server.Sticky.Events;
 using Content.Shared.Interaction;
 using Content.Shared.Ninja.Components;
-using Content.Shared.Ninja.Systems;
-using Content.Shared.Sticky;
 using Robust.Shared.GameObjects;
 
 namespace Content.Server.Ninja.Systems;
@@ -15,7 +14,7 @@ namespace Content.Server.Ninja.Systems;
 /// <summary>
 /// Prevents planting a spider charge outside of its location and handles greentext.
 /// </summary>
-public sealed class SpiderChargeSystem : SharedSpiderChargeSystem
+public sealed class SpiderChargeSystem : EntitySystem
 {
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
@@ -34,7 +33,7 @@ public sealed class SpiderChargeSystem : SharedSpiderChargeSystem
     /// <summary>
     /// Require that the planter is a ninja and the charge is near the target warp point.
     /// </summary>
-    private void OnAttemptStick(EntityUid uid, SpiderChargeComponent comp, ref AttemptEntityStickEvent args)
+    private void OnAttemptStick(EntityUid uid, SpiderChargeComponent comp, AttemptEntityStickEvent args)
     {
         if (args.Cancelled)
             return;
@@ -67,7 +66,7 @@ public sealed class SpiderChargeSystem : SharedSpiderChargeSystem
     /// <summary>
     /// Allows greentext to occur after exploding.
     /// </summary>
-    private void OnStuck(EntityUid uid, SpiderChargeComponent comp, ref EntityStuckEvent args)
+    private void OnStuck(EntityUid uid, SpiderChargeComponent comp, EntityStuckEvent args)
     {
         comp.Planter = args.User;
     }

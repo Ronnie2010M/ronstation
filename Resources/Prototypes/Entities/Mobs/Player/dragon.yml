@@ -164,7 +164,7 @@
     - MinorAntagonists
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   id: DragonsBreathGun
   name: dragon's lung
   description: For dragon's breathing.

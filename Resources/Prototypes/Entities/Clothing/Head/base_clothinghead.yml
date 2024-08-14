@@ -59,7 +59,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadLightBase
   name: base helmet with light
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -151,7 +151,7 @@
   # No parent since we aren't actually an item.
   id: ClothingHeadHardsuitBase
   name: base hardsuit helmet
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: BreathMask
   - type: Sprite
@@ -169,6 +169,8 @@
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
     coefficient: 0.1
+  - type: FireProtection
+    reduction: 0.2
   - type: Armor
     modifiers:
       coefficients:
@@ -195,7 +197,7 @@
   parent: ClothingHeadHardsuitBase
   id: ClothingHeadHardsuitWithLightBase
   name: base hardsuit helmet with light
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -247,7 +249,7 @@
   id: ClothingHeadHatHoodWinterBase
   name: base winter coat hood
   description: A hood, made to keep your head warm.
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Sprite
     state: icon

@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
   id: ClothingOuterWinterCoat
   name: winter coat
   description: A heavy jacket made from 'synthetic' animal furs.
@@ -38,7 +38,7 @@
   parent: ClothingOuterWinterCoat
   id: ClothingOuterWinterCoatToggleable
   name: winter coat with hood
-  categories: [ HideSpawnMenu ]
+  noSpawn: True
   components:
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterDefault

@@ -25,6 +25,7 @@ public abstract class SharedActionsSystem : EntitySystem
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
+    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly RotateToFaceSystem _rotateToFaceSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
@@ -38,12 +39,10 @@ public abstract class SharedActionsSystem : EntitySystem
         SubscribeLocalEvent<InstantActionComponent, MapInitEvent>(OnActionMapInit);
         SubscribeLocalEvent<EntityTargetActionComponent, MapInitEvent>(OnActionMapInit);
         SubscribeLocalEvent<WorldTargetActionComponent, MapInitEvent>(OnActionMapInit);
-        SubscribeLocalEvent<EntityWorldTargetActionComponent, MapInitEvent>(OnActionMapInit);
 
         SubscribeLocalEvent<InstantActionComponent, ComponentShutdown>(OnActionShutdown);
         SubscribeLocalEvent<EntityTargetActionComponent, ComponentShutdown>(OnActionShutdown);
         SubscribeLocalEvent<WorldTargetActionComponent, ComponentShutdown>(OnActionShutdown);
-        SubscribeLocalEvent<EntityWorldTargetActionComponent, ComponentShutdown>(OnActionShutdown);
 
         SubscribeLocalEvent<ActionsComponent, DidEquipEvent>(OnDidEquip);
         SubscribeLocalEvent<ActionsComponent, DidEquipHandEvent>(OnHandEquipped);
@@ -58,12 +57,10 @@ public abstract class SharedActionsSystem : EntitySystem
         SubscribeLocalEvent<InstantActionComponent, ComponentGetState>(OnInstantGetState);
         SubscribeLocalEvent<EntityTargetActionComponent, ComponentGetState>(OnEntityTargetGetState);
         SubscribeLocalEvent<WorldTargetActionComponent, ComponentGetState>(OnWorldTargetGetState);
-        SubscribeLocalEvent<EntityWorldTargetActionComponent, ComponentGetState>(OnEntityWorldTargetGetState);
 
         SubscribeLocalEvent<InstantActionComponent, GetActionDataEvent>(OnGetActionData);
         SubscribeLocalEvent<EntityTargetActionComponent, GetActionDataEvent>(OnGetActionData);
         SubscribeLocalEvent<WorldTargetActionComponent, GetActionDataEvent>(OnGetActionData);
-        SubscribeLocalEvent<EntityWorldTargetActionComponent, GetActionDataEvent>(OnGetActionData);
 
         SubscribeAllEvent<RequestPerformActionEvent>(OnActionRequest);
     }
@@ -104,11 +101,6 @@ public abstract class SharedActionsSystem : EntitySystem
     private void OnWorldTargetGetState(EntityUid uid, WorldTargetActionComponent component, ref ComponentGetState args)
     {
         args.State = new WorldTargetActionComponentState(component, EntityManager);
-    }
-
-    private void OnEntityWorldTargetGetState(EntityUid uid, EntityWorldTargetActionComponent component, ref ComponentGetState args)
-    {
-        args.State = new EntityWorldTargetActionComponentState(component, EntityManager);
     }
 
     private void OnGetActionData<T>(EntityUid uid, T component, ref GetActionDataEvent args) where T : BaseActionComponent
@@ -246,7 +238,7 @@ public abstract class SharedActionsSystem : EntitySystem
     }
 
     #region ComponentStateManagement
-    public virtual void UpdateAction(EntityUid? actionId, BaseActionComponent? action = null)
+    protected virtual void UpdateAction(EntityUid? actionId, BaseActionComponent? action = null)
     {
         // See client-side code.
     }
@@ -435,7 +427,7 @@ public abstract class SharedActionsSystem : EntitySystem
                 }
 
                 var entityCoordinatesTarget = GetCoordinates(netCoordinatesTarget);
-                _rotateToFaceSystem.TryFaceCoordinates(user, _transformSystem.ToMapCoordinates(entityCoordinatesTarget).Position);
+                _rotateToFaceSystem.TryFaceCoordinates(user, entityCoordinatesTarget.ToMapPos(EntityManager, _transformSystem));
 
                 if (!ValidateWorldTarget(user, entityCoordinatesTarget, (actionEnt, worldAction)))
                     return;
@@ -451,34 +443,6 @@ public abstract class SharedActionsSystem : EntitySystem
                 }
 
                 break;
-            case EntityWorldTargetActionComponent entityWorldAction:
-            {
-                var actionEntity = GetEntity(ev.EntityTarget);
-                var actionCoords = GetCoordinates(ev.EntityCoordinatesTarget);
-
-                if (actionEntity is null && actionCoords is null)
-                {
-                    Log.Error($"Attempted to perform an entity-world-targeted action without an entity or world coordinates! Action: {name}");
-                    return;
-                }
-
-                var entWorldAction = new Entity<EntityWorldTargetActionComponent>(actionEnt, entityWorldAction);
-
-                if (!ValidateEntityWorldTarget(user, actionEntity, actionCoords, entWorldAction))
-                    return;
-
-                _adminLogger.Add(LogType.Action,
-                    $"{ToPrettyString(user):user} is performing the {name:action} action (provided by {ToPrettyString(action.Container ?? user):provider}) targeted at {ToPrettyString(actionEntity):target} {actionCoords:target}.");
-
-                if (entityWorldAction.Event != null)
-                {
-                    entityWorldAction.Event.Entity = actionEntity;
-                    entityWorldAction.Event.Coords = actionCoords;
-                    Dirty(actionEnt, entityWorldAction);
-                    performEvent = entityWorldAction.Event;
-                }
-                break;
-            }
             case InstantActionComponent instantAction:
                 if (action.CheckCanInteract && !_actionBlockerSystem.CanInteract(user, null))
                     return;
@@ -502,14 +466,7 @@ public abstract class SharedActionsSystem : EntitySystem
 
     public bool ValidateEntityTarget(EntityUid user, EntityUid target, Entity<EntityTargetActionComponent> actionEnt)
     {
-        var comp = actionEnt.Comp;
-        if (!ValidateEntityTargetBase(user,
-                target,
-                comp.Whitelist,
-                comp.CheckCanInteract,
-                comp.CanTargetSelf,
-                comp.CheckCanAccess,
-                comp.Range))
+        if (!ValidateEntityTargetBase(user, target, actionEnt))
             return false;
 
         var ev = new ValidateActionEntityTargetEvent(user, target);
@@ -517,27 +474,21 @@ public abstract class SharedActionsSystem : EntitySystem
         return !ev.Cancelled;
     }
 
-    private bool ValidateEntityTargetBase(EntityUid user,
-        EntityUid? targetEntity,
-        EntityWhitelist? whitelist,
-        bool checkCanInteract,
-        bool canTargetSelf,
-        bool checkCanAccess,
-        float range)
+    private bool ValidateEntityTargetBase(EntityUid user, EntityUid target, EntityTargetActionComponent action)
     {
-        if (targetEntity is not { } target || !target.IsValid() || Deleted(target))
+        if (!target.IsValid() || Deleted(target))
             return false;
 
-        if (_whitelistSystem.IsWhitelistFail(whitelist, target))
+        if (_whitelistSystem.IsWhitelistFail(action.Whitelist, target))
             return false;
 
-        if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, target))
+        if (action.CheckCanInteract && !_actionBlockerSystem.CanInteract(user, target))
             return false;
 
         if (user == target)
-            return canTargetSelf;
+            return action.CanTargetSelf;
 
-        if (!checkCanAccess)
+        if (!action.CheckCanAccess)
         {
             // even if we don't check for obstructions, we may still need to check the range.
             var xform = Transform(user);
@@ -546,20 +497,19 @@ public abstract class SharedActionsSystem : EntitySystem
             if (xform.MapID != targetXform.MapID)
                 return false;
 
-            if (range <= 0)
+            if (action.Range <= 0)
                 return true;
 
             var distance = (_transformSystem.GetWorldPosition(xform) - _transformSystem.GetWorldPosition(targetXform)).Length();
-            return distance <= range;
+            return distance <= action.Range;
         }
 
-        return _interactionSystem.InRangeAndAccessible(user, target, range: range);
+        return _interactionSystem.InRangeAndAccessible(user, target, range: action.Range);
     }
 
     public bool ValidateWorldTarget(EntityUid user, EntityCoordinates coords, Entity<WorldTargetActionComponent> action)
     {
-        var comp = action.Comp;
-        if (!ValidateWorldTargetBase(user, coords, comp.CheckCanInteract, comp.CheckCanAccess, comp.Range))
+        if (!ValidateWorldTargetBase(user, coords, action))
             return false;
 
         var ev = new ValidateActionWorldTargetEvent(user, coords);
@@ -567,19 +517,12 @@ public abstract class SharedActionsSystem : EntitySystem
         return !ev.Cancelled;
     }
 
-    private bool ValidateWorldTargetBase(EntityUid user,
-        EntityCoordinates? entityCoordinates,
-        bool checkCanInteract,
-        bool checkCanAccess,
-        float range)
+    private bool ValidateWorldTargetBase(EntityUid user, EntityCoordinates coords, WorldTargetActionComponent action)
     {
-        if (entityCoordinates is not { } coords)
+        if (action.CheckCanInteract && !_actionBlockerSystem.CanInteract(user, null))
             return false;
 
-        if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, null))
-            return false;
-
-        if (!checkCanAccess)
+        if (!action.CheckCanAccess)
         {
             // even if we don't check for obstructions, we may still need to check the range.
             var xform = Transform(user);
@@ -587,40 +530,13 @@ public abstract class SharedActionsSystem : EntitySystem
             if (xform.MapID != coords.GetMapId(EntityManager))
                 return false;
 
-            if (range <= 0)
+            if (action.Range <= 0)
                 return true;
 
-            return coords.InRange(EntityManager, _transformSystem, Transform(user).Coordinates, range);
+            return coords.InRange(EntityManager, _transformSystem, Transform(user).Coordinates, action.Range);
         }
 
-        return _interactionSystem.InRangeUnobstructed(user, coords, range: range);
-    }
-
-    public bool ValidateEntityWorldTarget(EntityUid user,
-        EntityUid? entity,
-        EntityCoordinates? coords,
-        Entity<EntityWorldTargetActionComponent> action)
-    {
-        var comp = action.Comp;
-        var entityValidated = ValidateEntityTargetBase(user,
-            entity,
-            comp.Whitelist,
-            comp.CheckCanInteract,
-            comp.CanTargetSelf,
-            comp.CheckCanAccess,
-            comp.Range);
-
-        var worldValidated
-            = ValidateWorldTargetBase(user, coords, comp.CheckCanInteract, comp.CheckCanAccess, comp.Range);
-
-        if (!entityValidated && !worldValidated)
-            return false;
-
-        var ev = new ValidateActionEntityWorldTargetEvent(user,
-            entityValidated ? entity : null,
-            worldValidated ? coords : null);
-        RaiseLocalEvent(action, ref ev);
-        return !ev.Cancelled;
+        return _interactionSystem.InRangeUnobstructed(user, coords, range: action.Range);
     }
 
     public void PerformAction(EntityUid performer, ActionsComponent? component, EntityUid actionId, BaseActionComponent action, BaseActionEvent? actionEvent, TimeSpan curTime, bool predicted = true)

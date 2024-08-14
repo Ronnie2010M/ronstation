@@ -31,6 +31,8 @@ public abstract class SharedGrapplingGunSystem : EntitySystem
 
     public const string GrapplingJoint = "grappling";
 
+    public const float ReelRate = 2.5f;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -185,7 +187,7 @@ public abstract class SharedGrapplingGunSystem : EntitySystem
             }
 
             // TODO: This should be on engine.
-            distance.MaxLength = MathF.Max(distance.MinLength, distance.MaxLength - grappling.ReelRate * frameTime);
+            distance.MaxLength = MathF.Max(distance.MinLength, distance.MaxLength - ReelRate * frameTime);
             distance.Length = MathF.Min(distance.MaxLength, distance.Length);
 
             _physics.WakeBody(joint.BodyAUid);

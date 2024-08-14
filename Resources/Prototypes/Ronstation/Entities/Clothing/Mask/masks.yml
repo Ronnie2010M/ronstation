@@ -1,0 +1,22 @@
+# caldera items
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskBKKitsune
+  name: Blackburn Kitsune Mask
+  description: A mask of a fox usually worn by certain ranks in the military of a 'blackburn state'.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Ronstation/Clothing/Mask/bkkitsunemask.rsi
+  - type: Clothing
+    sprite: Ronstation/Clothing/Mask/bkkitsunemask.rsi
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesNose
+
+# caldera items

@@ -20,7 +20,7 @@
 - type: entity
   parent: GrenadeBase
   id: ClusterBangFull
-  name: clusterbang
+  name: ClusterBang
   description: Launches three flashbangs after the timer runs out.
   suffix: Full
   components:
@@ -96,7 +96,6 @@
     damage:
       types:
         Blunt: 10
-  - type: LandAtCursor
   - type: Damageable
     damageContainer: Inorganic
   - type: EmitSoundOnTrigger
@@ -225,7 +224,6 @@
     damage:
       types:
         Blunt: 10
-  - type: LandAtCursor
   - type: EmitSoundOnTrigger
     sound:
       path: "/Audio/Effects/flash_bang.ogg"

@@ -372,7 +372,7 @@ public abstract class SharedMindSystem : EntitySystem
         if (Resolve(mindId, ref mind))
         {
             var query = GetEntityQuery<T>();
-            foreach (var uid in mind.Objectives)
+            foreach (var uid in mind.AllObjectives)
             {
                 if (query.TryGetComponent(uid, out objective))
                 {

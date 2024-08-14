@@ -58,7 +58,6 @@ public sealed class PullController : VirtualController
     [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedGravitySystem _gravity = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
 
     /// <summary>
     ///     If distance between puller and pulled entity lower that this threshold,
@@ -134,8 +133,8 @@ public sealed class PullController : VirtualController
         var range = 2f;
         var fromUserCoords = coords.WithEntityId(player, EntityManager);
         var userCoords = new EntityCoordinates(player, Vector2.Zero);
-        
-        if (!_transformSystem.InRange(coords, userCoords, range))
+
+        if (!coords.InRange(EntityManager, TransformSystem, userCoords, range))
         {
             var direction = fromUserCoords.Position - userCoords.Position;
 

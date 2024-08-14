@@ -104,7 +104,7 @@ namespace Content.Server.Pointing.EntitySystems
         {
             if (HasComp<GhostComponent>(pointer))
             {
-                return _transform.InRange(Transform(pointer).Coordinates, coordinates, 15);
+                return Transform(pointer).Coordinates.InRange(EntityManager, _transform, coordinates, 15);
             }
             else
             {
@@ -148,14 +148,17 @@ namespace Content.Server.Pointing.EntitySystems
                 _popup.PopupEntity(Loc.GetString("pointing-system-try-point-cannot-reach"), player, player);
                 return false;
             }
-            var mapCoordsPointed = _transform.ToMapCoordinates(coordsPointed);
+
+            var mapCoordsPointed = coordsPointed.ToMap(EntityManager, _transform);
             _rotateToFaceSystem.TryFaceCoordinates(player, mapCoordsPointed.Position);
 
             var arrow = EntityManager.SpawnEntity("PointingArrow", coordsPointed);
 
             if (TryComp<PointingArrowComponent>(arrow, out var pointing))
             {
-                pointing.StartPosition = _transform.ToCoordinates((arrow, Transform(arrow)), _transform.ToMapCoordinates(Transform(player).Coordinates)).Position;
+                if (TryComp(player, out TransformComponent? xformPlayer))
+                    pointing.StartPosition = EntityCoordinates.FromMap(arrow, xformPlayer.Coordinates.ToMap(EntityManager, _transform), _transform).Position;
+
                 pointing.EndTime = _gameTiming.CurTime + PointDuration;
 
                 Dirty(arrow, pointing);

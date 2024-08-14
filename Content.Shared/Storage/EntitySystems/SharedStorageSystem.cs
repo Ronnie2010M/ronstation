@@ -2,9 +2,7 @@ using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.ActionBlocker;
-using Content.Shared.Administration.Logs;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Database;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.Components;
@@ -22,10 +20,8 @@ using Content.Shared.Popups;
 using Content.Shared.Stacks;
 using Content.Shared.Storage.Components;
 using Content.Shared.Timing;
-using Content.Shared.Storage.Events;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
@@ -60,7 +56,6 @@ public abstract class SharedStorageSystem : EntitySystem
     [Dependency] private   readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] protected readonly UseDelaySystem UseDelay = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
 
     private EntityQuery<ItemComponent> _itemQuery;
     private EntityQuery<StackComponent> _stackQuery;
@@ -70,9 +65,6 @@ public abstract class SharedStorageSystem : EntitySystem
     public const string DefaultStorageMaxItemSize = "Normal";
 
     public const float AreaInsertDelayPerItem = 0.075f;
-    private static AudioParams _audioParams = AudioParams.Default
-        .WithMaxDistance(7f)
-        .WithVolume(-2f);
 
     private ItemSizePrototype _defaultStorageMaxItemSize = default!;
 
@@ -104,7 +96,6 @@ public abstract class SharedStorageSystem : EntitySystem
             subs.Event<BoundUIClosedEvent>(OnBoundUIClosed);
         });
 
-        SubscribeLocalEvent<StorageComponent, ComponentRemove>(OnRemove);
         SubscribeLocalEvent<StorageComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<StorageComponent, GetVerbsEvent<ActivationVerb>>(AddUiVerb);
         SubscribeLocalEvent<StorageComponent, ComponentGetState>(OnStorageGetState);
@@ -140,11 +131,6 @@ public abstract class SharedStorageSystem : EntitySystem
             .Register<SharedStorageSystem>();
 
         UpdatePrototypeCache();
-    }
-
-    private void OnRemove(Entity<StorageComponent> entity, ref ComponentRemove args)
-    {
-        _ui.CloseUi(entity.Owner, StorageComponent.StorageUiKey.Key);
     }
 
     private void OnMapInit(Entity<StorageComponent> entity, ref MapInitEvent args)
@@ -367,7 +353,7 @@ public abstract class SharedStorageSystem : EntitySystem
         if (HasComp<PlaceableSurfaceComponent>(uid))
             return;
 
-        PlayerInsertHeldEntity((uid, storageComp), args.User);
+        PlayerInsertHeldEntity(uid, args.User, storageComp);
         // Always handle it, even if insertion fails.
         // We don't want to trigger any AfterInteract logic here.
         // Example issue would be placing wires if item doesn't fit in backpack.
@@ -451,7 +437,7 @@ public abstract class SharedStorageSystem : EntitySystem
                 {
                     BreakOnDamage = true,
                     BreakOnMove = true,
-                    NeedHand = true,
+                    NeedHand = true
                 };
 
                 _doAfterSystem.TryStartDoAfter(doAfterArgs);
@@ -550,7 +536,7 @@ public abstract class SharedStorageSystem : EntitySystem
         // If we picked up at least one thing, play a sound and do a cool animation!
         if (successfullyInserted.Count > 0)
         {
-            Audio.PlayPredicted(component.StorageInsertSound, uid, args.User, _audioParams);
+            Audio.PlayPredicted(component.StorageInsertSound, uid, args.User);
             EntityManager.RaiseSharedEvent(new AnimateInsertingEntitiesEvent(
                 GetNetEntity(uid),
                 GetNetEntityList(successfullyInserted),
@@ -581,87 +567,151 @@ public abstract class SharedStorageSystem : EntitySystem
     /// </summary>
     private void OnInteractWithItem(StorageInteractWithItemEvent msg, EntitySessionEventArgs args)
     {
-        if (!ValidateInput(args, msg.StorageUid, msg.InteractedItemUid, out var player, out var storage, out var item))
+        if (args.SenderSession.AttachedEntity is not { } player)
             return;
 
-        // If the user's active hand is empty, try pick up the item.
-        if (player.Comp.ActiveHandEntity == null)
+        var uid = GetEntity(msg.StorageUid);
+        var entity = GetEntity(msg.InteractedItemUid);
+
+        if (!TryComp<StorageComponent>(uid, out var storageComp))
+            return;
+
+        if (!_ui.IsUiOpen(uid, StorageComponent.StorageUiKey.Key, player))
+            return;
+
+        if (!Exists(entity))
         {
-            _adminLog.Add(
-                LogType.Storage,
-                LogImpact.Low,
-                $"{ToPrettyString(player):player} is attempting to take {ToPrettyString(item):item} out of {ToPrettyString(storage):storage}");
-
-            if (_sharedHandsSystem.TryPickupAnyHand(player, item, handsComp: player.Comp)
-                && storage.Comp.StorageRemoveSound != null)
-            {
-                Audio.PlayPredicted(storage.Comp.StorageRemoveSound, storage, player, _audioParams);
-            }
-
+            Log.Error($"Player {args.SenderSession} interacted with non-existent item {msg.InteractedItemUid} stored in {ToPrettyString(uid)}");
             return;
         }
 
-        _adminLog.Add(
-            LogType.Storage,
-            LogImpact.Low,
-            $"{ToPrettyString(player):player} is interacting with {ToPrettyString(item):item} while it is stored in {ToPrettyString(storage):storage} using {ToPrettyString(player.Comp.ActiveHandEntity):used}");
-
-        // Else, interact using the held item
-        if (_interactionSystem.InteractUsing(player,
-                player.Comp.ActiveHandEntity.Value,
-                item,
-                Transform(item).Coordinates,
-                checkCanInteract: false))
+        if (!ActionBlocker.CanInteract(player, entity) || !storageComp.Container.Contains(entity))
             return;
 
-        var failedEv = new StorageInsertFailedEvent((storage, storage.Comp), (player, player.Comp));
-        RaiseLocalEvent(storage, ref failedEv);
+        // Does the player have hands?
+        if (!TryComp(player, out HandsComponent? hands) || hands.Count == 0)
+            return;
+
+        // If the user's active hand is empty, try pick up the item.
+        if (hands.ActiveHandEntity == null)
+        {
+            if (_sharedHandsSystem.TryPickupAnyHand(player, entity, handsComp: hands)
+                && storageComp.StorageRemoveSound != null)
+                Audio.PlayPredicted(storageComp.StorageRemoveSound, uid, player);
+            {
+                return;
+            }
+        }
+
+        // Else, interact using the held item
+        _interactionSystem.InteractUsing(player, hands.ActiveHandEntity.Value, entity, Transform(entity).Coordinates, checkCanInteract: false);
     }
 
     private void OnSetItemLocation(StorageSetItemLocationEvent msg, EntitySessionEventArgs args)
     {
-        if (!ValidateInput(args, msg.StorageEnt, msg.ItemEnt, out var player, out var storage, out var item))
+        if (args.SenderSession.AttachedEntity is not { } player)
             return;
 
-        _adminLog.Add(
-            LogType.Storage,
-            LogImpact.Low,
-            $"{ToPrettyString(player):player} is updating the location of {ToPrettyString(item):item} within {ToPrettyString(storage):storage}");
+        var storageEnt = GetEntity(msg.StorageEnt);
+        var itemEnt = GetEntity(msg.ItemEnt);
 
-        TrySetItemStorageLocation(item!, storage!, msg.Location);
+        if (!TryComp<StorageComponent>(storageEnt, out var storageComp))
+            return;
+
+        if (!_ui.IsUiOpen(storageEnt, StorageComponent.StorageUiKey.Key, player))
+            return;
+
+        if (!Exists(itemEnt))
+        {
+            Log.Error($"Player {args.SenderSession} set location of non-existent item {msg.ItemEnt} stored in {ToPrettyString(storageEnt)}");
+            return;
+        }
+
+        if (!ActionBlocker.CanInteract(player, itemEnt))
+            return;
+
+        TrySetItemStorageLocation((itemEnt, null), (storageEnt, storageComp), msg.Location);
     }
 
     private void OnRemoveItem(StorageRemoveItemEvent msg, EntitySessionEventArgs args)
     {
-        if (!ValidateInput(args, msg.StorageEnt, msg.ItemEnt, out var player, out var storage, out var item))
+        if (args.SenderSession.AttachedEntity is not { } player)
             return;
 
-        _adminLog.Add(
-            LogType.Storage,
-            LogImpact.Low,
-            $"{ToPrettyString(player):player} is removing {ToPrettyString(item):item} from {ToPrettyString(storage):storage}");
-        TransformSystem.DropNextTo(item.Owner, player.Owner);
-        Audio.PlayPredicted(storage.Comp.StorageRemoveSound, storage, player, _audioParams);
+        var storageEnt = GetEntity(msg.StorageEnt);
+        var itemEnt = GetEntity(msg.ItemEnt);
+
+        if (!TryComp<StorageComponent>(storageEnt, out var storageComp))
+            return;
+
+        if (!_ui.IsUiOpen(storageEnt, StorageComponent.StorageUiKey.Key, player))
+            return;
+
+        if (!Exists(itemEnt))
+        {
+            Log.Error($"Player {args.SenderSession} set location of non-existent item {msg.ItemEnt} stored in {ToPrettyString(storageEnt)}");
+            return;
+        }
+
+        if (!ActionBlocker.CanInteract(player, itemEnt))
+            return;
+
+        TransformSystem.DropNextTo(itemEnt, player);
+        Audio.PlayPredicted(storageComp.StorageRemoveSound, storageEnt, player);
     }
 
     private void OnInsertItemIntoLocation(StorageInsertItemIntoLocationEvent msg, EntitySessionEventArgs args)
     {
-        if (!ValidateInput(args, msg.StorageEnt, msg.ItemEnt, out var player, out var storage, out var item, held: true))
+        if (args.SenderSession.AttachedEntity is not { } player)
             return;
 
-        _adminLog.Add(
-            LogType.Storage,
-            LogImpact.Low,
-            $"{ToPrettyString(player):player} is inserting {ToPrettyString(item):item} into {ToPrettyString(storage):storage}");
-        InsertAt(storage!, item!, msg.Location, out _, player, stackAutomatically: false);
+        var storageEnt = GetEntity(msg.StorageEnt);
+        var itemEnt = GetEntity(msg.ItemEnt);
+
+        if (!TryComp<StorageComponent>(storageEnt, out var storageComp))
+            return;
+
+        if (!_ui.IsUiOpen(storageEnt, StorageComponent.StorageUiKey.Key, player))
+            return;
+
+        if (!Exists(itemEnt))
+        {
+            Log.Error($"Player {args.SenderSession} set location of non-existent item {msg.ItemEnt} stored in {ToPrettyString(storageEnt)}");
+            return;
+        }
+
+        if (!ActionBlocker.CanInteract(player, itemEnt) || !_sharedHandsSystem.IsHolding(player, itemEnt, out _))
+            return;
+
+        InsertAt((storageEnt, storageComp), (itemEnt, null), msg.Location, out _, player, stackAutomatically: false);
     }
 
+    // TODO: if/when someone cleans up this shitcode please make all these
+    // handlers use a shared helper for checking that the ui is open etc, thanks
     private void OnSaveItemLocation(StorageSaveItemLocationEvent msg, EntitySessionEventArgs args)
     {
-        if (!ValidateInput(args, msg.Storage, msg.Item, out var player, out var storage, out var item, held: true))
+        if (args.SenderSession.AttachedEntity is not {} player)
             return;
 
-        SaveItemLocation(storage!, item.Owner);
+        var storage = GetEntity(msg.Storage);
+        var item = GetEntity(msg.Item);
+
+        if (!HasComp<StorageComponent>(storage))
+            return;
+
+        if (!_ui.IsUiOpen(storage, StorageComponent.StorageUiKey.Key, player))
+            return;
+
+        if (!Exists(item))
+        {
+            Log.Error($"Player {args.SenderSession} saved location of non-existent item {msg.Item} stored in {ToPrettyString(storage)}");
+            return;
+        }
+
+        if (!ActionBlocker.CanInteract(player, item))
+            return;
+
+        SaveItemLocation(storage, item);
     }
 
     private void OnBoundUIOpen(EntityUid uid, StorageComponent storageComp, BoundUIOpenedEvent args)
@@ -750,11 +800,7 @@ public abstract class SharedStorageSystem : EntitySystem
         _appearance.SetData(uid, StorageVisuals.Capacity, capacity, appearance);
         _appearance.SetData(uid, StorageVisuals.Open, isOpen, appearance);
         _appearance.SetData(uid, SharedBagOpenVisuals.BagState, isOpen ? SharedBagState.Open : SharedBagState.Closed, appearance);
-
-        // HideClosedStackVisuals true sets the StackVisuals.Hide to the open state of the storage.
-        // This is for containers that only show their contents when open. (e.g. donut boxes)
-        if (storage.HideStackVisualsWhenClosed)
-            _appearance.SetData(uid, StackVisuals.Hide, !isOpen, appearance);
+        _appearance.SetData(uid, StackVisuals.Hide, !isOpen, appearance);
     }
 
     /// <summary>
@@ -780,7 +826,7 @@ public abstract class SharedStorageSystem : EntitySystem
             Insert(target, entity, out _, user: user, targetComp, playSound: false);
         }
 
-        Audio.PlayPredicted(sourceComp.StorageInsertSound, target, user, _audioParams);
+        Audio.PlayPredicted(sourceComp.StorageInsertSound, target, user);
     }
 
     /// <summary>
@@ -959,7 +1005,7 @@ public abstract class SharedStorageSystem : EntitySystem
                 return false;
 
             if (playSound)
-                Audio.PlayPredicted(storageComp.StorageInsertSound, uid, user, _audioParams);
+                Audio.PlayPredicted(storageComp.StorageInsertSound, uid, user);
 
             return true;
         }
@@ -989,7 +1035,7 @@ public abstract class SharedStorageSystem : EntitySystem
         }
 
         if (playSound)
-            Audio.PlayPredicted(storageComp.StorageInsertSound, uid, user, _audioParams);
+            Audio.PlayPredicted(storageComp.StorageInsertSound, uid, user);
 
         return true;
     }
@@ -997,36 +1043,35 @@ public abstract class SharedStorageSystem : EntitySystem
     /// <summary>
     ///     Inserts an entity into storage from the player's active hand
     /// </summary>
-    /// <param name="ent">The storage entity and component to insert into.</param>
-    /// <param name="player">The player and hands component to insert the held entity from.</param>
-    /// <returns>True if inserted, otherwise false.</returns>
-    public bool PlayerInsertHeldEntity(Entity<StorageComponent?> ent, Entity<HandsComponent?> player)
+    /// <param name="uid"></param>
+    /// <param name="player">The player to insert an entity from</param>
+    /// <param name="storageComp"></param>
+    /// <returns>true if inserted, false otherwise</returns>
+    public bool PlayerInsertHeldEntity(EntityUid uid, EntityUid player, StorageComponent? storageComp = null)
     {
-        if (!Resolve(ent.Owner, ref ent.Comp)
-            || !Resolve(player.Owner, ref player.Comp)
-            || player.Comp.ActiveHandEntity == null)
+        if (!Resolve(uid, ref storageComp) || !TryComp(player, out HandsComponent? hands) || hands.ActiveHandEntity == null)
             return false;
 
-        var toInsert = player.Comp.ActiveHandEntity;
+        var toInsert = hands.ActiveHandEntity;
 
-        if (!CanInsert(ent, toInsert.Value, out var reason, ent.Comp))
+        if (!CanInsert(uid, toInsert.Value, out var reason, storageComp))
         {
-            _popupSystem.PopupClient(Loc.GetString(reason ?? "comp-storage-cant-insert"), ent, player);
+            _popupSystem.PopupClient(Loc.GetString(reason ?? "comp-storage-cant-insert"), uid, player);
             return false;
         }
 
-        if (!_sharedHandsSystem.CanDrop(player, toInsert.Value, player.Comp))
+        if (!_sharedHandsSystem.CanDrop(player, toInsert.Value, hands))
         {
-            _popupSystem.PopupClient(Loc.GetString("comp-storage-cant-drop", ("entity", toInsert.Value)), ent, player);
+            _popupSystem.PopupClient(Loc.GetString("comp-storage-cant-drop", ("entity", toInsert.Value)), uid, player);
             return false;
         }
 
-        return PlayerInsertEntityInWorld((ent, ent.Comp), player, toInsert.Value);
+        return PlayerInsertEntityInWorld((uid, storageComp), player, toInsert.Value);
     }
 
     /// <summary>
     ///     Inserts an Entity (<paramref name="toInsert"/>) in the world into storage, informing <paramref name="player"/> if it fails.
-    ///     <paramref name="toInsert"/> is *NOT* held, see <see cref="PlayerInsertHeldEntity(Entity{StorageComponent?},Entity{HandsComponent?})"/>.
+    ///     <paramref name="toInsert"/> is *NOT* held, see <see cref="PlayerInsertHeldEntity(EntityUid,EntityUid,StorageComponent)"/>.
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="player">The player to insert an entity with</param>
@@ -1372,7 +1417,7 @@ public abstract class SharedStorageSystem : EntitySystem
 
     private void OnStackCountChanged(EntityUid uid, MetaDataComponent component, StackCountChangedEvent args)
     {
-        if (_containerSystem.TryGetContainingContainer((uid, null, component), out var container) &&
+        if (_containerSystem.TryGetContainingContainer(uid, out var container, component) &&
             container.ID == StorageComponent.ContainerId)
         {
             UpdateAppearance(container.Owner);
@@ -1440,79 +1485,6 @@ public abstract class SharedStorageSystem : EntitySystem
     /// </summary>
     public abstract void PlayPickupAnimation(EntityUid uid, EntityCoordinates initialCoordinates,
         EntityCoordinates finalCoordinates, Angle initialRotation, EntityUid? user = null);
-
-    private bool ValidateInput(
-        EntitySessionEventArgs args,
-        NetEntity netStorage,
-        out Entity<HandsComponent> player,
-        out Entity<StorageComponent> storage)
-    {
-        player = default;
-        storage = default;
-
-        if (args.SenderSession.AttachedEntity is not { } playerUid)
-            return false;
-
-        if (!TryComp(playerUid, out HandsComponent? hands) || hands.Count == 0)
-            return false;
-
-        if (!TryGetEntity(netStorage, out var storageUid))
-            return false;
-
-        if (!TryComp(storageUid, out StorageComponent? storageComp))
-            return false;
-
-        // TODO STORAGE use BUI events
-        // This would automatically validate that the UI is open & that the user can interact.
-        // However, we still need to manually validate that items being used are in the users hands or in the storage.
-        if (!_ui.IsUiOpen(storageUid.Value, StorageComponent.StorageUiKey.Key, playerUid))
-            return false;
-
-        if (!ActionBlocker.CanInteract(playerUid, storageUid))
-            return false;
-
-        player = new(playerUid, hands);
-        storage = new(storageUid.Value, storageComp);
-        return true;
-    }
-
-    private bool ValidateInput(EntitySessionEventArgs args,
-        NetEntity netStorage,
-        NetEntity netItem,
-        out Entity<HandsComponent> player,
-        out Entity<StorageComponent> storage,
-        out Entity<ItemComponent> item,
-        bool held = false)
-    {
-        item = default!;
-        if (!ValidateInput(args, netStorage, out player, out storage))
-            return false;
-
-        if (!TryGetEntity(netItem, out var itemUid))
-            return false;
-
-        if (held)
-        {
-            if (!_sharedHandsSystem.IsHolding(player, itemUid, out _))
-                return false;
-        }
-        else
-        {
-            if (!storage.Comp.Container.Contains(itemUid.Value))
-                return false;
-
-            DebugTools.Assert(storage.Comp.StoredItems.ContainsKey(itemUid.Value));
-        }
-
-        if (!TryComp(itemUid, out ItemComponent? itemComp))
-            return false;
-
-        if (!ActionBlocker.CanInteract(player, itemUid))
-            return false;
-
-        item = new(itemUid.Value, itemComp);
-        return true;
-    }
 
     [Serializable, NetSerializable]
     protected sealed class StorageComponentState : ComponentState

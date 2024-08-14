@@ -35,9 +35,6 @@
     solution: food
   - type: TrashOnSolutionEmpty
     solution: food
-  - type: Tag
-    tags:
-      - Ingredient
 
 - type: entity
   abstract: true
@@ -276,9 +273,6 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 15
-  - type: Tag
-    tags:
-      - Ingredient
 
 - type: entity
   name: dough
@@ -757,6 +751,3 @@
       reagents:
       - ReagentId: CocoaPowder
         Quantity: 2
-  - type: Tag
-    tags:
-      - Ingredient

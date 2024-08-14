@@ -73,7 +73,7 @@
         state: narsian
 
 - type: entity
-  categories: [ HideSpawnMenu, Spawner ]
+  noSpawn: true
   id: SpawnPointGhostNukeOperative
   name: ghost role spawn point
   suffix: nukeops
@@ -93,7 +93,7 @@
         state: radiation
 
 - type: entity
-  categories: [ HideSpawnMenu, Spawner ]
+  noSpawn: true
   parent: BaseAntagSpawner
   id: SpawnPointLoneNukeOperative
   components:
@@ -109,7 +109,7 @@
         state: radiation
 
 - type: entity
-  categories: [ HideSpawnMenu, Spawner ]
+  noSpawn: true
   parent: SpawnPointLoneNukeOperative
   id: SpawnPointNukeopsCommander
   components:
@@ -118,7 +118,7 @@
     description: roles-antag-nuclear-operative-commander-objective
 
 - type: entity
-  categories: [ HideSpawnMenu, Spawner ]
+  noSpawn: true
   parent: SpawnPointLoneNukeOperative
   id: SpawnPointNukeopsMedic
   components:
@@ -127,7 +127,7 @@
     description: roles-antag-nuclear-operative-agent-objective
 
 - type: entity
-  categories: [ HideSpawnMenu, Spawner ]
+  noSpawn: true
   parent: SpawnPointLoneNukeOperative
   id: SpawnPointNukeopsOperative
   components:
@@ -136,14 +136,14 @@
     description: roles-antag-nuclear-operative-objective
 
 - type: entity
-  categories: [ HideSpawnMenu, Spawner ]
+  noSpawn: true
   parent: BaseAntagSpawner
   id: SpawnPointGhostDragon
   components:
   - type: GhostRole
     name: ghost-role-information-space-dragon-name
     description: ghost-role-information-space-dragon-description
-    rules: ghost-role-information-space-dragon-rules
+    rules: ghost-role-component-space-dragon-rules
   - type: Sprite
     layers:
     - state: green
@@ -151,9 +151,10 @@
       state: alive
 
 - type: entity
-  categories: [ HideSpawnMenu, Spawner ]
-  parent: BaseAntagSpawner
   id: SpawnPointGhostSpaceNinja
+  name: ghost role spawn point
+  suffix: space ninja
+  parent: MarkerBase
   components:
   - type: GhostRole
     name: ghost-role-information-space-ninja-name
@@ -161,6 +162,8 @@
     rules: ghost-role-information-antagonist-rules
     raffle:
       settings: default
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanSpaceNinja
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:

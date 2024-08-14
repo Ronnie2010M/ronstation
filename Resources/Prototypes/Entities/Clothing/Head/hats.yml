@@ -28,7 +28,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretFrench
-  name: french beret
+  name: French beret
   description: A French beret, "vive la France".
   components:
   - type: Sprite
@@ -391,6 +391,7 @@
   - type: HideLayerClothing
     slots:
     - Hair
+    - Snout
     - HeadTop
     - HeadSide
 
@@ -494,6 +495,8 @@
   - type: Appearance
   - type: AddAccentClothing
     accent: RussianAccent
+  - type: RussianAccent
+  - type: AccentWearerNameClothing
   - type: Foldable
     canFoldInsideContainer: true
   - type: FoldableClothing

@@ -26,7 +26,6 @@
     chemistry:   Structures/Doors/Airlocks/Glass/chemistry.rsi
     science:     Structures/Doors/Airlocks/Glass/science.rsi
     engineering: Structures/Doors/Airlocks/Glass/engineering.rsi
-    glass:       Structures/Doors/Airlocks/Glass/glass.rsi
     maintenance: Structures/Doors/Airlocks/Glass/maint.rsi
     medical:     Structures/Doors/Airlocks/Glass/medical.rsi
     security:    Structures/Doors/Airlocks/Glass/security.rsi
@@ -73,7 +72,6 @@
     command: Command
     engineering: Engineering
     freezer: Civilian
-    glass: Civilian
     maintenance: Civilian
     medical: Medical
     science: Science
