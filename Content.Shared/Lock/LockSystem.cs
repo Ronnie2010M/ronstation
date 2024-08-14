@@ -236,12 +236,7 @@ public sealed class LockSystem : EntitySystem
 
         var ev = new LockToggleAttemptEvent(user, quiet);
         RaiseLocalEvent(uid, ref ev, true);
-        if (ev.Cancelled)
-            return false;
-
-        var userEv = new UserLockToggleAttemptEvent(uid, quiet);
-        RaiseLocalEvent(user, ref userEv, true);
-        return !userEv.Cancelled;
+        return !ev.Cancelled;
     }
 
     // TODO: this should be a helper on AccessReaderSystem since so many systems copy paste it
@@ -374,7 +369,7 @@ public sealed class LockSystem : EntitySystem
         {
             args.Cancel();
             if (lockComp.Locked)
-                _sharedPopupSystem.PopupClient(Loc.GetString("entity-storage-component-locked-message"), uid, args.User);
+                _sharedPopupSystem.PopupEntity(Loc.GetString("entity-storage-component-locked-message"), uid, args.User);
         }
     }
 
@@ -386,3 +381,4 @@ public sealed class LockSystem : EntitySystem
         _activatableUI.CloseAll(uid);
     }
 }
+

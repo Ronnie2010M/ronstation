@@ -17,14 +17,17 @@ public sealed partial class ObjectsTab : Control
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IClientConsoleHost _console = default!;
 
+    private readonly List<ObjectsTabEntry> _objects = new();
+    private readonly List<ObjectsTabSelection> _selections = new();
+    private bool _ascending = false;  // Set to false for descending order by default
+    private ObjectsTabHeader.Header _headerClicked = ObjectsTabHeader.Header.ObjectName;
     private readonly Color _altColor = Color.FromHex("#292B38");
     private readonly Color _defaultColor = Color.FromHex("#2F2F3B");
 
-    private bool _ascending;
-    private ObjectsTabHeader.Header _headerClicked = ObjectsTabHeader.Header.ObjectName;
-
-    private readonly List<ObjectsTabSelection> _selections = [];
     public event Action<GUIBoundKeyEventArgs, ListData>? OnEntryKeyBindDown;
+
+    private readonly TimeSpan _updateFrequency = TimeSpan.FromSeconds(2);
+    private TimeSpan _nextUpdate;
 
     public ObjectsTab()
     {
@@ -37,19 +40,19 @@ public sealed partial class ObjectsTab : Control
             RefreshObjectList(_selections[ev.Id]);
         };
 
-        foreach (var type in Enum.GetValues<ObjectsTabSelection>())
+        foreach (var type in Enum.GetValues(typeof(ObjectsTabSelection)))
         {
-            _selections.Add(type);
-            ObjectTypeOptions.AddItem(GetLocalizedEnumValue(type));
+            _selections.Add((ObjectsTabSelection)type!);
+            ObjectTypeOptions.AddItem(Loc.GetString($"object-tab-object-type-{((Enum.GetName((ObjectsTabSelection)type))!.ToString().ToLower())}"));
         }
 
         ListHeader.OnHeaderClicked += HeaderClicked;
         SearchList.SearchBar = SearchLineEdit;
         SearchList.GenerateItem += GenerateButton;
         SearchList.DataFilterCondition += DataFilterCondition;
-        SearchList.ItemKeyBindDown += (args, data) => OnEntryKeyBindDown?.Invoke(args, data);
-        RefreshListButton.OnPressed += _ => RefreshObjectList();
 
+        RefreshObjectList();
+        // Set initial selection and refresh the list to apply the initial sort order
         var defaultSelection = ObjectsTabSelection.Grids;
         ObjectTypeOptions.SelectId((int)defaultSelection);
         RefreshObjectList(defaultSelection);
@@ -95,7 +98,6 @@ public sealed partial class ObjectsTab : Control
                 {
                     entities.Add((metadata.EntityName, _entityManager.GetNetEntity(uid)));
                 }
-
                 break;
             }
             default:
@@ -106,18 +108,14 @@ public sealed partial class ObjectsTab : Control
         {
             var valueA = GetComparableValue(a, _headerClicked);
             var valueB = GetComparableValue(b, _headerClicked);
-            return _ascending
-                ? Comparer<object>.Default.Compare(valueA, valueB)
-                : Comparer<object>.Default.Compare(valueB, valueA);
+            return _ascending ? Comparer<object>.Default.Compare(valueA, valueB) : Comparer<object>.Default.Compare(valueB, valueA);
         });
 
         var listData = new List<ObjectsListData>();
-        for (var index = 0; index < entities.Count; index++)
+        for (int index = 0; index < entities.Count; index++)
         {
             var info = entities[index];
-            listData.Add(new ObjectsListData(info,
-                $"{info.Name} {info.Entity}",
-                index % 2 == 0 ? _altColor : _defaultColor));
+            listData.Add(new ObjectsListData(info, $"{info.Name} {info.Entity}", index % 2 == 0 ? _altColor : _defaultColor));
         }
 
         SearchList.PopulateList(listData);
@@ -133,6 +131,7 @@ public sealed partial class ObjectsTab : Control
         entry.OnDelete += Delete;
         button.ToolTip = $"{info.Name}, {info.Entity}";
 
+        button.OnKeyBindDown += args => OnEntryKeyBindDown?.Invoke(args, data);
         button.AddChild(entry);
     }
 
@@ -154,7 +153,7 @@ public sealed partial class ObjectsTab : Control
         {
             ObjectsTabHeader.Header.ObjectName => entity.Name,
             ObjectsTabHeader.Header.EntityID => entity.Entity.ToString(),
-            _ => entity.Name,
+            _ => entity.Name
         };
     }
 
@@ -174,17 +173,6 @@ public sealed partial class ObjectsTab : Control
         RefreshObjectList();
     }
 
-    private string GetLocalizedEnumValue(ObjectsTabSelection selection)
-    {
-        return selection switch
-        {
-            ObjectsTabSelection.Grids => Loc.GetString("object-tab-object-type-grids"),
-            ObjectsTabSelection.Maps => Loc.GetString("object-tab-object-type-maps"),
-            ObjectsTabSelection.Stations => Loc.GetString("object-tab-object-type-stations"),
-            _ => throw new ArgumentOutOfRangeException(nameof(selection), selection, null),
-        };
-    }
-
     private enum ObjectsTabSelection
     {
         Grids,
@@ -193,5 +181,4 @@ public sealed partial class ObjectsTab : Control
     }
 }
 
-public record ObjectsListData((string Name, NetEntity Entity) Info, string FilteringString, Color BackgroundColor)
-    : ListData;
+public record ObjectsListData((string Name, NetEntity Entity) Info, string FilteringString, Color BackgroundColor) : ListData;

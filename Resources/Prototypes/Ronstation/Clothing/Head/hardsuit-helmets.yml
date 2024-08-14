@@ -1,0 +1,21 @@
+#When adding new hardsuits, please try to keep the organization consistent with hardsuit.yml (if possible.)
+
+#For now, since locational damage is not a thing, all "combat" hardsuits (with the exception of the deathsquad hardsuit) have the equvilent of a helmet in terms of armor.
+#This is so people don't need to wear both regular, on-station helmets and hardsuits to get full protection.
+#Generally, unless you're adding something like caustic damage, you should probably avoid messing with armor here outside of the above scenario.
+
+#CENTCOMM / ERT HARDSUITS
+#Central commander's Hardsuit
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitCentcom
+  name: central commander's hardsuit helmet
+  description: Special hardsuit helmet, made for the highest authorities within Central Command.
+  components:
+  - type: Sprite
+    sprite: Ronstation/Clothing/Head/Hardsuits/comspace.rsi
+  - type: Clothing
+    sprite: Ronstation/Clothing/Head/Hardsuits/comspace.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000

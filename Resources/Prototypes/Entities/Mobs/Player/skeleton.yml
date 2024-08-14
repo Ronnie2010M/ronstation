@@ -55,5 +55,5 @@
       settings: default
   - type: GhostTakeoverAvailable
   - type: Loadout
-    prototypes: [LimitedPassengerGear]
+    prototypes: [SkeletonPassengerGear]
   - type: RandomHumanoidAppearance

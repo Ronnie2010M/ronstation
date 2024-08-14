@@ -350,11 +350,6 @@
   components:
   - type: Stack
     stackType: Diamond
-    baseLayer: base
-    layerStates:
-    - diamond
-    - diamond_2
-    - diamond_3
   - type: Sprite
     state: diamond
     layers:
@@ -506,11 +501,13 @@
     layerStates:
       - bananium
       - bananium_1
+  - type: RadiationSource
+    intensity: 0.1
   - type: FlavorProfile
     flavors:
       - banana
   - type: Food
-    trash: 
+    trash:
     - TrashBananiumPeel
   - type: BadFood
   - type: SolutionContainerManager

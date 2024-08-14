@@ -53,6 +53,7 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Slime
+  - type: Geras
   - type: PassiveDamage # Around 8 damage a minute healed
     allowedStates:
     - Alive
@@ -109,25 +110,11 @@
       types:
         Asphyxiation: -1.0
     maxSaturation: 15
-  - type: Inventory
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
 
 - type: entity
   parent: MobHumanDummy
   id: MobSlimePersonDummy
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
-  - type: HumanoidAppearance
-    species: SlimePerson
-  - type: Inventory
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
+    - type: HumanoidAppearance
+      species: SlimePerson

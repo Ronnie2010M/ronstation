@@ -23,7 +23,7 @@ public sealed class ExplosionOverlay : Overlay
 
     private ShaderInstance _shader;
 
-    public ExplosionOverlay(SharedAppearanceSystem appearanceSystem)
+    public ExplosionOverlay()
     {
         IoCManager.InjectDependencies(this);
         _shader = _proto.Index<ShaderPrototype>("unshaded").Instance();
@@ -37,14 +37,15 @@ public sealed class ExplosionOverlay : Overlay
         drawHandle.UseShader(_shader);
 
         var xforms = _entMan.GetEntityQuery<TransformComponent>();
-        var query = _entMan.EntityQueryEnumerator<ExplosionVisualsComponent, ExplosionVisualsTexturesComponent>();
+        var query = _entMan
+            .EntityQuery<ExplosionVisualsComponent, ExplosionVisualsTexturesComponent, AppearanceComponent>(true);
 
-        while (query.MoveNext(out var uid, out var visuals, out var textures))
+        foreach (var (visuals, textures, appearance) in query)
         {
             if (visuals.Epicenter.MapId != args.MapId)
                 continue;
 
-            if (!_appearance.TryGetData(uid, ExplosionAppearanceData.Progress, out int index))
+            if (!appearance.TryGetData(ExplosionAppearanceData.Progress, out int index))
                 continue;
 
             index = Math.Min(index, visuals.Intensity.Count - 1);

@@ -19,13 +19,6 @@
     - Moth
     - Reptilian
 
-- type: loadoutEffectGroup
-  id: EffectSpeciesVox
-  effects:
-  - !type:SpeciesLoadoutEffect
-    species:
-    - Vox
-
 # Basic
 - type: loadout
   id: EmergencyOxygen

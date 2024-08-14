@@ -1,0 +1,92 @@
+# caldera items
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieBlackburn
+  name: Blackburn Plushie
+  description: A stuffed toy that resembles a typical non-altered blackburn.
+  components:
+    - type: Sprite
+      sprite: Ronstation/Objects/Fun/bkplushie.rsi
+      state: plushie_bkv1
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: Food
+      requiresSpecialDigestion: true
+      useSound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: MeleeWeapon
+      wideAnimationRotation: 180
+      soundHit:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+
+- type: entity
+  parent: BasePlushie
+  id: PlushiePlyushkina
+  name: Plyushkina Plushie
+  description: A stuffed toy that resembles a sub-species of blackburn created for trench clearing and cannon fodder.
+  components:
+    - type: Sprite
+      sprite: Ronstation/Objects/Fun/bkplushie.rsi
+      state: plushie_bkv2
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: Food
+      requiresSpecialDigestion: true
+      useSound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: MeleeWeapon
+      wideAnimationRotation: 180
+      soundHit:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieMatryoshka
+  name: Matryoshka Plushie
+  description: ...
+  components:
+    - type: Sprite
+      sprite: Ronstation/Objects/Fun/bkplushie.rsi
+      state: plushie_bkv3
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: Food
+      requiresSpecialDigestion: true
+      useSound:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+    - type: MeleeWeapon
+      wideAnimationRotation: 180
+      soundHit:
+        path: /Audio/Ronstation/Items/Toys/fox.ogg
+# caldera items

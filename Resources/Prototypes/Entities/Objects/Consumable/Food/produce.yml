@@ -96,21 +96,6 @@
     seedId: sugarcane
 
 - type: entity
-  name: papercane roll
-  description: Why do we even need to grow paper?
-  id: Papercane
-  parent: ProduceBase
-  components:
-  - type: Sprite
-    sprite: Objects/Specific/Hydroponics/papercane.rsi
-  - type: SolutionContainerManager
-  - type: Produce
-    seedId: papercane
-  - type: Log
-    spawnedPrototype: SheetPaper1
-    spawnCount: 2
-
-- type: entity
   parent: FoodProduceBase
   id: FoodLaughinPeaPod
   name: laughin' pea pod
@@ -349,6 +334,7 @@
     sprite: Objects/Specific/Hydroponics/banana.rsi
     heldPrefix: peel
   - type: Slippery
+    launchForwardsMultiplier: 1.5
   - type: StepTrigger
     intersectRatio: 0.2
   - type: CollisionWake
@@ -425,6 +411,7 @@
       path: /Audio/Effects/slip.ogg
       params:
         volume: -100
+    launchForwardsMultiplier: 1.6
 
 - type: entity
   name: bananium peel
@@ -438,6 +425,8 @@
     sprite: Objects/Materials/materials.rsi
     heldPrefix: peel
   - type: Slippery
+    paralyzeTime: 4
+    launchForwardsMultiplier: 2
 
 - type: entity
   name: carrot

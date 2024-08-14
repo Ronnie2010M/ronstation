@@ -124,7 +124,7 @@ public sealed class FloorTileSystem : EntitySystem
 
             if (mapGrid != null)
             {
-                var gridUid = location.EntityId;
+                var gridUid = mapGrid.Owner;
 
                 if (!CanPlaceTile(gridUid, mapGrid, out var reason))
                 {

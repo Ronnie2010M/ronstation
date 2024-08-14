@@ -145,7 +145,7 @@
   components:
   - type: StationEvent
     weight: 6
-    duration: null
+    duration: 1
     earliestStart: 30
     reoccurrenceDelay: 20
     minimumPlayers: 30
@@ -268,7 +268,7 @@
     earliestStart: 15
     weight: 6
     duration: 50
-    minimumPlayers: 30 # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)
+    minimumPlayers: 15 # Hopefully this is enough for the Rat King's potential Army
   - type: VentCrittersRule
     entries:
     - id: MobMouse

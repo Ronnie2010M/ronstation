@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "AR/molotov/plyush, modified by Bellkitsu/merrokitsune.",
+    "size": {
+        "x": 32,
+        "y": 32
+      },
+      "states": [
+        {
+          "name": "plushie_bkv1"
+        },
+        {
+          "name": "plushie_bkv2"
+        },
+        {
+          "name": "plushie_bkv3"
+        }
+        ]}

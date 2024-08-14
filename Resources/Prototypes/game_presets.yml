@@ -46,6 +46,7 @@
   description: greenshift-description
   rules:
   - BasicRoundstartVariation
+  - GameRuleMeteorScheduler
 
 - type: gamePreset
   id: Secret
@@ -83,7 +84,7 @@
     - sandbox
   name: sandbox-title
   description: sandbox-description
-  showInVote: false # Not suitable for use without admin intervention, since entity spamming can quickly crash a server
+  showInVote: false # NEVER ENABLE THIS EVER AGAIN, as it caused the server to crash and there's difficulties starting the server again after that crash.
   maxPlayers: 5
   rules:
     - Sandbox

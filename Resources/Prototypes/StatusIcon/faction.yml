@@ -23,7 +23,6 @@
 
 - type: factionIcon
   id: RevolutionaryFaction
-  isShaded: true
   priority: 11
   showTo:
     components:
@@ -35,7 +34,6 @@
 
 - type: factionIcon
   id: HeadRevolutionaryFaction
-  isShaded: true
   priority: 11
   showTo:
     components:

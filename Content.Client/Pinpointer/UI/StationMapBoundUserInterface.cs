@@ -15,6 +15,7 @@ public sealed class StationMapBoundUserInterface : BoundUserInterface
     protected override void Open()
     {
         base.Open();
+        _window?.Close();
         EntityUid? gridUid = null;
 
         if (EntMan.TryGetComponent<TransformComponent>(Owner, out var xform))

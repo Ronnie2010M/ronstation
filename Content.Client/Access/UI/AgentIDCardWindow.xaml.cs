@@ -18,6 +18,7 @@ namespace Content.Client.Access.UI
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
         private readonly SpriteSystem _spriteSystem;
+        private readonly AgentIDCardBoundUserInterface _bui;
 
         private const int JobIconColumnCount = 10;
 
@@ -31,6 +32,7 @@ namespace Content.Client.Access.UI
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
             _spriteSystem = _entitySystem.GetEntitySystem<SpriteSystem>();
+            _bui = bui;
 
             NameLineEdit.OnTextEntered += e => OnNameChanged?.Invoke(e.Text);
             NameLineEdit.OnFocusExit += e => OnNameChanged?.Invoke(e.Text);
@@ -68,7 +70,7 @@ namespace Content.Client.Access.UI
                 };
 
                 // Generate buttons textures
-                var jobIconTexture = new TextureRect
+                TextureRect jobIconTexture = new TextureRect
                 {
                     Texture = _spriteSystem.Frame0(jobIcon.Icon),
                     TextureScale = new Vector2(2.5f, 2.5f),
@@ -76,7 +78,7 @@ namespace Content.Client.Access.UI
                 };
 
                 jobIconButton.AddChild(jobIconTexture);
-                jobIconButton.OnPressed += _ => OnJobIconChanged?.Invoke(jobIcon.ID);
+                jobIconButton.OnPressed += _ => _bui.OnJobIconChanged(jobIconId);
                 IconGrid.AddChild(jobIconButton);
 
                 i++;

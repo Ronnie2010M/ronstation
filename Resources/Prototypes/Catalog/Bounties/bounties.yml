@@ -1,4 +1,4 @@
-- type: cargoBounty
+﻿- type: cargoBounty
   id: BountyArtifact
   reward: 2500
   description: bounty-description-artifact
@@ -500,11 +500,6 @@
     whitelist:
       components:
       - TemperatureProtection
-      tags:
-      - Scarf
-    blacklist:
-      components:
-      - ToggleableClothing
 
 - type: cargoBounty
   id: BountyBattery
@@ -733,13 +728,3 @@
       tags:
       - MicrowaveMachineBoard
 
-- type: cargoBounty
-  id: BountyFlashes
-  reward: 5500
-  description: bounty-description-flashes
-  entries:
-  - name: bounty-item-flash
-    amount: 6
-    whitelist:
-      components:
-      - Flash

@@ -796,7 +796,7 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: thin firelock
+  name: Thin firelock
   id: FirelockEdge
   graph: Firelock
   startNode: start

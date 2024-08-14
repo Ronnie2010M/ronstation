@@ -346,12 +346,12 @@
     - state: icon-treatment
   - type: ItemBorgModule
     items:
-    - HandheldHealthAnalyzerUnpowered
     - Brutepack10Lingering
     - Ointment10Lingering
     - Gauze10Lingering
     - Bloodpack10Lingering
     - Syringe
+    - Dropper
 
 - type: entity
   id: BorgModuleDefibrillator
@@ -506,8 +506,8 @@
     - state: icon-syndicate
   - type: ItemBorgModule
     items:
-    - WeaponPistolEchis
-    - EnergyDaggerLoud
+    - WeaponAdvancedLaser
+    - Machete
 
 - type: entity
   id: BorgModuleOperative
@@ -537,7 +537,7 @@
       - state: icon-syndicate
     - type: ItemBorgModule
       items:
-      - CyborgEnergySwordDouble
+      - EnergySwordDouble
       - PinpointerSyndicateNuclear
 
 - type: entity

@@ -1,0 +1,14 @@
+# caldera items
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtBKTurtleneck
+  name: Blackburn Turtle Skirt
+  description: A uniform consisting of snow coloured Turtleneck sweater with a navy blue skirt and gold belt straps.
+  components:
+  - type: Sprite
+    sprite: Ronstation/Clothing/Uniforms/bkturtleneck.rsi
+  - type: Clothing
+    sprite: Ronstation/Clothing/Uniforms/bkturtleneck.rsi
+
+# caldera items

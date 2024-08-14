@@ -1,14 +1,9 @@
-using System.Numerics;
 using Content.Server.Shuttles.Components;
 using Content.Server.Station.Components;
 using Content.Server.Station.Events;
 using Content.Shared.CCVar;
 using Content.Shared.Salvage;
 using Content.Shared.Shuttles.Components;
-using Content.Shared.Station.Components;
-using Robust.Shared.Collections;
-using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
@@ -183,13 +178,19 @@ public sealed partial class ShuttleSystem
 
         foreach (var group in component.Groups.Values)
         {
-            var count = _random.Next(group.MinCount, group.MaxCount + 1);
+            if (group.Paths.Count == 0)
+            {
+                Log.Error($"Found no paths for GridSpawn");
+                continue;
+            }
+
+            var count = _random.Next(group.MinCount, group.MaxCount);
+            paths.Clear();
 
             for (var i = 0; i < count; i++)
             {
-                EntityUid spawned;
-
-                switch (group)
+                // Round-robin so we try to avoid dupes where possible.
+                if (paths.Count == 0)
                 {
                     case DungeonSpawnGroup dungeon:
                         if (!TryDungeonSpawn(targetGrid.Value, mapId, dungeon, out spawned))
@@ -210,19 +211,44 @@ public sealed partial class ShuttleSystem
                     _metadata.SetEntityName(spawned, SharedSalvageSystem.GetFTLName(dataset, _random.Next()));
                 }
 
-                if (group.Hide)
+                    if (group.Hide)
+                    {
+                        var iffComp = EnsureComp<IFFComponent>(ent[0]);
+                        iffComp.Flags |= IFFFlags.HideLabel;
+                        Dirty(ent[0], iffComp);
+                    }
+
+                    if (group.StationGrid)
+                    {
+                        _station.AddGridToStation(uid, ent[0]);
+                    }
+
+                    if (group.NameGrid)
+                    {
+                        var name = path.FilenameWithoutExtension;
+                        _metadata.SetEntityName(ent[0], name);
+                    }
+
+                    foreach (var compReg in group.AddComponents.Values)
+                    {
+                        var compType = compReg.Component.GetType();
+
+                        if (HasComp(ent[0], compType))
+                            continue;
+
+                        var comp = _factory.GetComponent(compType);
+                        AddComp(ent[0], comp, true);
+                    }
+                }
+                else
                 {
-                    var iffComp = EnsureComp<IFFComponent>(spawned);
-                    iffComp.Flags |= IFFFlags.HideLabel;
-                    Dirty(spawned, iffComp);
+                    valid = false;
                 }
 
-                if (group.StationGrid)
+                if (!valid)
                 {
-                    _station.AddGridToStation(uid, spawned);
+                    Log.Error($"Error loading gridspawn for {ToPrettyString(uid)} / {path}");
                 }
-
-                EntityManager.AddComponents(spawned, group.AddComponents);
             }
         }
 

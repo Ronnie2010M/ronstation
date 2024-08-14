@@ -3,7 +3,7 @@
   id: MobObserver
   name: observer
   description: Boo!
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: CargoSellBlacklist
   - type: Sprite

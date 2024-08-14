@@ -34,6 +34,9 @@
         - ToyMouse
         - PlushieDiona
         - PlushieArachind
+        - PlushieBlackburn
+        - PlushiePlyushkina
+        - PlushieMatryoshka
       chance: 0.5
       offset: 0.2
 
