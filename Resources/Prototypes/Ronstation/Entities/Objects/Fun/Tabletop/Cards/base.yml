@@ -1,0 +1,35 @@
+- type: entity
+  parent: [BaseItem, BaseFoldable]
+  id: BaseCardFlippable
+  abstract: true
+  components:
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: Sprite
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+    - state: icon_flipped
+      map: ["foldedLayer"]
+      visible: false
+
+- type: entity
+  parent: BaseCardFlippable
+  id: BaseCardFlipped
+  abstract: true
+  components:
+  - type: Foldable
+    folded: true
+  - type: Item
+    heldPrefix: flipped
+  - type: Sprite
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+      visible: false
+    - state: icon_flipped
+      map: ["foldedLayer"]
+      visible: true

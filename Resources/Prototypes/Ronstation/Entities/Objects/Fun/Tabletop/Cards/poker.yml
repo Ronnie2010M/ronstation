@@ -1,0 +1,13 @@
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerSpadeAce
+  name: ace of spades
+  description: "A singular spade on a card. It looks valuable."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/spade_ace.rsi
+
+- type: entity
+  parent: [BaseCardFlipped, CardPokerSpadeAce]
+  id: CardPokerSpadeAceFlipped
+  name: poker card
