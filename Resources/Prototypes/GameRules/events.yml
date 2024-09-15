@@ -269,10 +269,12 @@
   parent: BaseStationEventLongDelay
   components:
   - type: StationEvent
-    earliestStart: 15
-    minimumPlayers: 15
-    weight: 7
-    duration: 240
+    startAudio:
+      path: /Audio/Misc/notice2.ogg
+    earliestStart: 20
+    minimumPlayers: 10
+    weight: 5
+    duration: 250
   - type: KudzuGrowthRule
 
 - type: entity
