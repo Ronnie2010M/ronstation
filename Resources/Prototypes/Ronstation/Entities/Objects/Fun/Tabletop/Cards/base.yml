@@ -10,10 +10,22 @@
     foldVerbText: fold-flip-verb
   - type: Sprite
     layers:
-    - state: [ icon, inhand-left, inhand-right ]
+    - state: icon
       map: [ "unfoldedLayer" ]
       visible: true
-    - state: - state: [ icon_flipped, inhand-left_flipped, inhand-right_flipped ]
+    - state: icon_flipped
+      map: ["foldedLayer"]
+      visible: false
+    - state: inhand-left
+      map: [ "unfoldedLayer" ]
+      visible: true
+    - state: inhand-left_flipped
+      map: ["foldedLayer"]
+      visible: false
+    - state: inhand-right
+      map: [ "unfoldedLayer" ]
+      visible: true
+    - state: inhand-right_flipped
       map: ["foldedLayer"]
       visible: false
 
@@ -28,9 +40,21 @@
     heldPrefix: flipped
   - type: Sprite
     layers:
-    - state: [ icon, inhand-left, inhand-right ]
+    - state: icon
       map: [ "unfoldedLayer" ]
       visible: false
-    - state: [ icon_flipped, inhand-left_flipped, inhand-right_flipped ]
+    - state: icon_flipped
+      map: ["foldedLayer"]
+      visible: true
+    - state: inhand-left
+      map: [ "unfoldedLayer" ]
+      visible: false
+    - state: inhand-left_flipped
+      map: ["foldedLayer"]
+      visible: true
+    - state: inhand-right
+      map: [ "unfoldedLayer" ]
+      visible: false
+    - state: inhand-right_flipped
       map: ["foldedLayer"]
       visible: true
