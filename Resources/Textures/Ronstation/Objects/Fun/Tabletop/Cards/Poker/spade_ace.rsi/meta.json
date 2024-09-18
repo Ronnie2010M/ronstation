@@ -12,6 +12,18 @@
       },
       {
         "name": "icon_flipped"
+      },
+      {
+        "name": "inhand-left"
+      },
+      {
+        "name": "inhand-left_flipped"
+      },
+      {
+        "name": "inhand-right"
+      },
+      {
+        "name": "inhand-right_flipped"
       }
     ]
 }
