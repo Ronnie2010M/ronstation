@@ -662,3 +662,17 @@
       amount: 1
   products:
     Haloperidol: 5
+
+- type: reaction
+  id: Demexatrine
+  impact: Medium
+  minTemp: 342
+  reactants:
+    Epinephrine:
+      amount: 1
+    Hydroxide:
+      amount: 1
+    Benzene:
+      amount: 1
+  products:
+    Demexatrine: 3
