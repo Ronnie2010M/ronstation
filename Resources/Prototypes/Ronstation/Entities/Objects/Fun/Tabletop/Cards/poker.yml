@@ -1,13 +1,118 @@
+# Spades
+
 - type: entity
   parent: BaseCardFlippable
   id: CardPokerSpadeAce
-  name: ace of spades
-  description: "A singular spade on a card. It looks valuable."
+  name: poker card
+  description: "It's a poker card."
   components:
   - type: Sprite
-    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/spade_ace.rsi
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/ace.rsi
 
 - type: entity
-  parent: [BaseCardFlipped, CardPokerSpadeAce]
-  id: CardPokerSpadeAceFlipped
+  parent: BaseCardFlippable
+  id: CardPokerSpadeTwo
   name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/two.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerSpadeThree
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/three.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerSpadeFour
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/four.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerSpadeFive
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/five.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerSpadeSix
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/six.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerSpadeSeven
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/seven.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerSpadeEight
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/eight.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerSpadeNine
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/nine.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerSpadeTen
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/ten.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerSpadeJack
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/jack.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerSpadeKing
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/king.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerSpadeQueen
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Spade/queen.rsi

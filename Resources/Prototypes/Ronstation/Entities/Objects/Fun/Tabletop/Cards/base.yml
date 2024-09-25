@@ -12,49 +12,6 @@
     layers:
     - state: icon
       map: [ "unfoldedLayer" ]
-      visible: true
     - state: icon_flipped
       map: ["foldedLayer"]
       visible: false
-    - state: inhand-left
-      map: [ "unfoldedLayer" ]
-      visible: true
-    - state: inhand-left_flipped
-      map: ["foldedLayer"]
-      visible: false
-    - state: inhand-right
-      map: [ "unfoldedLayer" ]
-      visible: true
-    - state: inhand-right_flipped
-      map: ["foldedLayer"]
-      visible: false
-
-- type: entity
-  parent: BaseCardFlippable
-  id: BaseCardFlipped
-  abstract: true
-  components:
-  - type: Foldable
-    folded: true
-  - type: Item
-    heldPrefix: flipped
-  - type: Sprite
-    layers:
-    - state: icon
-      map: [ "unfoldedLayer" ]
-      visible: false
-    - state: icon_flipped
-      map: ["foldedLayer"]
-      visible: true
-    - state: inhand-left
-      map: [ "unfoldedLayer" ]
-      visible: false
-    - state: inhand-left_flipped
-      map: ["foldedLayer"]
-      visible: true
-    - state: inhand-right
-      map: [ "unfoldedLayer" ]
-      visible: false
-    - state: inhand-right_flipped
-      map: ["foldedLayer"]
-      visible: true
