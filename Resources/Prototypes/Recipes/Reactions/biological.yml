@@ -64,4 +64,21 @@
   products:
     Mold: 2
     Protein: 1
-    Toxin: 1
+
+- type: reaction
+  id: Tar
+  source: true
+  impact: Medium
+  minTemp: 413
+  reactants:
+    Sap:
+      amount: 2
+    Oil: 
+      amount: 1
+    Ash:
+      amount: 2
+  products:
+    Tar:
+      amount: 3
+    Charcoal:
+      amount: 1
