@@ -170,8 +170,8 @@
 - type: reagent
   id: Turpentine
   name: reagent-name-turpentine
-  group: Biological
   desc: reagent-desc-turpentine
+  group: Biological
   flavor: bitter
   color: "#c8eba9"
   physicalDesc: reagent-physical-desc-slimy
