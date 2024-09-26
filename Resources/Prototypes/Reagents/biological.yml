@@ -267,10 +267,8 @@
       - !type:HealthChange
         damage:
           types:
-            Cellular: 1.5
-            Toxin: 1
-      - !type:ChemVomit
-        probability: 0.40
+            Cellular: 1
+            Toxin: 2
   footstepSound:
     collection: FootstepBlood
     params:
