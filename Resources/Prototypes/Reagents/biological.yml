@@ -250,26 +250,3 @@
         damage:
           types:
             Cellular: 2
-
-- type: reagent
-  id: Tar
-  name: reagent-name-tar
-  group: Biological
-  desc: reagent-desc-tar
-  physicalDesc: reagent-physical-desc-slimy
-  flavor: terrible
-  color: "#151715"
-  slippery: false
-  viscosity: 0.40
-  metabolisms:
-    Poison:
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Cellular: 1
-            Toxin: 2
-  footstepSound:
-    collection: FootstepBlood
-    params:
-      volume: 6
