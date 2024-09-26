@@ -71,9 +71,11 @@
   impact: Medium
   minTemp: 413
   reactants:
-    Sap:
-      amount: 2
+    Carbon:
+      amount: 1
     Oil: 
+      amount: 1
+    Fiber:
       amount: 1
   products:
     Tar:
