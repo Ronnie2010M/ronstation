@@ -63,18 +63,4 @@
   products:
     Mold: 2
     Protein: 1
-
-- type: reaction
-  id: Tar
-  impact: low
-  minTemp: 413
-  reactants:
-    Carbon:
-      amount: 1
-    Oil: 
-      amount: 1
-    Fiber:
-      amount: 1
-  products:
-    Tar:
-      amount: 3
+    Toxin: 1
