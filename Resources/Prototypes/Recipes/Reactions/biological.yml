@@ -75,10 +75,6 @@
       amount: 2
     Oil: 
       amount: 1
-    Ash:
-      amount: 2
   products:
     Tar:
       amount: 3
-    Charcoal:
-      amount: 1
