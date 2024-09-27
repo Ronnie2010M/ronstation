@@ -665,6 +665,7 @@
 
 - type: reaction
   id: Demexatrine
+  impact: Medium
   minTemp: 418
   reactants:
     Epinephrine:
