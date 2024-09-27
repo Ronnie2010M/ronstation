@@ -1388,17 +1388,13 @@
       effects:
       - !type:Jitter
         min: 10
-      - !type:MovespeedModifier
-        walkSpeedModifier: 1.1
-        sprintSpeedModifier: 1.1
     Medicine:
       effects:
       - !type:HealthChange
         damage:
-          groups:
+          types:
             Airloss: -2
             Poison: -1
-            Radiation: -0.1
      Poison:
       - !type:HealthChange
         conditions:
@@ -1407,4 +1403,3 @@
         damage:
           types:
             Brute: 1.5
-            Piercing: 2
