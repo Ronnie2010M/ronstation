@@ -1374,4 +1374,37 @@
         amount: -3.0
       - !type:AdjustReagent
         reagent: MindbreakerToxin
-        amount: -3.0
+
+- type: reagent
+  id: Demexatrine
+  name: reagent-name-demexatrine
+  group: Medicine
+  desc: reagent-desc-demexatrine
+  physicalDesc: reagent-physical-desc-thick
+  flavor: syrupy
+  color: "#6e4665"
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:Jitter
+        min: 10
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.1
+        sprintSpeedModifier: 1.1
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Airloss: -2
+            Poison: -1
+            Radiation: -0.1
+     Poison:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+        damage:
+          types:
+            Brute: 1.5
+            Piercing: 2
