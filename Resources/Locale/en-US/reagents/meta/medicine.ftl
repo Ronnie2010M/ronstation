@@ -147,3 +147,6 @@ reagent-desc-potassium-iodide = Will reduce the damaging effects of radiation by
 
 reagent-name-haloperidol = haloperidol
 reagent-desc-haloperidol = Removes most stimulating and hallucinogenic drugs. Reduces druggy effects and jitteriness. Causes drowsiness.
+
+reagent-name-demexatrine = demexatrine
+reagent-desc-demexatrine = A mass-produced chemical used by miners and medical personnel alike, which helps against the poison made by space wildlife. Easily overdoses and causes jittering.
