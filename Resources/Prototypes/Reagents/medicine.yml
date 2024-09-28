@@ -1384,10 +1384,6 @@
   flavor: syrupy
   color: "#6e4665"
   metabolisms:
-    Narcotic:
-      effects:
-      - !type:Jitter
-        min: 10
     Medicine:
       effects:
       - !type:HealthChange
@@ -1395,11 +1391,16 @@
           types:
             Airloss: -2
             Poison: -1
-     Poison:
+            Brute: -0.5
+      - !type:ChemCleanBloodstream
+        cleanseRate: 5
+      - !type:Jitter
+        min: 10
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
-          min: 15
+          - !type:ReagentThreshold
+            min: 15
         damage:
           types:
             Brute: 1.5
+            Poison: 0.5
