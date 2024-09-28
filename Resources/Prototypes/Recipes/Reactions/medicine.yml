@@ -665,12 +665,11 @@
 
 - type: reaction
   id: Demexatrine
-  impact: Medium
   minTemp: 418
   reactants:
     Epinephrine:
       amount: 1
-    Inaprovaline:
+    SulfuricAcid:
       amount: 1
     Benzene:
       amount: 1
