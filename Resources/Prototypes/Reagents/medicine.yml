@@ -1392,7 +1392,6 @@
           types:
             Asphyxiation: -2
             Poison: -1
-            Brute: -0.5
       - !type:ChemCleanBloodstream
         cleanseRate: 5
       - !type:Jitter
@@ -1403,5 +1402,4 @@
             min: 15
         damage:
           types:
-            Brute: 1.5
             Poison: 0.5
