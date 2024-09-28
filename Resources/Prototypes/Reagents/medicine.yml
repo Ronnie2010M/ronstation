@@ -1395,6 +1395,7 @@
       - !type:ChemCleanBloodstream
         cleanseRate: 5
       - !type:Jitter
+        conditions:
         min: 10
       - !type:HealthChange
         conditions:
