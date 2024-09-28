@@ -1390,7 +1390,7 @@
       - !type:HealthChange
         damage:
           types:
-            Airloss: -2
+            Asphyxiation: -2
             Poison: -1
             Brute: -0.5
       - !type:ChemCleanBloodstream
