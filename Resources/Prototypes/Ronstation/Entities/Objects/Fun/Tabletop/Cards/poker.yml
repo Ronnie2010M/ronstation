@@ -235,3 +235,122 @@
   components:
   - type: Sprite
     sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Heart/queen.rsi
+
+# Clubs
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubAce
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/ace.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubTwo
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/two.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubThree
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/three.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubFour
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/four.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubFive
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/five.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubSix
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/six.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubSeven
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/seven.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubEight
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/eight.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubNine
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/nine.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubTen
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/ten.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubJack
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/jack.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubKing
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/king.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerClubQueen
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/queen.rsi
