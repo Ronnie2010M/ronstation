@@ -354,3 +354,122 @@
   components:
   - type: Sprite
     sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Club/queen.rsi
+
+# Diamonds
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondAce
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/ace.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondTwo
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/two.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondThree
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/three.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondFour
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/four.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondFive
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/five.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondSix
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/six.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondSeven
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/seven.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondEight
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/eight.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondNine
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/nine.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondTen
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/ten.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondJack
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/jack.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondKing
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/king.rsi
+
+- type: entity
+  parent: BaseCardFlippable
+  id: CardPokerDiamondQueen
+  name: poker card
+  description: "It's a poker card."
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Fun/Tabletop/Cards/Poker/Diamond/queen.rsi
