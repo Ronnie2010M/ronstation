@@ -15,3 +15,6 @@
     - state: icon_flipped
       map: ["foldedLayer"]
       visible: false
+  - type: Tag
+    tags:
+    - TabletopCard

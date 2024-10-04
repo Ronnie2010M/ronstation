@@ -1,0 +1,28 @@
+- type: entity
+  parent: BaseStorageItem
+  id: CardBoxBase
+  description: Useful for carrying items in your hands.
+  abstract: true
+  components:
+  - type: Item
+    size: Medium
+  - type: Storage
+    grid:
+    - 0,0,14,5
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      tags:
+        - TabletopCard
+
+
+- type: entity
+  parent: CardBoxBase
+  id: CardBoxPoker
+  name: poker card box
+  components:
+  - type: Sprite
+    sprite: Objects/Storage/Briefcases/briefcase_brown.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Storage/Briefcases/briefcase_brown.rsi
