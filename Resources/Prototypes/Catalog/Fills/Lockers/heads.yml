@@ -18,6 +18,7 @@
     - id: RubberStampDenied
     - id: RubberStampQm
     - id: AstroNavCartridge
+    - id: SalvageMedipen #Ronstation - sec/salvage medipen
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -328,6 +329,7 @@
     - id: SecurityTechFabCircuitboard
     - id: WeaponDisabler
     - id: WantedListCartridge
+    - id: SecurityMedipen #Ronstation - sec/salvage medipens
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

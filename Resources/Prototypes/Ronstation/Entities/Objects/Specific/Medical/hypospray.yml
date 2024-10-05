@@ -1,0 +1,53 @@
+- type: entity
+  name: salvage medipen #Ronstation - sec/salvage medipen
+  parent: ChemicalMedipen
+  id: SalvageMedipen
+  description: 40 years ago, right after the first Cargonian Revolution, a reverse-engineered version of emergency medipens was created. It contains chemicals that would heal the user's injuries, mainly Bicaridine and Tranexamic Acid. Doesn't contain as much as it's emergency variant.
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: salvage
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: salvage_empty
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 10
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 5
+        - ReagentId: TranexamicAcid
+          Quantity: 5
+  - type: Tag
+    tags: []
+
+- type: entity
+  name: security medipen #Ronstation - sec/salvage medipen
+  parent: ChemicalMedipen
+  id: SecurityMedipen
+  description: A medipen created to assist Security members in their duties. Contains Epinephrine and Tranexamic Acid.
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: sec
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: sec_empty
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 13
+        reagents:
+        - ReagentId: TranexamicAcid
+          Quantity: 8
+        - ReagentId: Epinephrine
+          Quantity: 5
+  - type: Tag
+    tags: []
