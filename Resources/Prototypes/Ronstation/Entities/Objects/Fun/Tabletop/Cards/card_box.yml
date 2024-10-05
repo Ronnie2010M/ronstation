@@ -22,7 +22,7 @@
   name: poker card box
   components:
   - type: Sprite
-    sprite: Objects/Storage/Briefcases/briefcase_brown.rsi
+    sprite: Ronstation/Objects/Storage/Fun/Card/poker_card_box.rsi
     state: icon
   - type: Item
-    sprite: Objects/Storage/Briefcases/briefcase_brown.rsi
+    sprite: Ronstation/Objects/Storage/Fun/Card/poker_card_box.rsi
