@@ -1277,9 +1277,6 @@
   id: TabletopBoard
 
 - type: Tag
-  id: TabletopCard
-
-- type: Tag
   id: Taco
 
 - type: Tag
