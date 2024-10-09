@@ -348,4 +348,22 @@
         amount: -20
         conditions:
         - !type:ReagentThreshold
-          min: 50
+
+- type: reagent
+  id: AmmoniatedSludge
+  name: reagent-name-ammoniated-sludge
+  group: Toxins
+  desc: reagent-desc-ammoniated-sludge
+  physicalDesc: reagent-physical-desc-slimy
+  flavor: bitter
+  color: "#555f55"
+  metabolisms:
+    Poison:
+      metabolismRate: 0.45
+      effects:
+      - !type:Emote
+        emote: Scream
+        showInChat: true
+        force: true
+        probability: 0.1
+      - !type:Jitter
