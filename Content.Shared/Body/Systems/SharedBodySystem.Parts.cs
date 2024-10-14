@@ -827,5 +827,31 @@ public partial class SharedBodySystem
         return false;
     }
 
+    private bool TryGetPartSlotContainerName(BodyPartType partType, out HashSet<string> containerNames)
+    {
+        containerNames = partType switch
+        {
+            BodyPartType.Arm => new() { "gloves" },
+            BodyPartType.Leg => new() { "shoes" },
+            BodyPartType.Head => new() { "eyes", "ears", "head", "mask" },
+            _ => new()
+        };
+        return containerNames.Count > 0;
+    }
+
+    public int GetBodyPartCount(EntityUid bodyId, BodyPartType partType, BodyComponent? body = null)
+    {
+        if (!Resolve(bodyId, ref body, logMissing: false))
+            return 0;
+
+        int count = 0;
+        foreach (var part in GetBodyChildren(bodyId, body))
+        {
+            if (part.Component.PartType == partType)
+                count++;
+        }
+        return count;
+    }
+
     #endregion
 }

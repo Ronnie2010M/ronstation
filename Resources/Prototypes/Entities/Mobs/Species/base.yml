@@ -187,6 +187,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      - key: enum.SurgeryUIKey.Key
+        type: SurgeryBui
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -211,6 +213,8 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: Targeting
+  - type: SurgeryTarget
 
 - type: entity
   save: false
