@@ -246,3 +246,95 @@
     state: saw
   - type: SurgeryRemovePartStep
   - type: SurgeryStepEmoteEffect
+
+# Tend Wounds
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepCarefulIncisionScalpel
+  name: Make a careful incision
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Scalpel
+    add:
+    - type: IncisionOpen
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
+  - type: SurgeryStepEmoteEffect
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepRepairBruteTissue
+  name: Repair damaged tissue
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Hemostat
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
+    state: hemostat
+  - type: SurgeryTendWoundsEffect
+    damage:
+      groups:
+        Brute: -5
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepRepairBurnTissue
+  name: Repair burnt tissue
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Hemostat
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
+    state: hemostat
+  - type: SurgeryTendWoundsEffect
+    mainGroup: Burn
+    damage:
+      groups:
+        Burn: -5
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepSealTendWound
+  name: Seal the wound
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Cautery
+    remove:
+    - type: IncisionOpen
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/cautery.rsi
+    state: cautery
+  - type: SurgeryStepCauterizeEffect
+  - type: SurgeryStepEmoteEffect
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepInsertItem
+  name: Insert item into cavity
+  components:
+  - type: SurgeryStep
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/manipulation.rsi
+    state: insertion
+  - type: SurgeryStepCavityEffect
+    action: Insert
+  - type: SurgeryStepEmoteEffect
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepRemoveItem
+  name: Remove item from cavity
+  components:
+  - type: SurgeryStep
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/manipulation.rsi
+    state: insertion
+  - type: SurgeryStepCavityEffect
+    action: Remove
+  - type: SurgeryStepEmoteEffect

@@ -82,6 +82,9 @@ public partial class SharedBodySystem
     {
         Logger.Debug($"Trying to change integrity for entity {ToPrettyString(partEnt)}: {integrity}");
         severed = false;
+        if (!HasComp<TargetingComponent>(partEnt.Comp.Body) || !_timing.IsFirstTimePredicted)
+            return;
+
         var partIdSlot = GetParentPartAndSlotOrNull(partEnt)?.Slot;
         var originalIntegrity = partEnt.Comp.Integrity;
         partEnt.Comp.Integrity -= integrity;

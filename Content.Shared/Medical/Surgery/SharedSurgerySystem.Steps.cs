@@ -5,8 +5,13 @@ using Content.Shared.Medical.Surgery.Tools;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Events;
 using Content.Shared.Buckle.Components;
-using Content.Shared.DoAfter;
+using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.Mood;
 using Content.Shared.Inventory;
+using Content.Shared.Item;
+using Content.Shared.DoAfter;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using System.Linq;
@@ -22,6 +27,8 @@ public abstract partial class SharedSurgerySystem
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryCanPerformStepEvent>(OnToolCanPerform);
 
         //SubSurgery<SurgeryCutLarvaRootsStepComponent>(OnCutLarvaRootsStep, OnCutLarvaRootsCheck);
+        SubSurgery<SurgeryTendWoundsEffectComponent>(OnTendWoundsStep, OnTendWoundsCheck);
+        SubSurgery<SurgeryStepCavityEffectComponent>(OnCavityStep, OnCavityCheck);
         SubSurgery<SurgeryAddPartStepComponent>(OnAddPartStep, OnAddPartCheck);
         SubSurgery<SurgeryRemovePartStepComponent>(OnRemovePartStep, OnRemovePartCheck);
         Subs.BuiEvents<SurgeryTargetComponent>(SurgeryUIKey.Key, subs =>
@@ -161,6 +168,59 @@ public abstract partial class SharedSurgerySystem
         }
     }
 
+    private EntProtoId? GetProtoId(EntityUid entityUid)
+    {
+        if (!TryComp<MetaDataComponent>(entityUid, out var metaData))
+            return null;
+
+        return metaData.EntityPrototype?.ID;
+    }
+
+    private void OnTendWoundsStep(Entity<SurgeryTendWoundsEffectComponent> ent, ref SurgeryStepEvent args)
+    {
+        var group = ent.Comp.MainGroup == "Brute" ? BruteDamageTypes : BurnDamageTypes;
+
+        if (!TryComp(args.Body, out DamageableComponent? damageable)
+            || !group.Intersect(damageable.Damage.DamageDict.Keys).Any()
+            && (!TryComp(args.Part, out BodyPartComponent? bodyPart)
+            || bodyPart.Integrity == 100))
+            return;
+
+        var bonus = ent.Comp.HealMultiplier * damageable.DamagePerGroup[ent.Comp.MainGroup];
+        if (_mobState.IsDead(args.Body))
+            bonus *= 0.2;
+
+        var adjustedDamage = new DamageSpecifier(ent.Comp.Damage);
+        var bonusPerType = bonus / group.Length;
+
+        foreach (var type in group)
+        {
+            adjustedDamage.DamageDict[type] -= bonusPerType;
+        }
+
+        var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, adjustedDamage, 0.5f);
+        RaiseLocalEvent(args.Body, ref ev);
+
+        if (ent.Comp.IsAutoRepeatable)
+        {
+            var stepProto = GetProtoId(ent);
+            var surgeryProto = GetProtoId(args.Surgery);
+            if (stepProto != null && surgeryProto != null)
+                CheckAndStartStep(args.User, args.Body, args.Part, ent, args.Surgery, stepProto.Value, surgeryProto.Value);
+        }
+    }
+
+    private void OnTendWoundsCheck(Entity<SurgeryTendWoundsEffectComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    {
+        var group = ent.Comp.MainGroup == "Brute" ? BruteDamageTypes : BurnDamageTypes;
+
+        if (!TryComp(args.Body, out DamageableComponent? damageable)
+            || group.Intersect(damageable.Damage.DamageDict.Keys).Any()
+            || !TryComp(args.Part, out BodyPartComponent? bodyPart)
+            || bodyPart.Integrity < 100)
+            args.Cancelled = true;
+    }
+
     /*private void OnCutLarvaRootsStep(Entity<SurgeryCutLarvaRootsStepComponent> ent, ref SurgeryStepEvent args)
     {
         if (TryComp(args.Body, out VictimInfectedComponent? infected) &&
@@ -181,6 +241,32 @@ public abstract partial class SharedSurgerySystem
         if (infected != null && infected.SpawnedLarva != null)
             args.Cancelled = true;
     }*/
+
+    private void OnCavityStep(Entity<SurgeryStepCavityEffectComponent> ent, ref SurgeryStepEvent args)
+    {
+        if (!TryComp(args.Part, out BodyPartComponent? partComp) || partComp.PartType != BodyPartType.Torso)
+            return;
+        Logger.Debug("Attempting item insertion");
+        var activeHandEntity = _hands.EnumerateHeld(args.User).FirstOrDefault();
+        if (activeHandEntity != default
+            && ent.Comp.Action == "Insert"
+            && TryComp<ItemComponent>(activeHandEntity, out ItemComponent? itemComp)
+            && (itemComp.Size.Id == "Tiny"
+            || itemComp.Size.Id == "Small"))
+            _itemSlotsSystem.TryInsert(ent, partComp.ItemInsertionSlot, activeHandEntity, args.User)
+        else if (ent.Comp.Action == "Remove")
+            _itemSlotsSystem.TryEjectToHands(ent, partComp.ItemInsertionSlot, args.User)
+    }
+
+    private void OnCavityCheck(Entity<SurgeryStepCavityEffectComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    {
+        if (!TryComp(args.Part, out BodyPartComponent? partComp)
+            || ent.Comp.Action == "Insert"
+            && !partComp.ItemInsertionSlot.HasItem
+            || ent.Comp.Action == "Remove"
+            && partComp.ItemInsertionSlot.HasItem)
+            args.Cancelled = true;
+    }
 
     private void OnAddPartStep(Entity<SurgeryAddPartStepComponent> ent, ref SurgeryStepEvent args)
     {
