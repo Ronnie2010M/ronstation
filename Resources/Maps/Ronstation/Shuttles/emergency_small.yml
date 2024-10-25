@@ -372,7 +372,7 @@ entities:
           0,0:
             0: 47615
           0,-1:
-            0: 61559
+            0: 62071
           -1,0:
             0: 46079
           0,1:
@@ -884,10 +884,9 @@ entities:
       - 493
 - proto: APCBasic
   entities:
-  - uid: 330
+  - uid: 12
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -1.5,-1.5
       parent: 2
 - proto: AtmosDeviceFanDirectional
@@ -1302,6 +1301,11 @@ entities:
       parent: 2
 - proto: CableHV
   entities:
+  - uid: 329
+    components:
+    - type: Transform
+      pos: 1.5,-1.5
+      parent: 2
   - uid: 348
     components:
     - type: Transform
@@ -1311,11 +1315,6 @@ entities:
     components:
     - type: Transform
       pos: 0.5,-1.5
-      parent: 2
-  - uid: 350
-    components:
-    - type: Transform
-      pos: 0.5,-2.5
       parent: 2
   - uid: 351
     components:
@@ -2170,6 +2169,7 @@ entities:
     - type: GasMixer
       inletTwoConcentration: 0.22000003
       inletOneConcentration: 0.78
+      enabled: True
     - type: AtmosPipeColor
       color: '#0055CCFF'
 - proto: GasPassiveVent
@@ -2882,6 +2882,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 1.5,-3.5
       parent: 2
+    - type: GasPressurePump
+      enabled: True
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 73
@@ -2890,12 +2892,16 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-3.5
       parent: 2
+    - type: GasPressurePump
+      enabled: True
   - uid: 108
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -1.5,-3.5
       parent: 2
+    - type: GasPressurePump
+      enabled: True
 - proto: GasValve
   entities:
   - uid: 80
@@ -3192,6 +3198,11 @@ entities:
       color: '#990000FF'
 - proto: GeneratorBasic15kW
   entities:
+  - uid: 106
+    components:
+    - type: Transform
+      pos: 1.5,-1.5
+      parent: 2
   - uid: 276
     components:
     - type: Transform
@@ -3206,12 +3217,6 @@ entities:
       parent: 2
 - proto: Grille
   entities:
-  - uid: 12
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 3.5,-2.5
-      parent: 2
   - uid: 48
     components:
     - type: Transform
@@ -3353,11 +3358,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -2.5,8.5
       parent: 2
-  - uid: 274
+  - uid: 350
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 1.5,-1.5
+      rot: 3.141592653589793 rad
+      pos: 3.5,-2.5
       parent: 2
 - proto: Gyroscope
   entities:
@@ -3547,12 +3552,6 @@ entities:
     - type: Transform
       pos: -1.5,-4.5
       parent: 2
-  - uid: 106
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 1.5,-1.5
-      parent: 2
   - uid: 127
     components:
     - type: Transform
@@ -3684,10 +3683,10 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -4.5,-0.5
       parent: 2
-  - uid: 275
+  - uid: 274
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 3.5,-2.5
       parent: 2
 - proto: StasisBed
@@ -3699,10 +3698,9 @@ entities:
       parent: 2
 - proto: SubstationWallBasic
   entities:
-  - uid: 329
+  - uid: 330
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 0.5,-1.5
       parent: 2
 - proto: Thruster
@@ -4151,6 +4149,12 @@ entities:
       parent: 2
 - proto: WindowReinforcedDirectional
   entities:
+  - uid: 275
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,-1.5
+      parent: 2
   - uid: 314
     components:
     - type: Transform
