@@ -142,16 +142,13 @@ namespace Content.Server.Hands.Systems
 
         private void HandleBodyPartEnabled(EntityUid uid, HandsComponent component, ref BodyPartEnabledEvent args)
         {
-            Logger.Debug($"Adding hand {ToPrettyString(args.Part)} to entity {ToPrettyString(uid)}.");
             TryAddHand(uid, component, args.Part, SharedBodySystem.GetPartSlotContainerId(args.Part.Comp.ParentSlot?.Id ?? string.Empty));
         }
 
         private void HandleBodyPartDisabled(EntityUid uid, HandsComponent component, ref BodyPartDisabledEvent args)
         {
-            Logger.Debug($"Removing hand {ToPrettyString(args.Part)} from entity {ToPrettyString(uid)}.");
             if (args.Part.Comp.PartType != BodyPartType.Hand)
                 return;
-            Logger.Debug("Passed checks, removing hand.");
 
             RemoveHand(uid, SharedBodySystem.GetPartSlotContainerId(args.Part.Comp.ParentSlot?.Id ?? string.Empty));
         }

@@ -1274,6 +1274,24 @@
       Steel: 2
       Glass: 5
       Cable: 2
+  - type: ReverseEngineering # Delta
+    difficulty: 2
+    recipes:
+      -  JukeboxCircuitBoard
+
+- type: entity
+  id: MedicalBiofabMachineBoard
+  parent: BaseMachineCircuitboard
+  name: medical biofab machine board
+  description: A machine printed circuit board for a medical biofab.
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: MedicalBiofabricator
+      requirements:
+        MatterBin: 2
+        Manipulator: 2
 
 - type: entity
   parent: BaseMachineCircuitboard
