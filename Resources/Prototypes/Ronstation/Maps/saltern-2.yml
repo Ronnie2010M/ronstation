@@ -9,6 +9,8 @@
     Saltern:
       stationProto: StandardNanotrasenStation
       components:
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Ronstation/Shuttles/emergency_small.yml # should fit.
         - type: StationNameSetup
           mapNameTemplate: '{0} Saltern {1}'
           nameGenerator:
@@ -18,6 +20,7 @@
           availableJobs:
             #service
             Captain: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]
             Botanist: [ 1, 2 ]
@@ -57,3 +60,5 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            #silicon
+            StationAi: [ 1, 1 ]

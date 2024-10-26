@@ -30,3 +30,15 @@ reagent-desc-cellulose = A crystaline polydextrose polymer, plants swear by this
 
 reagent-name-rororium = rororium
 reagent-desc-rororium = A strange substance which fills the cores of the hivelords that roam the mining asteroid. Thought to be the source of their regenerative powers.
+
+reagent-name-ammoniated-mercury = ammoniated mercury
+reagent-desc-ammoniated-mercury = An inorganic compound used to treat skin problems and injuries, causes mercury poisoning if ingested in high doses.
+
+reagent-name-calomel = calomel
+reagent-desc-calomel = A mercury chloride mineral that was used as a medicine in older times, causes mercury poisoning if ingested.
+
+reagent-name-hydrogen-peroxide = hydrogen peroxide
+reagent-desc-hydrogen-peroxide = An ubiquitous chemical substance that is used in several applications.
+
+reagent-name-formaldehyde = formaldehyde
+reagent-desc-formaldehyde = A commonly used pesticide and plant remover, used in several applications.
