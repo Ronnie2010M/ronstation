@@ -1,0 +1,65 @@
+- type: entity
+  parent: [ BasePDA, BaseTerragovContraband ]
+  id: HeccdiverPDA
+  name: heccdiver PDA
+  description: Looks a lot different than normal PDAs.
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Devices/pda.rsi
+  - type: Pda
+    id: HeccdiverIDCard
+    state: pda-heccdiver
+  - type: PdaBorderColor
+    borderColor: "#2F3030"
+  - type: Icon
+    sprite: Ronstation/Objects/Devices/pda.rsi
+    state: pda-heccdiver
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - NotekeeperCartridge
+    cartridgeSlot:
+      priority: -1
+      name: Cartridge
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Machines/id_insert.ogg
+      whitelist:
+        components:
+          - Cartridge
+
+- type: entity
+  parent: [ BasePDA, BaseCommandContraband ]
+  id: BlueshieldPDA
+  name: Blueshield PDA
+  description: Might allow you to see who to protect through the crew manifest.
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Devices/pda.rsi
+  - type: Pda
+    id: BlueshieldIDCard
+    state: pda-blueshield
+  - type: PdaBorderColor
+    borderColor: "#0071B7"
+    accentHColor: "#E2E2E2"
+  - type: Icon
+    sprite: Ronstation/Objects/Devices/pda.rsi
+    state: pda-blueshield
+
+- type: entity
+  parent: [ BasePDA, BaseCommandContraband ]
+  id: CentcomBlueshieldPDA
+  name: Blueshield PDA
+  suffix: Central Command
+  description: Might allow you to see who to protect through the crew manifest.
+  components:
+  - type: Sprite
+    sprite: Ronstation/Objects/Devices/pda.rsi
+  - type: Pda
+    id: CentcomBlueshieldIDCard
+    state: pda-blueshield
+  - type: PdaBorderColor
+    borderColor: "#0071B7"
+    accentHColor: "#E2E2E2"
+  - type: Icon
+    sprite: Ronstation/Objects/Devices/pda.rsi
+    state: pda-blueshield

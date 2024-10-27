@@ -347,7 +347,7 @@ chem_master: ChemMaster
 CrateJanitorExplosive: ClosetJanitorBombFilled
 
 # 2024-05-27
-DoorRemoteFirefight: null
+# DoorRemoteFirefight: null
 
 # 2024-06-03
 AirlockServiceCaptainLocked: AirlockCaptainLocked
@@ -418,9 +418,9 @@ ClothingBeltSuspenders: ClothingBeltSuspendersRed
 ClothingNeckShockCollar: ClothingBackpackElectropack
 
 # 2024-08-22
-ComputerShuttleSalvage: null
-SalvageShuttleConsoleCircuitboard: null
-SalvageShuttleCircuitboardStealObjective: null
+# ComputerShuttleSalvage: null
+# SalvageShuttleConsoleCircuitboard: null
+# SalvageShuttleCircuitboardStealObjective: null
 
 # 2024-08-28
 ClothingBackpackDuffelSyndicateCostumeCentcom: null

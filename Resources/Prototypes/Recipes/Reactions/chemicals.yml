@@ -516,3 +516,85 @@
   products:
     Tazinide: 1
 
+- type: reaction
+  id: Calomel
+  impact: Low
+  minTemp: 374
+  reactants:
+    Mercury:
+      amount: 1
+    Chlorine:
+      amount: 1
+  products:
+    Calomel: 2
+
+- type: reaction
+  id: AmmoniatedMercury
+  impact: Medium
+  minTemp: 336
+  reactants:
+    Calomel:
+      amount: 1
+    Ammonia:
+      amount: 2
+  products:
+    AmmoniatedMercury: 2
+    AmmoniatedSludge: 1
+
+- type: reaction
+  id: BathSalts
+  minTemp: 374
+  reactants:
+    Saltpetre:
+      amount: 1
+    SpaceCleaner:
+      amount: 1
+    Enzyme:
+      amount: 1
+    Nutriment:
+      amount: 1
+    Mercury:
+      amount: 1
+  products:
+    BathSalts: 3
+
+- type: reaction
+  id: Cyanide
+  impact: Medium
+  minTemp: 380
+  reactants:
+    Ammonia:
+      amount: 1
+    Oxygen:
+      amount: 1
+    Oil:
+      amount: 1
+  products:
+    Cyanide: 2
+
+- type: reaction
+  id: HydrogenPeroxide
+  impact: Low
+  reactants:
+    Chlorine:
+      amount: 1
+    Oxygen:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    HydrogenPeroxide: 2
+
+- type: reaction
+  id: Formaldehyde
+  impact: Medium
+  minTemp: 418.6
+  reactants:
+    Silver:
+      amount: 1
+    Ethanol:
+      amount: 1
+    Carbon:
+      amount: 1
+  products:
+    Formaldehyde: 3

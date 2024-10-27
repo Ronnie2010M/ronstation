@@ -91,9 +91,11 @@
       - id: ClothingMaskGasAtmos
       - id: ClothingOuterSuitAtmosFire
       - id: ClothingHeadHelmetAtmosFire
+      - id: AirTankFilled
       - id: GasAnalyzer
       - id: MedkitOxygenFilled
       - id: HolofanProjector
+      - id: DoorRemoteFirefight
       - id: RCD
       - id: RCDAmmo
 
@@ -107,9 +109,11 @@
       - id: ClothingMaskGasAtmos
       - id: ClothingOuterSuitAtmosFire
       - id: ClothingHeadHelmetAtmosFire
+      - id: AirTankFilled
       - id: GasAnalyzer
       - id: MedkitOxygenFilled
       - id: HolofanProjector
+      - id: DoorRemoteFirefight
       - id: RCD
       - id: RCDAmmo
 
@@ -123,6 +127,7 @@
       - id: ClothingOuterHardsuitEngineering
       - id: ClothingHandsGlovesColorYellow
       - id: ClothingMaskGas
+      - id: AirTankFilled
       - id: ClothingShoesBootsMag
       - id: RCD
       - id: RCDAmmo
