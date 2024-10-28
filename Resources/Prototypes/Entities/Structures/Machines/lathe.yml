@@ -1424,6 +1424,10 @@
     idleState: limbgrower_idleoff
     runningState: limbgrower_idleon
     staticRecipes:
+    - SynthLiver
+    - SynthHeart
+    - SynthLungs
+    - SynthEyes
     - SynthLeftLeg
     - SynthRightLeg
     - SynthLeftFoot

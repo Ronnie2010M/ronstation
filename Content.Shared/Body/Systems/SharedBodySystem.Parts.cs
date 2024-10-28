@@ -25,7 +25,7 @@ public partial class SharedBodySystem
         // TODO: This doesn't handle comp removal on child ents.
 
         // If you modify this also see the Body partial for root parts.
-        SubscribeLocalEvent<BodyPartComponent, ComponentStartup>(OnBodyPartInit);
+        SubscribeLocalEvent<BodyPartComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<BodyPartComponent, ComponentRemove>(OnBodyPartRemove);
         SubscribeLocalEvent<BodyPartComponent, EntInsertedIntoContainerMessage>(OnBodyPartInserted);
         SubscribeLocalEvent<BodyPartComponent, EntRemovedFromContainerMessage>(OnBodyPartRemoved);
@@ -33,11 +33,12 @@ public partial class SharedBodySystem
         SubscribeLocalEvent<BodyPartComponent, BodyPartEnableChangedEvent>(OnPartEnableChanged);
     }
 
-    private void OnBodyPartInit(Entity<BodyPartComponent> ent, ref ComponentStartup args)
+    private void OnMapInit(Entity<BodyPartComponent> ent, ref MapInitEvent args)
     {
         if (ent.Comp.PartType == BodyPartType.Torso)
         {
             _slots.AddItemSlot(ent, ent.Comp.ContainerName, ent.Comp.ItemInsertionSlot);
+            Dirty(ent, ent.Comp);
         }
     }
 
@@ -117,6 +118,8 @@ public partial class SharedBodySystem
             }
         }
 
+        // The code for RemovePartEffect() should live here, because it literally is the point of this recursive function.
+        // But the debug asserts at the top plus existing tests need refactoring for this. So we'll be lazy.
         foreach (var slotId in ent.Comp.Children.Keys)
         {
             if (!Containers.TryGetContainer(ent, GetPartSlotContainerId(slotId), out var container))
@@ -241,7 +244,8 @@ public partial class SharedBodySystem
                 }
             };
             Dirty(bodyEnt, bodyEnt.Comp);
-        }*/
+        }
+
     }
 
     private void PartRemoveDamage(Entity<BodyComponent?> bodyEnt, Entity<BodyPartComponent> partEnt)
@@ -402,7 +406,7 @@ public partial class SharedBodySystem
             return null;
 
         Containers.EnsureContainer<ContainerSlot>(partUid, GetPartSlotContainerId(slotId));
-        var partSlot = new BodyPartSlot(slotId, partType, parent: GetNetEntity(partUid));
+        var partSlot = new BodyPartSlot(slotId, partType);
         part.Children.Add(slotId, partSlot);
         Dirty(partUid, part);
         return partSlot;
@@ -428,7 +432,7 @@ public partial class SharedBodySystem
         }
 
         Containers.EnsureContainer<ContainerSlot>(partId.Value, GetPartSlotContainerId(slotId));
-        slot = new BodyPartSlot(slotId, partType, parent: GetNetEntity(partId.Value));
+        slot = new BodyPartSlot(slotId, partType);
 
         if (!part.Children.TryAdd(slotId, slot.Value))
             return false;
