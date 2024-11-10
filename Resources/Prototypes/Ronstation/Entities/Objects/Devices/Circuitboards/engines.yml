@@ -7,7 +7,7 @@
     state: engineering
   - type: MachineBoard
     prototype: TegCenter
-    requirements:
+    stackRequirements:
       Capacitor: 4
       MatterBin: 1
       Steel: 6
@@ -22,7 +22,7 @@
     state: engineering
   - type: MachineBoard
     prototype: TegCirculator
-    requirements:
+    stackRequirements:
       Capacitor: 2
       Steel: 3
       GasPipeStraight: 1
