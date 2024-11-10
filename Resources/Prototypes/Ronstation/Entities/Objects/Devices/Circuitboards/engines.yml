@@ -25,4 +25,7 @@
     stackRequirements:
       Capacitor: 2
       Steel: 3
-      GasPipeStraight: 1
+    tagRequirements:
+      Pipe:
+        amount: 1
+        defaultPrototype: GasPipeStraight
