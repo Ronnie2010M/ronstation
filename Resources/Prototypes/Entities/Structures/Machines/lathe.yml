@@ -519,6 +519,9 @@
       - MassMediaCircuitboard
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
+      - CloningPodMachineCircuitboard
+      - MedicalScannerMachineCircuitboard
+      - CloningConsoleComputerCircuitboard
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
