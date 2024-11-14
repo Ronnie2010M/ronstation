@@ -2,7 +2,7 @@
   id: Cloning
   name: research-technology-cloning
   icon:
-    sprite: /Structures/Machines/scanner.rsi
+    sprite: Structures/Machines/scanner.rsi
     state: open
   discipline: CivilianServices
   tier: 3
