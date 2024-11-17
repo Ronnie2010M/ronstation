@@ -200,6 +200,8 @@
       - WetFloorSign
       - ClothingHeadHatCone
       - FreezerElectronics
+      - OreProcessorBasicMachineCircuitboard
+      - CircuitImprinterMachineCircuitboard
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - BoxLethalshot
@@ -1230,7 +1232,7 @@
   - type: Machine
     board: OreProcessorIndustrialMachineCircuitboard
   - type: Lathe
-    materialUseMultiplier: 0.75
+    materialUseMultiplier: 0.25
     timeMultiplier: 0.5
     staticRecipes:
       - SheetSteel
