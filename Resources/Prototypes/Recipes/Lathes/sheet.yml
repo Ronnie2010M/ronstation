@@ -212,7 +212,7 @@
   applyMaterialDiscount: false
   completetime: 0
   materials:
-    Plastic: 50
+    Plastic: 100
 
 - type: latheRecipe
   id: MaterialBananium1
