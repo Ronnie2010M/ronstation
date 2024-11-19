@@ -590,7 +590,7 @@
   impact: Medium
   minTemp: 418.6
   reactants:
-    Silver:
+    Zinc:
       amount: 1
     Ethanol:
       amount: 1
@@ -598,3 +598,19 @@
       amount: 1
   products:
     Formaldehyde: 3
+
+- type: reaction
+  id: Morphine
+  impact: Medium
+  minTemp: 480.6
+  reactants:
+    Carbon:
+      amount: 2
+    Hydrogen:
+      amount: 2
+    Ethanol:
+      amount: 1
+    NitrousOxide:
+      amount: 1
+  products:
+    Morphine: 2.5
