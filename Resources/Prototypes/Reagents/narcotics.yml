@@ -468,8 +468,8 @@
 - type: reagent
   id: BathSalts
   name: reagent-name-bath-salts
-  group: Narcotics
   desc: reagent-desc-bath-salts
+  group: Narcotics
   physicalDesc: reagent-physical-desc-powdery
   flavor: bitter
   color: "white"
@@ -516,3 +516,93 @@
           groups:
             Brute: -0.15
             Burn: -0.15
+
+- type: reagent
+  id: Opium
+  name: reagent-name-opium
+  desc: reagent-desc-opium
+  group: Narcotics
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: bitter
+  color: "#FAFAFA"
+  boilingPoint: 374.4 # both melting and boiling point are of morphine
+  meltingPoint: 392.6
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.1
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        damage:
+          types:
+            Asphyxiation: 0.3
+    Narcotic:
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.05
+        sprintSpeedModifier: 1.05
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 5
+        refresh: false
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        messages:
+        - "psicodine-effect-fearless"
+        - "psicodine-effect-anxieties-wash-away"
+        - "psicodine-effect-at-peace"
+        probability: 0.2
+
+- type: reagent
+  id: Morphine
+  name: reagent-name-morphine
+  desc: reagent-desc-morphine
+  group: Narcotics
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: bitter
+  color: "#FAFAFA"
+  boilingPoint: 374.4
+  meltingPoint: 392.6
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.1
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+        damage:
+          types:
+            Asphyxiation: 0.3
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 1.5
+        refresh: false
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        messages:
+        - "psicodine-effect-fearless"
+        - "psicodine-effect-anxieties-wash-away"
+        probability: 0.3
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        component: Drowsiness
+        time: 3
+        type: Add
+        refresh: false
