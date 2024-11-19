@@ -95,7 +95,6 @@
   materials:
     RawGold: 100
 
-- type: latheRecipe
   id: IngotSilver1Normal
   result: IngotSilver1
   completetime: 0
