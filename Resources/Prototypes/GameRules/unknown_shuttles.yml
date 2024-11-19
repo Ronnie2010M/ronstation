@@ -20,6 +20,7 @@
     - id: UnknownShuttleMeatZone
     - id: UnknownShuttleMicroshuttle
     - id: UnknownShuttleSpacebus
+    - id: UnknownShuttleEngineeringFailure
 
 - type: entityTable
   id: UnknownShuttlesFreelanceTable
@@ -229,4 +230,6 @@
     startAnnouncement: station-event-unknown-shuttle-incoming #!!
   - type: LoadMapRule
     preloadedGrid: Spacebus
+
+    
 

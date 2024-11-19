@@ -1,0 +1,12 @@
+
+- type: entity
+  id: UnknownShuttleEngineeringFailure
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-unknown-shuttle-incoming #!!
+  - type: LoadMapRule
+    preloadedGrid: EngineeringFailure
+
+    
+
