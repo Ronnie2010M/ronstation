@@ -9,15 +9,3 @@
       prototype: ComputerShuttleSalvage
     - type: StealTarget
       stealGroup: SalvageShuttleConsoleCircuitboard
-
-- type: entity
-  parent: BaseComputerCircuitboard
-  id: ResearchComputerCircuitboardEngineeringFailure
-  name: R&D computer board
-  description: A computer printed circuit board for a R&D console.
-  suffix: No access, Doesn't report on radio
-  components:
-    - type: Sprite
-      state: cpu_science
-    - type: ComputerBoard
-      prototype: ComputerResearchAndDevelopmentEngineeringFailure
