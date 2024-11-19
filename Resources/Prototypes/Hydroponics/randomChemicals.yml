@@ -32,6 +32,7 @@
     - CogChamp
     - JuiceThatMakesYouWeh
     - Cyanide
+    - BathSalts
   - quantity: 5
     weight: 2
     reagents:
@@ -58,6 +59,8 @@
     - Cola
     - Diphenhydramine
     - Iron
+    - Opium
+    - Morphine
   - quantity: 10
     weight: 3
     reagents:
