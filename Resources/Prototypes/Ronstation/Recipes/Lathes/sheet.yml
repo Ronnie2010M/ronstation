@@ -1,0 +1,102 @@
+- type: latheRecipe
+  id: SheetSteelNormal
+  result: SheetSteel1
+  completetime: 0
+  materials:
+    RawIron: 100
+    Coal: 30
+
+- type: latheRecipe
+  id: SheetSteel30Normal
+  result: SheetSteel
+  completetime: 2
+  materials:
+    RawIron: 3000
+    Coal: 1000
+
+- type: latheRecipe
+  id: SheetGlass1Normal
+  result: SheetGlass1
+  completetime: 0
+  materials:
+    RawQuartz: 100
+
+- type: latheRecipe
+  id: SheetGlass30Normal
+  result: SheetGlass
+  completetime: 2
+  materials:
+    RawQuartz: 3000
+
+- type: latheRecipe
+  id: SheetPlasma1Normal
+  result: SheetPlasma1
+  completetime: 0
+  materials:
+    RawPlasma: 100
+
+- type: latheRecipe
+  id: SheetPlasma30Normal
+  result: SheetPlasma
+  completetime: 2
+  materials:
+    RawPlasma: 3000
+
+- type: latheRecipe
+  id: SheetPlasteel1Normal
+  result: SheetPlasteel1
+  completetime: 0
+  materials:
+    RawPlasma: 100
+    RawIron: 200 #Twice as durable as steel, Twice the material cost
+    Coal: 30
+
+- type: latheRecipe
+  id: SheetPlasteel30Normal
+  result: SheetPlasteel
+  completetime: 5
+  materials:
+    RawPlasma: 3000
+    RawIron: 6000 #Twice as durable as steel, Twice the material cost
+    Coal: 1000
+
+- type: latheRecipe
+  id: SheetUranium30Normal
+  result: SheetUranium
+  completetime: 2
+  materials:
+    RawUranium: 3000
+
+- type: latheRecipe
+  id: IngotGold30Normal
+  result: IngotGold
+  completetime: 2
+  materials:
+    RawGold: 3000
+
+- type: latheRecipe
+  id: IngotSilver30Normal
+  result: IngotSilver
+  completetime: 2
+  materials:
+    RawSilver: 3000
+
+- type: latheRecipe
+  id: SheetUranium1Normal
+  result: SheetUranium1
+  completetime: 0
+  materials:
+    RawUranium: 100
+
+- type: latheRecipe
+  id: IngotGold1Normal
+  result: IngotGold1
+  completetime: 0
+  materials:
+    RawGold: 100
+
+  id: IngotSilver1Normal
+  result: IngotSilver1
+  completetime: 0
+  materials:
+    RawSilver: 100

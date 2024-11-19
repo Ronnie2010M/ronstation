@@ -28,9 +28,9 @@
       runningState: building
       defaultProductionAmount: 5
       staticRecipes:
-        - SheetSteel
-        - SheetGlass1
-        - SheetPlasma1
-        - SheetUranium1
-        - IngotGold1
-        - IngotSilver1
+        - SheetSteelNormal
+        - SheetGlass1Normal
+        - SheetPlasma1Normal
+        - SheetUranium1Normal
+        - IngotGold1Normal
+        - IngotSilver1Normal
