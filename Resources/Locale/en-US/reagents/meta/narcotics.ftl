@@ -45,3 +45,6 @@ reagent-desc-bath-salts = A drug that is used to reduce inflammation and relax t
 
 reagent-name-opium = opium
 reagent-desc-opium = Rule, britannia, rule the waves! Found in poppies, highly addictive.
+
+reagent-name-morphine = morphine
+reagent-desc-morphine = An opiate, used as a depressant, makes you sleepy.
