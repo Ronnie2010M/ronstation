@@ -1375,6 +1375,15 @@
       - !type:AdjustReagent
         reagent: MindbreakerToxin
         amount: -3.0
+      - !type:AdjustReagent
+        reagent: Morphine
+        amount: -3.0
+      - !type:AdjustReagent
+        reagent: Opium
+        amount: -3.0
+      - !type:AdjustReagent
+        reagent: BathSalts
+        amount: -3.0
 
 - type: reagent
   id: SalineGlucose
@@ -1388,48 +1397,32 @@
     Drink:
       effects:
       - !type:SatiateThirst
-        factor: 2.5
+        factor: 3
     Medicine:
       effects:
       - !type:HealthChange
         damage:
           groups:
-            Brute: -0.85
-            Burn: -0.65
+            Brute: -0.5
+            Burn: -0.5
       - !type:ModifyBloodLevel
-        amount: 3.25
+        amount: 3.5
       - !type:HealthChange
         conditions:
           - !type:ReagentThreshold
-            min: 16.5
+            min: 20
         damage:
           types:
-            Asphyxiation: 0.10
-      - !type:MovespeedModifier #too many electrolytes leads to fatigue
+            Asphyxiation: 0.1
+      - !type:MovespeedModifier
         conditions:
           - !type:ReagentThreshold
             min: 20
         walkSpeedModifier: 0.95
         sprintSpeedModifier: 0.95
-
-- type: reagent
-  id: Ipecybin
-  name: reagent-name-ipecybin
-  desc: reagent-desc-ipecybin
-  group: Medicine
-  physicalDesc: reagent-physical-desc-pungent
-  flavor: bitter
-  color: "#577178"
-  metabolisms:
-    Medicine:
-      effects:
-      - !type:HealthChange
-        damage:
-          groups:
-            Toxin: -0.65
-            Airloss: -0.45
-            Brute: -0.25
-      - !type:ChemVomit
-        conditions:
-          - !type:ReagentThreshold
-            min: 12.5
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        component: Drowsiness
+        time: 1.5
+        type: Add
+        refresh: false
