@@ -3,7 +3,7 @@
   result: SheetSteel1
   completetime: 0
   materials:
-    RawIron: 1000
+    RawIron: 100
     Coal: 30
 
 - type: latheRecipe
@@ -112,7 +112,7 @@
   materials:
     RawPlasma: 3000
     RawIron: 6000 #Twice as durable as steel, Twice the material cost
-    Coal: 500
+    Coal: 1000
 
 - type: latheRecipe
   id: SheetUranium30
@@ -233,4 +233,4 @@
   result: SheetPaper1
   completetime: 1
   materials:
-    Wood: 100
+    Wood: 50
