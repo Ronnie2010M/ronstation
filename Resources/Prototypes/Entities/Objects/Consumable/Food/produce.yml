@@ -492,7 +492,7 @@
   name: cabbage
   parent: FoodProduceBase
   id: FoodCabbage
-  description: Ewwwwwwwwww. Cabbage.
+  description: Yum, not yuck.
   components:
   - type: FlavorProfile
     flavors:
@@ -1450,12 +1450,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 22
+        maxVol: 25
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 3
         - ReagentId: Bicaridine
-          Quantity: 20
+          Quantity: 17
+        - ReagentId: Opium
+          Quantity: 5
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/poppy.rsi
   - type: Produce
