@@ -551,33 +551,35 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 6
-          - 95
-          - 94
-          - 93
-          - 92
-          - 91
-          - 90
-          - 88
-          - 87
-          - 86
-          - 73
-          - 74
-          - 75
-          - 76
-          - 77
-          - 78
-          - 79
-          - 80
-          - 81
-          - 82
-          - 83
-          - 84
-          - 89
-          - 120
-          - 85
-          - 97
           - 98
+          - 97
+          - 85
+          - 120
+          - 89
+          - 84
+          - 83
+          - 82
+          - 81
+          - 80
+          - 79
+          - 78
+          - 77
+          - 76
+          - 75
+          - 74
+          - 73
+          - 86
+          - 87
+          - 88
+          - 90
+          - 91
+          - 92
+          - 93
+          - 94
+          - 95
+          - 6
+          - 121
+          - 122
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -727,6 +729,15 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: MineralScanner
+  entities:
+  - uid: 121
+    components:
+    - type: Transform
+      parent: 72
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: Paper
   entities:
   - uid: 117
@@ -761,6 +772,15 @@ entities:
         [italic]6. Make the rest of the boards provided in the crate[/italic]
 
         [italic]7. Build a Circuit Imprinter. The board for it can be found in the Autolathe.[/italic]
+- proto: Pickaxe
+  entities:
+  - uid: 122
+    components:
+    - type: Transform
+      parent: 72
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: PortableGeneratorPacman
   entities:
   - uid: 96
