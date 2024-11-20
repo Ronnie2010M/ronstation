@@ -1206,6 +1206,7 @@
         tags:
           - Ore
     - type: Lathe
+      materialUseMultiplier: 0.5
       idleState: icon
       runningState: building
       defaultProductionAmount: 10
@@ -1233,7 +1234,7 @@
   - type: Machine
     board: OreProcessorIndustrialMachineCircuitboard
   - type: Lathe
-    materialUseMultiplier: 0.25
+    materialUseMultiplier: 0.125
     timeMultiplier: 0.5
     staticRecipes:
       - SheetSteel
