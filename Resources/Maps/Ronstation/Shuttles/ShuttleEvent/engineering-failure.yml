@@ -142,10 +142,74 @@ entities:
     - type: GridAtmosphere
       version: 2
       data:
+        tiles:
+          0,0:
+            0: 30579
+          0,-1:
+            0: 26480
+            1: 4096
+            2: 4
+          -1,0:
+            0: 52424
+          0,1:
+            2: 4
+          -1,-1:
+            0: 52416
+            2: 4
+          -1,1:
+            2: 4
+        uniqueMixes:
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 21.824879
+          - 82.10312
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.14975
+          moles:
+          - 20.078888
+          - 75.53487
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          immutable: True
+          moles:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: NavMap
+    - type: GravityShake
+      shakeTimes: 10
 - proto: APCHighCapacity
   entities:
   - uid: 35
@@ -213,6 +277,20 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: BlueprintFulton
+  entities:
+  - uid: 120
+    components:
+    - type: MetaData
+      desc: A permit you got when buying the shuttle. Ultimately useless.
+      name: shuttle expansion permit
+    - type: Transform
+      parent: 72
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+    missingComponents:
+    - Blueprint
 - proto: CableApcExtension
   entities:
   - uid: 50
@@ -449,13 +527,31 @@ entities:
     - type: Transform
       pos: 0.5,-0.5
       parent: 1
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
           ents:
-          - 96
+          - 6
           - 95
           - 94
           - 93
@@ -477,8 +573,9 @@ entities:
           - 82
           - 83
           - 84
-          - 85
           - 89
+          - 120
+          - 85
           - 97
           - 98
         paper_label: !type:ContainerSlot
@@ -664,9 +761,9 @@ entities:
         [italic]6. Make the rest of the boards provided in the crate[/italic]
 
         [italic]7. Build a Circuit Imprinter. The board for it can be found in the Autolathe.[/italic]
-- proto: PortableGeneratorSuperPacman
+- proto: PortableGeneratorPacman
   entities:
-  - uid: 6
+  - uid: 96
     components:
     - type: Transform
       pos: 0.5,-2.5
@@ -703,9 +800,9 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: SalvageMagnetMachineCircuitboard
+- proto: Screwdriver
   entities:
-  - uid: 96
+  - uid: 6
     components:
     - type: Transform
       parent: 72
@@ -866,7 +963,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: VisitorSalvageSpecialistSpawner
+- proto: VisitorScientistSpawner
   entities:
   - uid: 119
     components:
