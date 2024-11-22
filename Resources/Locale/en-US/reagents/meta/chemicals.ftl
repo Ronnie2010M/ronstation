@@ -42,3 +42,6 @@ reagent-desc-hydrogen-peroxide = An ubiquitous chemical substance that is used i
 
 reagent-name-formaldehyde = formaldehyde
 reagent-desc-formaldehyde = A commonly used pesticide and plant remover, used in several applications.
+
+reagent-name-stabilizing-agent = stabilizing agent
+reagent-desc-stabilizing-agent = An industrial grade stabilizing agent used to stabilize reagents, so you know, they don't blow up in your face.
