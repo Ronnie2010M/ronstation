@@ -672,3 +672,15 @@
       amount: 1
   products:
     SalineGlucose: 3
+
+- type: reaction
+  id: Libital
+  reactants:
+    Phenol:
+      amount: 1
+    Nitrogen:
+      amount: 1
+    Oxygen:
+      amount: 1
+  products:
+    Libital: 3
