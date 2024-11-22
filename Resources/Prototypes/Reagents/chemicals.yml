@@ -209,7 +209,6 @@
   id: AmmoniatedMercury
   name: reagent-name-ammoniated-mercury
   desc: reagent-desc-ammoniated-mercury
-  group: Chemical
   flavor: metallic
   color: "#f2f0f0"
   physicalDesc: reagent-physical-desc-crystalline
@@ -238,7 +237,6 @@
   id: HydrogenPeroxide
   name: reagent-name-hydrogen-peroxide
   desc: reagent-desc-hydrogen-peroxide
-  group: Chemical
   flavor: bitter
   color: "#cdcdcd"
   boilingPoint: 302.36
@@ -270,7 +268,6 @@
   id: Formaldehyde
   name: reagent-name-formaldehyde
   desc: reagent-desc-formaldehyde
-  group: Chemical
   color: "#b4004b"
   boilingPoint: 254.1
   meltingPoint: 181.2
@@ -305,3 +302,10 @@
       - !type:Emote
         emote: Scream
         probability: 0.10
+
+- type: reagent
+  id: StabilizingAgent
+  name: reagent-name-stabilizing-agent
+  desc: reagent-desc-stabilizing-agent
+  color: "white"
+  physicalDesc: reagent-physical-desc-alkaline
