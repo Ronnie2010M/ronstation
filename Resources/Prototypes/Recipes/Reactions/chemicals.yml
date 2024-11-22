@@ -543,6 +543,7 @@
 
 - type: reaction
   id: BathSalts
+  impact: Medium
   minTemp: 374
   reactants:
     Saltpetre:
@@ -614,3 +615,16 @@
       amount: 1
   products:
     Morphine: 2.5
+
+- type: reaction
+  id: StabilizingAgent
+  impact: Low
+  reactants:
+    Iron:
+      amount: 1
+    Hydrogen:
+      amount: 1
+    Oxygen:
+      amount: 1
+  products:
+    StabilizingAgent: 3
