@@ -684,7 +684,7 @@
     SalineGlucose: 3
 
 - type: reaction
-  id: Salbutamol
+  id: SalicyclicAcid
   reactants:
     Phenol:
       amount: 1
