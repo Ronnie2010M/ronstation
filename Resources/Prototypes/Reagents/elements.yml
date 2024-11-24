@@ -354,3 +354,91 @@
   color: "#bababa"
   meltingPoint: 419.5
   boilingPoint: 907.0
+
+- type: reagent
+  id: Platinum
+  name: reagent-name-platinum
+  group: Elements
+  desc: reagent-desc-platinum
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: metallic
+  color: "#e5e4e2"
+  meltingPoint: 2041.2
+  boilingPoint: 4098.1
+
+- type: reagent
+  id: Calcium
+  name: reagent-name-calcium
+  group: Elements
+  desc: reagent-desc-calcium
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: bitter
+  color: "#f4e1c5"
+  meltingPoint: 1115.2
+  boilingPoint: 1757.3
+
+- type: reagent
+  id: Magnesium
+  name: reagent-name-magnesium
+  group: Elements
+  desc: reagent-desc-magnesium
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: bitter
+  color: "#f4e1c5"
+  meltingPoint: 923.2
+  boilingPoint: 1364.1
+
+- type: reagent
+  id: Barium
+  name: reagent-name-barium
+  group: Elements
+  desc: reagent-desc-barium
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: bitter
+  color: "#f4e1c5"
+  meltingPoint: 1000
+  boilingPoint: 2170.3
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1
+
+- type: reagent
+  id: Bromine
+  name: reagent-name-bromine
+  group: Elements
+  desc: reagent-desc-bromine
+  physicalDesc: reagent-physical-desc-gaseous
+  flavor: sweet
+  color: "#752817"
+  meltingPoint: 266.3
+  boilingPoint: 332.6
+  plantMetabolism:
+    - !type:PlantAdjustWater
+      amount: -1
+    - !type:PlantAdjustToxins
+      amount: 25
+    - !type:PlantAdjustWeeds
+      amount: -5
+    - !type:PlantAdjustHealth
+      amount: -1
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3
+
+- type: reagent
+  id: Helium
+  name: reagent-name-helium
+  group: Elements
+  desc: reagent-desc-helium
+  physicalDesc: reagent-physical-desc-gaseous
+  color: "#c1c2c3"
+  meltingPoint: 0.95
+  boilingPoint: 4.22
