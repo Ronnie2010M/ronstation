@@ -672,3 +672,45 @@
       amount: 1
   products:
     SalineGlucose: 3
+
+- type: reaction
+  id: SalineGlucose
+  reactants:
+    Saline:
+      amount: 2
+    Sugar:
+      amount: 1
+  products:
+    SalineGlucose: 3
+
+- type: reaction
+  id: Salbutamol
+  reactants:
+    Phenol:
+      amount: 1
+    Sodium:
+      amount: 1
+    Carbon:
+      amount: 1
+    Oxygen:
+      amount: 1
+    SulfuricAcid:
+      amount: 1
+  products:
+    SalicylicAcid: 3
+
+- type: reaction
+  id: Salbutamol
+  reactants:
+    SalicyclicAcid:
+      amount: 1
+    Ammonia:
+      amount: 1
+    Aluminium:
+      amount: 1
+    Bromine:
+      amount: 1
+    Lithium:
+      amount: 1
+  products:
+    Salbutamol: 3
