@@ -1388,16 +1388,16 @@
     Drink:
       effects:
       - !type:SatiateThirst
-        factor: 2.5
+        factor: 5
     Medicine:
       effects:
       - !type:HealthChange
         damage:
           groups:
-            Brute: -0.85
-            Burn: -0.65
+            Brute: -0.5
+            Burn: -0.5
       - !type:ModifyBloodLevel
-        amount: 3.25
+        amount: 5
       - !type:HealthChange
         conditions:
           - !type:ReagentThreshold
