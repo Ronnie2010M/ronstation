@@ -63,3 +63,21 @@ reagent-desc-uranium = A grey metallic chemical element in the actinide series, 
 
 reagent-name-zinc = zinc
 reagent-desc-zinc = A silvery, brittle metal, often used in batteries to carry charge.
+
+reagent-name-platinum = platinum
+reagent-desc-platinum = A soft, malleable, ductile silvery-metal. Used in jewelry and electronics.
+
+reagent-name-calcium = calcium
+reagent-desc-calcium = Also found in your bones. Extremely reactive to air and water.
+
+reagent-name-magnesium = magnesium
+reagent-desc-magnesium = A grey-ish in color, alkaline metal. Your body requires it for maintenance.
+
+reagent-name-barium = barium
+reagent-desc-barium = A soft, silvery, alkaline metal. Highly reactive and toxic.
+
+reagent-name-bromine = bromine
+reagent-desc-bromine = A brownish-red in color, gaseous carcinogenic. Highly reactive.
+
+reagent-name-helium = helium
+reagent-desc-helium = One of the coldest gases in the whole entire universe, it has no color, no taste. Now in liquid form!
