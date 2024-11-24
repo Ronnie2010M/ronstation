@@ -1475,6 +1475,7 @@
   physicalDesc: reagent-physical-desc-opaque
   flavor: bitter
   color: "white"
+  metabolismRate: 0.1
   metabolisms:
     Medicine:
       effects:
