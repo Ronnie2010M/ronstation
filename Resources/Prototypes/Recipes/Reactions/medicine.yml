@@ -674,7 +674,7 @@
     SalineGlucose: 3
 
 - type: reaction
-  id: SalicyclicAcid
+  id: Salicyclic
   impact: medium
   reactants:
     Phenol:
