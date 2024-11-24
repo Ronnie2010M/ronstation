@@ -675,6 +675,7 @@
 
 - type: reaction
   id: SalicyclicAcid
+  impact: medium
   reactants:
     Phenol:
       amount: 1
@@ -691,6 +692,7 @@
 
 - type: reaction
   id: Salbutamol
+  impact: high
   reactants:
     SalicyclicAcid:
       amount: 1
