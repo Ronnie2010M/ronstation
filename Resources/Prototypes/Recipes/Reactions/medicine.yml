@@ -701,5 +701,7 @@
       amount: 1
     Bromine:
       amount: 1
+    Lithium: 
+      amount: 1
   products:
     Salbutamol: 3
