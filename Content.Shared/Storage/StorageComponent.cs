@@ -169,6 +169,20 @@ namespace Content.Shared.Storage
         }
     }
 
+        [Serializable, NetSerializable] // Ronstation.
+    public sealed class StorageRemoveItemEvent : EntityEventArgs
+    {
+        public readonly NetEntity ItemEnt;
+
+        public readonly NetEntity StorageEnt;
+
+        public StorageRemoveItemEvent(NetEntity itemEnt, NetEntity storageEnt)
+        {
+            ItemEnt = itemEnt;
+            StorageEnt = storageEnt;
+        }
+    } // Ronstation.
+
     [Serializable, NetSerializable]
     public sealed class StorageInsertItemIntoLocationEvent : EntityEventArgs
     {
