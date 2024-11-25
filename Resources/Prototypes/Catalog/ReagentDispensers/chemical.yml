@@ -26,7 +26,6 @@
   - JugMagnesium
   - JugBarium
   - JugBromine
-  - JugHelium
 
 - type: reagentDispenserInventory
   id: EmptyInventory
