@@ -1379,8 +1379,8 @@
 - type: reagent
   id: SalineGlucose
   name: reagent-name-saline-glucose
-  desc: reagent-desc-saline-glucose
   group: Medicine
+  desc: reagent-desc-saline-glucose
   physicalDesc: reagent-physical-desc-milky
   flavor: sweet
   color: "#c3d2e0"
@@ -1388,16 +1388,16 @@
     Drink:
       effects:
       - !type:SatiateThirst
-        factor: 2.5
+        factor: 5
     Medicine:
       effects:
       - !type:HealthChange
         damage:
           groups:
-            Brute: -0.85
-            Burn: -0.65
+            Brute: -0.5
+            Burn: -0.5
       - !type:ModifyBloodLevel
-        amount: 3.25
+        amount: 5
       - !type:HealthChange
         conditions:
           - !type:ReagentThreshold
@@ -1405,7 +1405,7 @@
         damage:
           types:
             Asphyxiation: 0.10
-      - !type:MovespeedModifier #too many electrolytes leads to fatigue
+      - !type:MovespeedModifier
         conditions:
           - !type:ReagentThreshold
             min: 20
@@ -1415,8 +1415,8 @@
 - type: reagent
   id: Ipecybin
   name: reagent-name-ipecybin
-  desc: reagent-desc-ipecybin
   group: Medicine
+  desc: reagent-desc-ipecybin
   physicalDesc: reagent-physical-desc-pungent
   flavor: bitter
   color: "#577178"
@@ -1426,10 +1426,76 @@
       - !type:HealthChange
         damage:
           groups:
-            Toxin: -0.65
-            Airloss: -0.45
-            Brute: -0.25
+            Toxin: -0.50
+            Airloss: -0.50
+            Brute: -0.50
       - !type:ChemVomit
         conditions:
           - !type:ReagentThreshold
-            min: 12.5
+            min: 10
+
+- type: reagent
+  id: SalicyclicAcid
+  name: reagent-name-salicyclic-acid
+  group: Medicine
+  desc: reagent-desc-salicyclic-acid
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: bitter
+  color: "white"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -4
+        conditions:
+        - !type:TotalDamage
+          min: 25
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -0.5
+        conditions:
+        - !type:TotalDamage
+          max: 25
+      - !type:HealthChange
+        conditions:
+          - !type:ReagentThreshold
+            min: 25
+        damage:
+          groups:
+            Brute: 4
+
+- type: reagent
+  id: Salbutamol
+  name: reagent-name-salbutamol
+  group: Medicine
+  desc: reagent-desc-salbutamol
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: bitter
+  color: "white"
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.1
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -1.5
+      - !type:HealthChange
+        conditions:
+        - !type:MobStateCondition
+          mobstate: Critical
+        damage:
+          groups:
+            Airloss: -4
+            Brute: -0.5
+      - !type:HealthChange
+        conditions:
+          - !type:ReagentThreshold
+            min: 25
+        damage:
+          groups:
+            Brute: 1
+            Toxin: 1

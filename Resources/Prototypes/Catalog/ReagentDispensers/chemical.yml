@@ -21,6 +21,12 @@
   - JugSilicon
   - JugSodium
   - JugSulfur
+  - JugPlatinum
+  - JugCalcium
+  - JugMagnesium
+  - JugBarium
+  - JugBromine
+  - JugHelium
 
 - type: reagentDispenserInventory
   id: EmptyInventory

@@ -443,3 +443,93 @@
         reagents:
         - ReagentId: WeldingFuel
           Quantity: 200
+
+- type: entity
+  parent: Jug
+  suffix: platinum
+  id: JugPlatinum
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    currentLabel: reagent-name-platinum
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Platinum
+          Quantity: 200
+
+- type: entity
+  parent: Jug
+  suffix: calcium
+  id: JugCalcium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    currentLabel: reagent-name-calcium
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Calcium
+          Quantity: 200
+
+- type: entity
+  parent: Jug
+  suffix: magnesium
+  id: JugMagnesium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    currentLabel: reagent-name-magnesium
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Magnesium
+          Quantity: 200
+
+- type: entity
+  parent: Jug
+  suffix: barium
+  id: JugBarium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    currentLabel: reagent-name-barium
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Barium
+          Quantity: 200
+
+- type: entity
+  parent: Jug
+  suffix: bromine
+  id: JugBromine
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    currentLabel: reagent-name-bromine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Bromine
+          Quantity: 200
+
+- type: entity
+  parent: Jug
+  suffix: helium
+  id: JugHelium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    currentLabel: reagent-name-helium
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Helium
+          Quantity: 200
