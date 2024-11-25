@@ -27,7 +27,6 @@
     JugMagnesium: 1
     JugBarium: 1
     JugBromine: 2
-    JugHelium: 2
   emaggedInventory:
     ToxinChemistryBottle: 1
 
@@ -61,7 +60,6 @@
     JugMagnesium: 2
     JugBarium: 2
     JugBromine: 2
-    JugHelium: 1
   emaggedInventory:
     PaxChemistryBottle: 3
     MuteToxinChemistryBottle: 3
