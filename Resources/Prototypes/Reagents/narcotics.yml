@@ -516,3 +516,36 @@
           groups:
             Brute: -0.15
             Burn: -0.15
+
+- type: reagent
+  id: Caffeine
+  name: reagent-name-caffeine
+  group: Narcotics
+  desc: reagent-desc-caffeine
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: bitter
+  color: "white"
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          max: 30
+        damage:
+          types:
+            Poison: 1.5
+    Narcotic:
+      effects:
+      - !type:Jitter
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.05
+        sprintSpeedModifier: 1.05
+      - !type:PopupMessage
+        conditions:
+        - !type:ReagentThreshold
+          max: 30
+        visualType: Medium
+        messages: ["ephedrine-effect-tight-pain", "ephedrine-effect-heart-pounds"]
+        type: Local
+        probability: 0.03
