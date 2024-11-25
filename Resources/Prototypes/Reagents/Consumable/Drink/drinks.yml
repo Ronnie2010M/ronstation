@@ -46,6 +46,9 @@
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.05
+      - !type:AdjustReagent
+        reagent: Caffeine
+        amount: 0.05
 
 - type: reagent
   id: Cream
@@ -112,6 +115,9 @@
         key: Drowsiness
         time: 2.0
         type: Remove
+      - !type:AdjustReagent
+        reagent: Caffeine
+        amount: 0.10
 
 - type: reagent
   id: GreenTea
@@ -170,6 +176,9 @@
         key: Drowsiness
         time: 2.0
         type: Remove
+      - !type:AdjustReagent
+        reagent: Caffeine
+        amount: 0.05
 
 - type: reagent
   id: IcedGreenTea
@@ -207,6 +216,9 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Theobromine
+        amount: 0.05
+      - !type:AdjustReagent
+        reagent: Caffeine
         amount: 0.05
 
 - type: reagent
@@ -409,6 +421,9 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Theobromine
+        amount: 0.05
+      - !type:AdjustReagent
+        reagent: Caffeine
         amount: 0.05
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/teaglass.rsi
