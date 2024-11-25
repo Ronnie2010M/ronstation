@@ -432,13 +432,3 @@
         damage:
           types:
             Poison: 3
-
-- type: reagent
-  id: Helium
-  name: reagent-name-helium
-  group: Elements
-  desc: reagent-desc-helium
-  physicalDesc: reagent-physical-desc-gaseous
-  color: "#c1c2c3"
-  meltingPoint: 0.95
-  boilingPoint: 4.22
