@@ -526,6 +526,7 @@
   flavor: bitter
   color: "white"
   metabolisms:
+  metabolismRate: 0.1
     Poison:
       effects:
       - !type:HealthChange
@@ -535,6 +536,13 @@
         damage:
           types:
             Poison: 1.5
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Animal
+        damage:
+          types:
+            Poison: 0.5
     Narcotic:
       effects:
       - !type:Jitter
