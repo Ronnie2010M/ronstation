@@ -676,19 +676,18 @@
 - type: reaction
   id: SalicyclicAcid
   impact: medium
+  minTemp: 373.15
   reactants:
-    Phenol:
-      amount: 1
     Sodium:
+      amount: 1
+    Phenol:
       amount: 1
     Carbon:
       amount: 1
     Oxygen:
       amount: 1
-    SulfuricAcid:
-      amount: 1
   products:
-    SalicylicAcid: 3
+    SalicyclicAcid: 3
 
 - type: reaction
   id: Salbutamol
@@ -696,13 +695,11 @@
   reactants:
     SalicyclicAcid:
       amount: 1
-    Ammonia:
+    Phenol:
       amount: 1
-    Aluminium:
+    Oxygen:
       amount: 1
     Bromine:
-      amount: 1
-    Lithium:
       amount: 1
   products:
     Salbutamol: 3
