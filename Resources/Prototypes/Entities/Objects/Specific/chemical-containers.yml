@@ -518,3 +518,18 @@
         reagents:
         - ReagentId: Bromine
           Quantity: 200
+
+- type: entity
+  parent: Jug
+  suffix: helium
+  id: JugHelium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    currentLabel: reagent-name-helium
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Helium
+          Quantity: 200
