@@ -78,6 +78,3 @@ reagent-desc-barium = A soft, silvery, alkaline metal. Highly reactive and toxic
 
 reagent-name-bromine = bromine
 reagent-desc-bromine = A brownish-red in color, gaseous carcinogenic. Highly reactive.
-
-reagent-name-helium = helium
-reagent-desc-helium = One of the coldest gases in the whole entire universe, it has no color, no taste. Now in liquid form!
