@@ -1,7 +1,7 @@
 - type: gameMap
   id: Saltern-3
   mapName: 'Saltern'
-  mapPath: C:\Users\SiriusFrost\OneDrive\Desktop\ronstation\Resources\Maps\Ronstation\saltern-3.yml
+  mapPath: Resources\Maps\Ronstation\saltern-3.yml
   minPlayers: 0
   maxPlayers: 35
   fallback: true
