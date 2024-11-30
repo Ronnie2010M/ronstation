@@ -1114,7 +1114,8 @@ entities:
             2: 136
           -11,1:
             2: 546
-            0: 2184
+            0: 136
+            3: 2048
           -11,3:
             2: 60078
           -11,4:
@@ -6649,7 +6650,7 @@ entities:
       pos: 31.5,23.5
       parent: 31
     - type: Door
-      secondsUntilStateChange: -30875.318
+      secondsUntilStateChange: -34178.78
       state: Opening
     - type: DeviceLinkSource
       linkedPorts:
@@ -7123,7 +7124,7 @@ entities:
       pos: 26.5,-19.5
       parent: 31
     - type: Door
-      secondsUntilStateChange: -12198.343
+      secondsUntilStateChange: -15501.803
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9181,13 +9182,6 @@ entities:
       parent: 31
 - proto: BoxBodyBag
   entities:
-  - uid: 8052
-    components:
-    - type: Transform
-      parent: 7731
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
   - uid: 10548
     components:
     - type: Transform
@@ -9438,41 +9432,6 @@ entities:
       parent: 31
 - proto: BoxMRE
   entities:
-  - uid: 857
-    components:
-    - type: Transform
-      parent: 792
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1131
-    components:
-    - type: Transform
-      parent: 792
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1229
-    components:
-    - type: Transform
-      parent: 792
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1299
-    components:
-    - type: Transform
-      parent: 792
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4900
-    components:
-    - type: Transform
-      parent: 792
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
   - uid: 7434
     components:
     - type: Transform
@@ -29612,23 +29571,6 @@ entities:
     - type: Transform
       pos: 24.491184,-6.41413
       parent: 31
-- proto: CheapRollerBedSpawnFolded
-  entities:
-  - uid: 7105
-    components:
-    - type: Transform
-      pos: -40.5,4.5
-      parent: 31
-  - uid: 7726
-    components:
-    - type: Transform
-      pos: -41.5,4.5
-      parent: 31
-  - uid: 12401
-    components:
-    - type: Transform
-      pos: -42.5,4.5
-      parent: 31
 - proto: CheckerBoard
   entities:
   - uid: 10764
@@ -31792,55 +31734,6 @@ entities:
     - type: Transform
       pos: 1.5,-42.5
       parent: 31
-- proto: CrateMedicalSecure
-  entities:
-  - uid: 792
-    components:
-    - type: MetaData
-      name: M.R.E. Crate
-    - type: Transform
-      pos: -43.5,5.5
-      parent: 31
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 857
-          - 1131
-          - 1229
-          - 1299
-          - 4900
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-  - uid: 5898
-    components:
-    - type: MetaData
-      name: EMT Crate
-    - type: Transform
-      pos: -43.5,6.5
-      parent: 31
-  - uid: 7731
-    components:
-    - type: MetaData
-      name: Body Bags Crate
-    - type: Transform
-      pos: -43.5,4.5
-      parent: 31
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 8052
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: CrateMedicalSurgery
   entities:
   - uid: 7264
@@ -32528,7 +32421,9 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 16.5,-17.5
       parent: 31
-  - uid: 12395
+- proto: DefibrillatorCabinetOpen
+  entities:
+  - uid: 1229
     components:
     - type: Transform
       pos: -42.5,7.5
@@ -55579,20 +55474,26 @@ entities:
     - type: Transform
       pos: -11.5,13.5
       parent: 31
-- proto: LockerWallMedicalDoctorFilled
+- proto: LockerWallMedical
   entities:
-  - uid: 12393
+  - uid: 792
     components:
     - type: Transform
       pos: -40.5,7.5
       parent: 31
-- proto: LockerWallMedicalFilled
-  entities:
-  - uid: 12394
+    - type: Lock
+      locked: False
+    - type: EntityStorage
+      open: True
+  - uid: 857
     components:
     - type: Transform
       pos: -41.5,7.5
       parent: 31
+    - type: Lock
+      locked: False
+    - type: EntityStorage
+      open: True
 - proto: LockerWardenFilledHardsuit
   entities:
   - uid: 5
@@ -56545,6 +56446,52 @@ entities:
     - type: Transform
       pos: 14.22177,12.601002
       parent: 31
+  - uid: 1131
+    components:
+    - type: Transform
+      pos: -38.541138,6.5351357
+      parent: 31
+    - type: Paper
+      stampState: paper_stamp-centcom
+      stampedBy:
+      - stampedColor: '#006600FF'
+        stampedName: stamp-component-stamped-name-centcom
+      content: >-
+        [color=#19196E]█▄ █ ▀█▀
+
+        █ ▀█     █     NT14 Saltern Station LV-361[/color]
+
+        ──────────────────────────────────────
+             [head=2]NOTICE FROM [color=#5A815A]CENTRAL COMMAND[/head][/color]
+
+        To: All NT14 Saltern Station Personnel
+
+        From: Central Command
+
+        Subject: Budget Cuts
+
+
+        To Whom It May Concern,
+
+
+        Central Command, as the governing administrative body overseeing all Nanotrasen Corporation space operations and installations, is issuing this notice to inform you of upcoming budget cuts that will impact station operations.
+
+
+        Pioneering the future of space commerce, The Nanotrasen Corporation has always been your gateway to the stars. Leading the way in galactic trade, the Nanotrasen Corporation is where space meets opportunity to empower your interstellar ambitions. Navigating the cosmos with excellence and building bridges across the universe - we're charting new frontiers together as your trusted partner in space.
+
+
+        That is why, effective immediately, all space installations owned and operated by the Nanotrasen Corporation will be required to supply their evacuation centres with the medical supplies necessary for their function as part of our Orbital Optimization and Astro-Efficiency program. Central Command, and by extension the Nanotrasen Corporation, will no longer be providing standardized medical supplies for these designated emergency areas. Station commanders are expected to allocate appropriate funds from their local budgets to ensure their evacuation centres are fully equipped and ready for any potential emergencies.
+
+
+        As the galactic market leader in interstellar innovation, we trust that this will not be an inconvenience, as our stellar service relies on a zero-gravity growth these budget cuts are necessary to maintain the Nanotrasen Corporation's competitive edge in the space commerce industry. We expect all Nanotrasen facilities to comply with this directive without disruption to operations.
+
+
+        For any questions or concerns regarding the implementation of this policy, please contact your regional Central Command liaison.
+
+
+        Thank you for your continued service and dedication to the Nanotrasen Corporation.
+
+        ──────────────────────────────────────
   - uid: 2170
     components:
     - type: Transform
@@ -56610,51 +56557,6 @@ entities:
       parent: 12397
     - type: Physics
       canCollide: False
-  - uid: 12400
-    components:
-    - type: Transform
-      pos: -38.540756,6.531702
-      parent: 31
-    - type: Paper
-      stampState: paper_stamp-centcom
-      stampedBy:
-      - stampedColor: '#006600FF'
-        stampedName: stamp-component-stamped-name-centcom
-      content: >-
-        [color=#19196E]█▄ █ ▀█▀
-
-        █ ▀█     █     NT14 Saltern Station LV-361[/color]
-
-        ──────────────────────────────────────
-             [head=2]NOTICE FROM [color=#5A815A]CENTRAL COMMAND[/head][/color]
-
-        To: All NT14 Saltern Station Personnel
-
-        From: Central Command
-
-
-        Subject: Budget Cuts
-
-
-
-        To Whom It May Concern,
-
-
-        Central Command, as the governing administrative body overseeing all Nanotrasen space operations and stations, is issuing this notice to inform you of upcoming budget cuts that will impact station operations.
-
-
-        Effective immediately, all space installations and owned and operated by the Nanotrasen Corporation will be required to supply their evacuation centres with the comprehensive medical supplies necessary for their function - Central Command will no longer be fully and generously providing standardized medical supplies for these designated emergency areas. Station commanders are expected to allocate appropriate funds from their local budgets to ensure their evacuation centres are fully equipped and ready for any potential emergencies.
-
-
-        We trust this will not be an inconvenience, given how recently new, critical emergency amenities were added to your stations alongisde your designated evacuation centres. These budget cuts are necessary to maintain the Nanotrasen Corporation's competitive edge in the space commerce industry. We expect all Nanotrasen facilities to comply with this directive without disruption to operations.
-
-
-        For any questions or concerns regarding the implementation of this policy, please contact your regional Central Command liaison. 
-
-
-        Thank you for your continued service and dedication to Nanotrasen.
-
-        ──────────────────────────────────────
 - proto: ParchisBoard
   entities:
   - uid: 2501
