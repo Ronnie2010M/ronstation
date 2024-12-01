@@ -616,7 +616,7 @@
 - type: reaction
   id: Glycerol
   reactants:
-    CornOil:
+    Oil:
       amount: 3
     SulfuricAcid:
       amount: 1
