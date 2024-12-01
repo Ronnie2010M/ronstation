@@ -86,4 +86,4 @@ reagent-name-almitricin = almitricin
 reagent-desc-almitricin = A toxin present in common space mushrooms.
 
 reagent-name-cyanide = cyanide
-reagent-desc-cyanide = Reeks of almonds, do not ingest!
+reagent-desc-cyanide = Also known as sodium cyanide, extremely toxic. Reeks of almonds.
