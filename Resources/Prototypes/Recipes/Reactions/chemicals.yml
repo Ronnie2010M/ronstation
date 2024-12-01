@@ -617,8 +617,8 @@
   id: Glycerol
   reactants:
     CornOil:
-      amount: 2
+      amount: 3
     SulfuricAcid:
       amount: 1
   products:
-    Glycerol: 3
+    Glycerol: 1
