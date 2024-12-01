@@ -64,8 +64,8 @@ namespace Content.IntegrationTests.Tests
             "Cog",
             "Saltern2",
             "Cluster2",
-            "Atlas2"
-			"Saltern-3"
+            "Atlas2",
+			"Saltern-3",
         };
 
         /// <summary>
