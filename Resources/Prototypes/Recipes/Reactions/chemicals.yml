@@ -612,3 +612,13 @@
       amount: 1
   products:
     NitricAcid: 3
+
+- type: reaction
+  id: Glycerol
+  reactants:
+    CornOil:
+      amount: 2
+    SulfuricAcid:
+      amount: 1
+  products:
+    Glycerol: 3
