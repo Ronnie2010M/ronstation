@@ -594,8 +594,6 @@
       amount: 1
     Ethanol:
       amount: 1
-    Oxygen:
-      amount: 1
     Carbon:
       amount: 1
   products:
