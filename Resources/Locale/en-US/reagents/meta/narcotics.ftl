@@ -44,4 +44,4 @@ reagent-name-bath-salts = bath salts
 reagent-desc-bath-salts = A drug that is used to reduce inflammation and relax the user, though it is misused and is recreationally used by spessmen.
 
 reagent-name-caffeine = caffeine
-reagent-desc-caffeine = A non-sythentic stimulant found in biological such as tea or coffee. Also found in the metabolisms of paper pushers.
+reagent-desc-caffeine = A non-sythentic stimulant found in tea and coffee. Also found in the metabolisms of paper pushers.
