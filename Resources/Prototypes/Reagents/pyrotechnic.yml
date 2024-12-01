@@ -178,3 +178,26 @@
   color: "#9e6b38"
   boilingPoint: 190.0 # Perfluorooctanoic Acid.
   meltingPoint: 45.0
+
+- type: reagent
+  id: Nitroglycerin
+  name: reagent-name-nitroglycerin
+  parent: BasePyrotechnic
+  desc: reagent-desc-nitroglycerin
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: sweet
+  color: "#808080"
+  boilingPoint: 491.3
+  meltingPoint: 285.9
+  tileReactions:
+  - !type:FlammableTileReaction {}
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1
+            Caustic: 3.5
+      - !type:FlammableReaction
+        multiplier: 1
