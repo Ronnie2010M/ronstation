@@ -1375,6 +1375,9 @@
       - !type:AdjustReagent
         reagent: MindbreakerToxin
         amount: -3.0
+      - !type:AdjustReagent
+        reagent: Morphine
+        amount: -3.0
 
 - type: reagent
   id: SalineGlucose
@@ -1441,28 +1444,28 @@
   desc: reagent-desc-salicyclic-acid
   physicalDesc: reagent-physical-desc-opaque
   flavor: bitter
-  color: "white"
+  color: "#f2f7f7"
   metabolisms:
     Medicine:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:TotalDamage
+          min: 25.01
         damage:
           groups:
             Brute: -4
-        conditions:
-        - !type:TotalDamage
-          min: 25
       - !type:HealthChange
-        damage:
-          groups:
-            Brute: -0.5
         conditions:
         - !type:TotalDamage
           max: 25
+        damage:
+          groups:
+            Brute: -0.5
       - !type:HealthChange
         conditions:
           - !type:ReagentThreshold
-            min: 25
+            min: 15
         damage:
           groups:
             Brute: 4
@@ -1474,7 +1477,7 @@
   desc: reagent-desc-salbutamol
   physicalDesc: reagent-physical-desc-opaque
   flavor: bitter
-  color: "white"
+  color: "#d5dbdb"
   metabolisms:
     Medicine:
       metabolismRate: 0.1
@@ -1482,7 +1485,7 @@
       - !type:HealthChange
         damage:
           groups:
-            Brute: -1.5
+            Brute: -1
       - !type:HealthChange
         conditions:
         - !type:MobStateCondition
@@ -1494,8 +1497,48 @@
       - !type:HealthChange
         conditions:
           - !type:ReagentThreshold
-            min: 25
+            min: 20
         damage:
           groups:
             Brute: 1
             Toxin: 1
+
+- type: reagent
+  id: Morphine
+  name: reagent-name-morphine
+  group: Medicine
+  desc: reagent-desc-morphine
+  physicalDesc: reagent-physical-desc-milky
+  flavor: bitter
+  color: "#fafafa"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+        damage:
+          groups:
+            Toxin: 1
+      - !type:MovespeedModifier
+        conditions:
+        - !type:TotalDamage
+          min: 15
+        walkSpeedModifier: 1
+        sprintSpeedModifier: 1
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        component: Drowsiness
+        time: 5
+        type: Add
+        refresh: false
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 5
+        refresh: false
