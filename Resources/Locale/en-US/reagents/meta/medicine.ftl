@@ -159,6 +159,3 @@ reagent-desc-salicyclic-acid = Efficiently restores brute damage. Causes brute d
 
 reagent-name-salbutamol = salbutamol
 reagent-desc-salbutamol = Restores airloss damage. Useful for people in critical condition.
-
-reagent-name-morphine = morphine
-reagent-desc-morphine = Used as a sedative. Kills your pain, addictive.
