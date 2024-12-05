@@ -602,7 +602,7 @@
 - type: reaction
   id: NitricAcid
   impact: Medium
-  minTemp: 480.1
+  minTemp: 480
   reactants:
     FluorosulfuricAcid:
       amount: 1
@@ -615,8 +615,9 @@
 
 - type: reaction
   id: Glycerol
+  impact: Low
   reactants:
-    Oil:
+    Cornoil:
       amount: 3
     SulfuricAcid:
       amount: 1
