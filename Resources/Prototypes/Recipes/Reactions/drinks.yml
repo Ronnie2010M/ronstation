@@ -747,7 +747,7 @@
   products:
     Moonshine: 3
 
- - type: reaction
+- type: reaction
   id: Neurotoxin
   reactants:
     GargleBlaster:
