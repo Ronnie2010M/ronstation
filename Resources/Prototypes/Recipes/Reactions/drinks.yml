@@ -749,8 +749,6 @@
 
  - type: reaction
   id: Neurotoxin
-  requiredMixerCategories:
-  - Shake
   reactants:
     GargleBlaster:
       amount: 1
