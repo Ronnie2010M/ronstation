@@ -492,7 +492,7 @@
   name: cabbage
   parent: FoodProduceBase
   id: FoodCabbage
-  description: Ewwwwwwwwww. Cabbage.
+  description: Yum, not yuck.
   components:
   - type: FlavorProfile
     flavors:
