@@ -6596,7 +6596,7 @@ entities:
       pos: 31.5,23.5
       parent: 31
     - type: Door
-      secondsUntilStateChange: -49561.047
+      secondsUntilStateChange: -52420.734
       state: Opening
     - type: DeviceLinkSource
       linkedPorts:
@@ -7070,7 +7070,7 @@ entities:
       pos: 26.5,-19.5
       parent: 31
     - type: Door
-      secondsUntilStateChange: -30884.068
+      secondsUntilStateChange: -33743.758
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9238,6 +9238,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -19.671114,-5.542589
       parent: 31
+  - uid: 7376
+    components:
+    - type: Transform
+      pos: 7.5,24.5
+      parent: 31
   - uid: 9048
     components:
     - type: Transform
@@ -9249,19 +9254,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: -14.940454,-39.485104
       parent: 31
-  - uid: 12419
+  - uid: 12414
     components:
     - type: Transform
-      pos: 7.5,24.5
+      pos: -2.5,24.5
       parent: 31
 - proto: BoxFolderBlue
   entities:
-  - uid: 1370
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -1.5,28.5
-      parent: 31
   - uid: 3947
     components:
     - type: Transform
@@ -9286,6 +9285,12 @@ entities:
     components:
     - type: Transform
       pos: 7.4773426,19.456753
+      parent: 31
+  - uid: 12415
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,28.5
       parent: 31
 - proto: BoxFolderClipboard
   entities:
@@ -24736,7 +24741,7 @@ entities:
       parent: 31
 - proto: CaptainIDCard
   entities:
-  - uid: 12435
+  - uid: 1370
     components:
     - type: Transform
       pos: 6.5,24.5
@@ -35288,11 +35293,11 @@ entities:
       parent: 31
 - proto: DrinkHotCoffee
   entities:
-  - uid: 981
+  - uid: 4919
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -1.0703499,28.449207
+      pos: -0.999118,28.460855
       parent: 31
   - uid: 10538
     components:
@@ -36144,13 +36149,13 @@ entities:
       parent: 31
     - type: FaxMachine
       name: hop's office
-  - uid: 12418
+- proto: FaxMachineCaptain
+  entities:
+  - uid: 763
     components:
     - type: Transform
       pos: 6.5,24.5
       parent: 31
-    - type: FaxMachine
-      name: Captain's Office
 - proto: filingCabinetDrawerRandom
   entities:
   - uid: 4637
@@ -37855,16 +37860,16 @@ entities:
     - type: Transform
       pos: -4.454084,13.160239
       parent: 31
-  - uid: 1092
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -0.49179482,28.652332
-      parent: 31
   - uid: 8989
     components:
     - type: Transform
       pos: -1.5376439,25.04381
+      parent: 31
+  - uid: 12418
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5300189,28.57023
       parent: 31
 - proto: FoodCondimentBottleEnzyme
   entities:
@@ -55671,13 +55676,6 @@ entities:
     - type: Physics
       canCollide: False
       bodyType: Static
-- proto: LuxuryPen
-  entities:
-  - uid: 12420
-    components:
-    - type: Transform
-      pos: 7.5,24.5
-      parent: 31
 - proto: MachineAnomalyGenerator
   entities:
   - uid: 6098
@@ -56826,6 +56824,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: -38.5,5.5
       parent: 31
+- proto: PenCap
+  entities:
+  - uid: 981
+    components:
+    - type: Transform
+      pos: 7.5,24.5
+      parent: 31
 - proto: PersonalAI
   entities:
   - uid: 7898
@@ -57440,14 +57445,6 @@ entities:
     - type: ContainerContainer
       containers:
         stash: !type:ContainerSlot {}
-  - uid: 763
-    components:
-    - type: Transform
-      pos: 0.5,26.5
-      parent: 31
-    - type: ContainerContainer
-      containers:
-        stash: !type:ContainerSlot {}
   - uid: 1068
     components:
     - type: Transform
@@ -57502,6 +57499,11 @@ entities:
     - type: ContainerContainer
       containers:
         stash: !type:ContainerSlot {}
+  - uid: 8386
+    components:
+    - type: Transform
+      pos: 0.5,23.5
+      parent: 31
   - uid: 8709
     components:
     - type: Transform
@@ -67277,6 +67279,11 @@ entities:
     - type: Transform
       pos: -1.5,25.5
       parent: 31
+  - uid: 1092
+    components:
+    - type: Transform
+      pos: 7.5,24.5
+      parent: 31
   - uid: 1419
     components:
     - type: Transform
@@ -67366,7 +67373,6 @@ entities:
   - uid: 4191
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 6.5,24.5
       parent: 31
   - uid: 4247
@@ -67378,12 +67384,6 @@ entities:
     components:
     - type: Transform
       pos: 9.5,-28.5
-      parent: 31
-  - uid: 4919
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 7.5,24.5
       parent: 31
   - uid: 5220
     components:
