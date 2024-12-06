@@ -22,6 +22,12 @@
     JugSodium: 2
     JugSugar: 3
     JugSulfur: 1
+    JugPlatinum: 2
+    JugCalcium: 1
+    JugMagnesium: 1
+    JugBarium: 1
+    JugBromine: 2
+    JugHelium: 2
   emaggedInventory:
     ToxinChemistryBottle: 1
 
@@ -50,6 +56,12 @@
     JugSugar: 3
     JugSulfur: 1
     JugWeldingFuel: 1
+    JugPlatinum: 1
+    JugCalcium: 2
+    JugMagnesium: 2
+    JugBarium: 2
+    JugBromine: 2
+    JugHelium: 1
   emaggedInventory:
     PaxChemistryBottle: 3
     MuteToxinChemistryBottle: 3

@@ -307,6 +307,12 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
                     _entity.GetNetEntity(storageEnt),
                     new ItemStorageLocation(DraggingRotation, position)));
             }
+            else
+            { // Ronstation.
+                _entity.RaisePredictiveEvent(new StorageRemoveItemEvent(
+                    _entity.GetNetEntity(draggingGhost.Entity),
+                    _entity.GetNetEntity(storageEnt)));
+            } // Ronstation.
 
             _menuDragHelper.EndDrag();
             _container?.BuildItemPieces();

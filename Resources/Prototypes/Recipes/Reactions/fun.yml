@@ -203,24 +203,11 @@
       entity: MaterialGunpowder
 
 - type: reaction
-  id: MonkeyPowder
-  impact: Low
-  reactants:
-    Protein:
-      amount: 2
-    Sugar:
-      amount: 2
-    Blood:
-      amount: 2
-  products:
-    MonkeyPowder: 4
-
-- type: reaction
   id: CatalaseYeast
   impact: Low
   reactants:
     HydrogenPeroxide:
-      amount: 0.5
+      amount: 1
     Mold:
       amount: 1
   effects:

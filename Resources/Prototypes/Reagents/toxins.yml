@@ -719,8 +719,8 @@
               Poison: 0.50
               Asphyxiation: 0.50
       - !type:MovespeedModifier
-        walkSpeedModifier: 0.85
-        sprintSpeedModifier: 0.85
+        walkSpeedModifier: 0.9
+        sprintSpeedModifier: 0.9
       - !type:Jitter
         conditions:
         - !type:ReagentThreshold
@@ -735,7 +735,7 @@
   desc: reagent-desc-cyanide
   group: Toxins
   flavor: bitter
-  color: "#5cd6d6"
+  color: "white"
   physicalDesc: reagent-physical-desc-acrid
   metabolisms:
     Poison:
@@ -743,9 +743,48 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
-          min: 4.2
         damage:
           types:
-            Poison: 0.65
-            Asphyxiation: 0.45
+            Poison: 1
+            Asphyxiation: 0.5
+
+- type: reagent
+  id: NitricAcid
+  name: reagent-name-nitric-acid
+  group: Toxins
+  desc: reagent-desc-nitric-acid
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: acid
+  color: "#9B7A01"
+  boilingPoint: 356
+  meltingPoint: 231
+  reactiveEffects:
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: true
+        ignoreResistances: false
+        damage:
+          types:
+            Caustic: 1.5
+      - !type:Emote
+        emote: Scream
+        probability: 0.25
+  metabolisms:
+    Poison:
+      metabolismRate: 0.4
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Caustic: 5
+      - !type:PopupMessage
+        type: Local
+        visualType: Large
+        messages: [ "generic-reagent-effect-burning-insides" ]
+        probability: 0.40
+      - !type:Emote
+        emote: Scream
+        probability: 0.25
+      - !type:Jitter

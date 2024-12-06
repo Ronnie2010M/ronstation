@@ -10,7 +10,7 @@ reagent-desc-stimulants = A chemical cocktail developed by Donk Co. that allows 
 reagent-name-experimental-stimulants = experimental stimulants
 reagent-desc-experimental-stimulants = A prototype version of hyperzine. Usage grants virtual immunity to stun weaponry, rapid tissue regeneration, extreme running speed by reducing lactic acid buildup, and a general feeling of euphoria. Side effects may include extreme levels of anticoagulation, tunnel vision, extreme toxin buildup in the bloodstream, and rapid liver death. Do not give to animals.
 
-reagent-name-thc = THC
+reagent-name-thc = tetrahydrocannabinol
 reagent-desc-thc = The main psychoactive compound in cannabis.
 
 reagent-name-bananadine = bananadine
@@ -42,3 +42,9 @@ reagent-desc-happiness = Fills you with ecstatic numbness and causes minor brain
 
 reagent-name-bath-salts = bath salts
 reagent-desc-bath-salts = A drug that is used to reduce inflammation and relax the user, though it is misused and is recreationally used by spessmen.
+
+reagent-name-caffeine = caffeine
+reagent-desc-caffeine = A non-sythentic stimulant found in tea and coffee. Also found in the metabolisms of paper pushers.
+
+reagent-name-morphine = morphine
+reagent-desc-morphine = The main active chemical compound found in the poppy plant.

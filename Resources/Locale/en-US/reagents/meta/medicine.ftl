@@ -152,4 +152,10 @@ reagent-name-saline-glucose = saline-glucose solution
 reagent-desc-saline-glucose = A solution made of saltwater and glucose, used for treating blunt force trauma, burn wounds and bloodloss.
 
 reagent-name-ipecybin = ipecybin
-reagent-desc-ipecybin = A bitter, pungent substance produced by fungi, used as an emetic and medicine. Reeks of garlic and almonds.
+reagent-desc-ipecybin = A bitter, pungent substance produced by fungi.
+
+reagent-name-salicyclic-acid = salicyclic acid
+reagent-desc-salicyclic-acid = Efficiently restores brute damage. Causes brute damage when overdosed.
+
+reagent-name-salbutamol = salbutamol
+reagent-desc-salbutamol = Restores airloss damage. Useful for people in critical condition.

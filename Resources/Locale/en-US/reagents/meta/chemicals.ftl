@@ -41,4 +41,7 @@ reagent-name-hydrogen-peroxide = hydrogen peroxide
 reagent-desc-hydrogen-peroxide = An ubiquitous chemical substance that is used in several applications.
 
 reagent-name-formaldehyde = formaldehyde
-reagent-desc-formaldehyde = A commonly used pesticide and plant remover, used in several applications.
+reagent-desc-formaldehyde = An ubiquitous chemical, used as an embalming agent and a pesticide.
+
+reagent-name-glycerol = glycerol
+reagent-desc-glycerol = A naturally occuring alcohol, used in several applications.

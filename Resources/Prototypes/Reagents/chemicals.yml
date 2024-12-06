@@ -191,7 +191,6 @@
   id: Calomel
   name: reagent-name-calomel
   desc: reagent-desc-calomel
-  group: Chemical 
   flavor: bitter
   color: "#6e4665"
   physicalDesc: reagent-physical-desc-odorless
@@ -209,7 +208,6 @@
   id: AmmoniatedMercury
   name: reagent-name-ammoniated-mercury
   desc: reagent-desc-ammoniated-mercury
-  group: Chemical
   flavor: metallic
   color: "#f2f0f0"
   physicalDesc: reagent-physical-desc-crystalline
@@ -238,7 +236,6 @@
   id: HydrogenPeroxide
   name: reagent-name-hydrogen-peroxide
   desc: reagent-desc-hydrogen-peroxide
-  group: Chemical
   flavor: bitter
   color: "#cdcdcd"
   boilingPoint: 302.36
@@ -270,7 +267,7 @@
   id: Formaldehyde
   name: reagent-name-formaldehyde
   desc: reagent-desc-formaldehyde
-  group: Chemical
+  group: Toxins
   color: "#b4004b"
   boilingPoint: 254.1
   meltingPoint: 181.2
@@ -289,7 +286,7 @@
       - !type:HealthChange
         damage:
           types:
-            Poison: 0.90
+            Poison: 1
   reactiveEffects:
     Acidic:
       methods: [ Touch ]
@@ -299,9 +296,16 @@
         ignoreResistances: false
         damage:
           types:
-            Caustic: 0.40
-            Heat: 0.20
-            Poison: 0.05
+            Caustic: 0.50
+            Heat: 0.10
       - !type:Emote
         emote: Scream
-        probability: 0.10
+        probability: 0.05
+
+- type: reagent
+  id: Glycerol
+  name: reagent-name-glycerol
+  desc: reagent-desc-glycerol
+  flavor: bitter
+  color: "#d3b913"
+  physicalDesc: reagent-physical-desc-odorless
