@@ -598,3 +598,28 @@
       amount: 1
   products:
     Formaldehyde: 3
+
+- type: reaction
+  id: NitricAcid
+  impact: Medium
+  minTemp: 480
+  reactants:
+    FluorosulfuricAcid:
+      amount: 1
+    HydrogenPeroxide:
+      amount: 1
+    Nitrogen:
+      amount: 1
+  products:
+    NitricAcid: 3
+
+- type: reaction
+  id: Glycerol
+  impact: Low
+  reactants:
+    Cornoil:
+      amount: 3
+    SulfuricAcid:
+      amount: 1
+  products:
+    Glycerol: 1

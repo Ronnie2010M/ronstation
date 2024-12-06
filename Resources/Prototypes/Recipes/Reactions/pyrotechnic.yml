@@ -73,3 +73,23 @@
     Ethanol: 5
     Hydrogen: 3
     Sulfur: 2
+
+- type: reaction
+  id: Nitroglycerin
+  impact: High
+  reactants:
+    NitricAcid:
+      amount: 1
+    SulfuricAcid:
+      amount: 1
+    Glycerol:
+      amount: 1
+  products:
+    Nitroglycerin: 3
+  effects:
+    - !type:ExplosionReactionEffect
+      explosionType: Default
+      maxIntensity: 250
+      intensityPerUnit: 7.5
+      intensitySlope: 5
+      maxTotalIntensity: 250

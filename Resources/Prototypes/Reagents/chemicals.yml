@@ -267,7 +267,7 @@
   id: Formaldehyde
   name: reagent-name-formaldehyde
   desc: reagent-desc-formaldehyde
-  group: Toxin
+  group: Toxins
   color: "#b4004b"
   boilingPoint: 254.1
   meltingPoint: 181.2
@@ -286,7 +286,7 @@
       - !type:HealthChange
         damage:
           types:
-            Poison: 0.90
+            Poison: 1
   reactiveEffects:
     Acidic:
       methods: [ Touch ]
@@ -296,9 +296,16 @@
         ignoreResistances: false
         damage:
           types:
-            Caustic: 0.40
-            Heat: 0.20
-            Poison: 0.05
+            Caustic: 0.50
+            Heat: 0.10
       - !type:Emote
         emote: Scream
-        probability: 0.10
+        probability: 0.05
+
+- type: reagent
+  id: Glycerol
+  name: reagent-name-glycerol
+  desc: reagent-desc-glycerol
+  flavor: bitter
+  color: "#d3b913"
+  physicalDesc: reagent-physical-desc-odorless
