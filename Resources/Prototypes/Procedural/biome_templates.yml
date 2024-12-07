@@ -147,6 +147,7 @@
         - FloraTreeLarge04
         - FloraTreeLarge05
         - FloraTreeLarge06
+        - Spaceshroom
     # Rock formations
     - !type:BiomeEntityLayer
       allowedTiles:
@@ -264,6 +265,7 @@
         - FloraRockSolid01
         - FloraRockSolid02
         - FloraRockSolid03
+        - Spaceshroom
     - !type:BiomeEntityLayer
       threshold: 0.2
       noise:
@@ -390,6 +392,7 @@
         - FloraTreeSnow04
         - FloraTreeSnow05
         - FloraTreeSnow06
+        - Spaceshroom
     # Rock formations
     - !type:BiomeEntityLayer
       allowedTiles:
@@ -485,6 +488,7 @@
         - ShadowTree04
         - ShadowTree05
         - ShadowTree06
+        - Spaceshroom
     # Rock formations
     - !type:BiomeEntityLayer
       threshold: -0.2
@@ -554,6 +558,7 @@
       - FloraStalagmite4
       - FloraStalagmite5
       - FloraStalagmite6
+      - Spaceshroom
     - !type:BiomeEntityLayer
       threshold: -0.5
       invert: true
@@ -607,6 +612,7 @@
         - FloraStalagmite4
         - FloraStalagmite5
         - FloraStalagmite6
+        - Spaceshroom
     - !type:BiomeEntityLayer
       threshold: -0.6
       invert: true
