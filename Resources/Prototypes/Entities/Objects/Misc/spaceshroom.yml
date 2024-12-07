@@ -3,7 +3,7 @@
   parent: BaseStructure
   id: Spaceshroom
   suffix: Structure
-  description: A cluster of wild mushrooms that evolved specifically to grow in low pressure, low oxygen, cold environments.
+  description: A cluster of wild mushrooms.
   components:
     - type: Sprite
       sprite: Objects/Misc/spaceshroom.rsi
@@ -48,7 +48,7 @@
   name: spaceshroom
   parent: FoodProduceBase
   id: FoodSpaceshroom
-  description: Wild space mushrooms.
+  description: Wild mushrooms.
   components:
   - type: Produce
   - type: Sprite
@@ -80,16 +80,27 @@
 - type: weightedRandomFillSolution
   id: RandomFillSpaceshroom
   fills:
-  - quantity: 10
-    weight: 10
+  - quantity: 12.5
+    weight: 5
     reagents:
+    - Nutriment
+    - Vitamin
     - SalineGlucose
+    - Mold
+    - SpaceDrugs
+  - quantity: 7.5
+    weight: 2.5
+    reagents:
+    - Psicodine
+    - NorepinephricAcid
+    - SalicyclicAcid
+    - Cyanide
     - Ipecybin
   - quantity: 5
-    weight: 3
+    weight: 1
     reagents:
-    - Almitricin
-    - Psicodine
+    - Omnizine
+    - Lexorin
 
 # Cooked Object
 - type: entity
