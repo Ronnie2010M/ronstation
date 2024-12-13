@@ -1161,6 +1161,11 @@
     - BioGenMilk
     - BioGenMilkSoy
     - BioGenEthanol
+    - BioGenNitrogen
+    - BioGenPhosphorus
+    - BioGenHydrogen
+    - BioGenOxygen
+    - BioGenPotassium
     - BioGenCream
     - BioGenBlackpepper
     - BioGenEnzyme
