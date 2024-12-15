@@ -1,0 +1,34 @@
+- type: preloadedGrid
+  id: ERTSec
+  path: /Maps/Ronstation/Shuttles/ERT-sec.yml
+  copies: 1
+
+- type: preloadedGrid
+  id: ERTMed
+  path: /Maps/Ronstation/Shuttles/ERT-med.yml
+  copies: 1
+
+- type: preloadedGrid
+  id: ERTEngi
+  path: /Maps/Ronstation/Shuttles/ERT-engi.yml
+  copies: 1
+
+- type: preloadedGrid
+  id: ERTCburn
+  path: /Maps/Ronstation/Shuttles/ERT-cburn.yml
+  copies: 1
+
+- type: preloadedGrid
+  id: ERTChap
+  path: /Maps/Ronstation/Shuttles/ERT-chap.yml
+  copies: 1
+
+- type: preloadedGrid
+  id: ERTMixed
+  path: /Maps/Ronstation/Shuttles/ERT-mixed.yml
+  copies: 1
+
+- type: preloadedGrid
+  id: ERTDeathsquad
+  path: /Maps/Ronstation/Shuttles/ERT-deathsquad.yml
+  copies: 1
