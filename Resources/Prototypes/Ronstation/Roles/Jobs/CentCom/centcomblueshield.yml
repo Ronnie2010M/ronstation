@@ -22,7 +22,7 @@
     eyes: ClothingEyesGlassesSunglasses
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterArmorBasic
-    back: ClothingBackpack
+    back: ClothingBackpackBlueshield
     id: CentcomBlueshieldPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
