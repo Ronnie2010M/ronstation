@@ -7,7 +7,7 @@
 - type: loadout
   id: BlueshieldHat
   equipment:
-    head: ClothingHeadHatBluehshieldsoft
+    head: ClothingHeadHatBlueshieldsoft
 
 - type: loadout
   id: BlueshieldBeret
