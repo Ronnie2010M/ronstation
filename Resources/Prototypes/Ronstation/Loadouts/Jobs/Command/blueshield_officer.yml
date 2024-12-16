@@ -1,3 +1,13 @@
+# Blueshield Shield
+- type: loadoutEffectGroup
+  id: BlueshieldMedalWorthy
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:RoleTimeRequirement
+        role: JobBlueshieldOfficer
+        time: 360000 #100 hrs
+
 # Head
 - type: loadout
   id: BlueshieldHelmet
@@ -29,17 +39,17 @@
 - type: loadout
   id: BlueshieldBackpack
   equipment:
-    back: ClothingBackpack
+    back: ClothingBackpackBlueshield
 
 - type: loadout
   id: BlueshieldSatchel
   equipment:
-    back: ClothingBackpackSatchel
+    back: ClothingBackpackSatchelBlueshield
 
 - type: loadout
   id: BlueshieldDuffel
   equipment:
-    back: ClothingBackpackDuffel
+    back: ClothingBackpackDuffelBlueshield
 
 # Outerclothing
 - type: loadout
@@ -63,3 +73,13 @@
   id: BlueshieldPDA
   equipment:
     id: BlueshieldPDA
+
+# Misc
+- type: loadout
+  id: BlueMedal
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: BlueshieldMedalWorthy
+  storage:
+    back:
+    - Dinkyshield
