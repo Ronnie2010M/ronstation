@@ -10,7 +10,7 @@
     head: ClothingHeadHatBluehshieldsoft
 
 - type: loadout
-  id: SecurityBeret
+  id: BlueshieldBeret
   equipment:
     head: ClothingHeadHatBeretBlueshield
 
