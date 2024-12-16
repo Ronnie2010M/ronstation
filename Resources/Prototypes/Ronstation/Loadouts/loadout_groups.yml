@@ -4,6 +4,8 @@
   minLimit: 0
   loadouts:
   - BlueshieldHelmet
+  - BlueshieldBeret
+  - BlueshieldHat
 
 - type: loadoutGroup
   id: BlueshieldJumpsuit
