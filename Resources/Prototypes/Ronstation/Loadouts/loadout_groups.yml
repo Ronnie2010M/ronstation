@@ -49,3 +49,10 @@
   name: loadout-group-blueshield-id
   loadouts:
   - BlueshieldPDA
+
+- type: loadoutGroup
+  id: BlueshieldMedal
+  name: loadout-group-blueshield-medal
+  minLimit: 0
+  loadouts:
+  - BlueMedal
