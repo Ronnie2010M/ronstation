@@ -39,7 +39,7 @@
   id: BlueshieldShoes
   name: loadout-group-blueshield-shoes
   loadouts:
-  - JackBoots
+  - BlueshieldCombatBoots
   - BlueshieldWinterBoots
 
 - type: loadoutGroup

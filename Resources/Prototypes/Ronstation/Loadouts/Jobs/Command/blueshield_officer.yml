@@ -4,6 +4,16 @@
   equipment:
     head: ClothingHeadHelmetBasic
 
+- type: loadout
+  id: BlueshieldHat
+  equipment:
+    head: ClothingHeadHatBluehshieldsoft
+
+- type: loadout
+  id: SecurityBeret
+  equipment:
+    head: ClothingHeadHatBeretBlueshield
+
 # Jumpsuit
 - type: loadout
   id: BlueshieldJumpsuitGrey
@@ -38,6 +48,11 @@
     outerClothing: ClothingOuterWinterCoat
 
 # Shoes
+- type: loadout
+  id: BlueshieldCombatBoots
+  equipment:
+    shoes: ClothingShoesBootsCombat
+
 - type: loadout
   id: BlueshieldWinterBoots
   equipment:

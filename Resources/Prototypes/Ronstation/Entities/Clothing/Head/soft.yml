@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatBlueshieldsoft
+  name: blueshield cap
+  description: It's a robust baseball hat in tasteful red colour.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/blueshieldsoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/blueshieldsoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatBlueshieldsoft]
+  id: ClothingHeadHatBlueshieldsoftFlipped
+  name: blueshield cap
