@@ -1,0 +1,8 @@
+- type: entity
+  parent: AirlockCommand
+  id: AirlockBlueshieldLocked
+  suffix: Blueshield, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBlueshield ]
