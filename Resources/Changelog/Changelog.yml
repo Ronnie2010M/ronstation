@@ -1,47 +1,4 @@
 ﻿Entries:
-- author: 12rabbits
-  changes:
-  - message: The guidebook now remembers where you left off when re-opened.
-    type: Tweak
-  id: 7218
-  time: '2024-08-26T23:06:54.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31375
-- author: Dimastra
-  changes:
-  - message: Fixed meat kudzu not dealing damage.
-    type: Fix
-  id: 7219
-  time: '2024-08-27T00:30:42.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31494
-- author: JIPDawg
-  changes:
-  - message: Gas miners are now indestructible, can be pulled and only anchored.
-    type: Tweak
-  id: 7220
-  time: '2024-08-27T00:48:04.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31370
-- author: SaphireLattice
-  changes:
-  - message: Safety Moth poster graphics for hardhats and pipes are no longer swapped
-      around
-    type: Fix
-  id: 7221
-  time: '2024-08-27T11:32:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31507
-- author: Winkarst-cpu
-  changes:
-  - message: Explosive ammunition is now marked as a contraband.
-    type: Fix
-  id: 7222
-  time: '2024-08-27T11:37:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31508
-- author: Winkarst-cpu
-  changes:
-  - message: Now the syndicate raid helmet is marked as a Syndicate contraband.
-    type: Fix
-  id: 7223
-  time: '2024-08-27T13:01:09.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31512
 - author: Winkarst-cpu
   changes:
   - message: The explorer gas mask is now restricted to the cargo.
@@ -3926,3 +3883,48 @@
   id: 7717
   time: '2024-12-16T17:53:39.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/31872
+- author: Beck Thompson
+  changes:
+  - message: Figures can now be activated with signals!
+    type: Add
+  id: 7718
+  time: '2024-12-16T18:52:09.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/32769
+- author: TheShuEd
+  changes:
+  - message: Christmas anomaly added
+    type: Add
+  - message: Christmas anomaly infection added
+    type: Add
+  id: 7719
+  time: '2024-12-16T19:23:32.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/33889
+- author: chromiumboy
+  changes:
+  - message: Added the atmospheric network monitor. Use these consoles to monitor
+      the network of pipes that supply the crew with a breathable atmosphere
+    type: Add
+  id: 7720
+  time: '2024-12-17T03:53:17.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/32294
+- author: TheShuEd
+  changes:
+  - message: Added new map Gate
+    type: Add
+  id: 7721
+  time: '2024-12-17T10:06:33.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/32032
+- author: pcaessayrs
+  changes:
+  - message: Anomaly hosts keep their anomaly when turning into a zombie.
+    type: Tweak
+  id: 7722
+  time: '2024-12-17T11:56:47.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/33867
+- author: TiniestShark
+  changes:
+  - message: Adds in-hand sprites to the Anomaly Scanner.
+    type: Add
+  id: 7723
+  time: '2024-12-17T13:35:29.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/33427
