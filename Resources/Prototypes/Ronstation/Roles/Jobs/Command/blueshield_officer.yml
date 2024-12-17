@@ -17,11 +17,23 @@
   supervisors: job-supervisors-centcom
   canBeAntag: false
   access:
-  - Command
+  - Bar
+  - Blueshield
   - Brig
-  - Maintenance
-  - External
+  - Cargo
+  - Chapel
+  - Command
   - Cryogenics
+  - Engineering
+  - External
+  - Hydroponics
+  - Janitor
+  - Kitchen
+  - Lawyer
+  - Maintenance
+  - Medical
+  - Service
+  - Theatre
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
