@@ -45,7 +45,7 @@
 - type: loadout
   id: BlueshieldOfficerWintercoat
   equipment:
-    outerClothing: ClothingOuterWinterCoat
+    outerClothing: ClothingOuterWinterBlueshield
 
 # Shoes
 - type: loadout
@@ -56,7 +56,7 @@
 - type: loadout
   id: BlueshieldWinterBoots
   equipment:
-    shoes: ClothingShoesBootsWinter
+    shoes: ClothingShoesBootsWinterBlueshield
 
 # PDA
 - type: loadout
