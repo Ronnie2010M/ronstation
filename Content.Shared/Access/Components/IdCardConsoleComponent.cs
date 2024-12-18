@@ -73,8 +73,7 @@ public sealed partial class IdCardConsoleComponent : Component
         "Salvage",
         "Security",
         "Service",
-        "Theatre",
-        "Blueshield" // Ronstation
+        "Theatre"
     };
 
     [Serializable, NetSerializable]
