@@ -1,25 +1,4 @@
 ﻿Entries:
-- author: Winkarst-cpu
-  changes:
-  - message: Now AKMS is restricted to the security department.
-    type: Fix
-  id: 7228
-  time: '2024-08-27T16:54:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31519
-- author: metalgearsloth
-  changes:
-  - message: Added warp points for AI.
-    type: Add
-  id: 7229
-  time: '2024-08-28T05:58:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31559
-- author: metalgearsloth
-  changes:
-  - message: Fix AI being ejectable.
-    type: Fix
-  id: 7230
-  time: '2024-08-28T07:09:05.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31561
 - author: metalgearsloth
   changes:
   - message: Fix whitelist
@@ -3929,3 +3908,25 @@
   id: 7727
   time: '2024-12-18T11:26:19.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/32694
+- author: MilenVolf
+  changes:
+  - message: Clicking on a buckled mob now unbuckles it, rather than hugging/petting
+      it.
+    type: Fix
+  id: 7728
+  time: '2024-12-18T14:26:58.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/33635
+- author: SlamBamActionman
+  changes:
+  - message: Slimes no longer deal Cellular damage.
+    type: Tweak
+  id: 7729
+  time: '2024-12-18T15:05:16.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/33104
+- author: Redbookcase
+  changes:
+  - message: Standardized Mercenary gear's contraband status.
+    type: Tweak
+  id: 7730
+  time: '2024-12-18T15:13:40.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/33647
