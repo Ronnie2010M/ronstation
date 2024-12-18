@@ -40,6 +40,10 @@
     {
       "name": "BLUESHIELD-inhand-left",
       "directions": 4
+    },
+    {
+      "name": "BLUESHIELD-inhand-right",
+      "directions": 4
     }
   ]
 }
