@@ -17,11 +17,23 @@
   supervisors: job-supervisors-centcom
   canBeAntag: false
   access:
-  - Command
+  - Bar
+  - Blueshield
   - Brig
-  - Maintenance
-  - External
+  - Cargo
+  - Chapel
+  - Command
   - Cryogenics
+  - Engineering
+  - External
+  - Hydroponics
+  - Janitor
+  - Kitchen
+  - Lawyer
+  - Maintenance
+  - Medical
+  - Service
+  - Theatre
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -33,9 +45,11 @@
   id: BlueshieldOfficerGear
   equipment:
     eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetCommand
-    pocket1: WeaponPistolMk58
+    pocket1: WeaponDisabler
   storage:
     back:
     - Flash
+    - WeaponPistolMk58
     - MagazinePistol

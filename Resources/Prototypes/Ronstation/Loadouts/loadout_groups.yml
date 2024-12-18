@@ -4,6 +4,8 @@
   minLimit: 0
   loadouts:
   - BlueshieldHelmet
+  - BlueshieldBeret
+  - BlueshieldHat
 
 - type: loadoutGroup
   id: BlueshieldJumpsuit
@@ -41,7 +43,7 @@
   id: BlueshieldShoes
   name: loadout-group-blueshield-shoes
   loadouts:
-  - JackBoots
+  - BlueshieldCombatBoots
   - BlueshieldWinterBoots
 
 - type: loadoutGroup
@@ -49,3 +51,10 @@
   name: loadout-group-blueshield-id
   loadouts:
   - BlueshieldPDA
+
+- type: loadoutGroup
+  id: BlueshieldMedal
+  name: loadout-group-blueshield-medal
+  minLimit: 0
+  loadouts:
+  - BlueMedal

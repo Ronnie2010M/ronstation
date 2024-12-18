@@ -22,13 +22,14 @@
     eyes: ClothingEyesGlassesSunglasses
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterArmorBasic
-    back: ClothingBackpack
+    back: ClothingBackpackBlueshield
     id: CentcomBlueshieldPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
     pocket1: Flash
-    pocket2: WeaponPistolMk58
+    pocket2: WeaponDisabler
   storage:
     back:
+    - WeaponPistolMk58
     - MagazinePistol
     - MagazinePistol

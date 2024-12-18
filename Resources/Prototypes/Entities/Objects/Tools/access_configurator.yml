@@ -48,6 +48,7 @@
       - Security
       - Service
       - Theatre
+      - Blueshield # Ronstation
       privilegedIdSlot:
         name: id-card-console-privileged-id
         ejectSound: /Audio/Machines/id_swipe.ogg
@@ -120,6 +121,7 @@
     - NuclearOperative
     - SyndicateAgent
     - Wizard
+    - Blueshield # Ronstation
     privilegedIdSlot:
       name: id-card-console-privileged-id
       ejectSound: /Audio/Machines/id_swipe.ogg

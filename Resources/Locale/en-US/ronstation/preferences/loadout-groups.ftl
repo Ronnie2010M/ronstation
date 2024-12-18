@@ -7,3 +7,5 @@ loadout-group-blueshield-belt = Blueshield Belt
 loadout-group-blueshield-outerclothing = Blueshield outer clothing
 loadout-group-blueshield-shoes = Blueshield shoes
 loadout-group-blueshield-id = Blueshield ID
+
+loadout-group-blueshield-medal = Blueshield Medal
