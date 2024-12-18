@@ -6,6 +6,6 @@
   name: blueshield coat hood
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hoods/Coat/hoodblueshield.rsi
+    sprite: Ronstation/Clothing/Head/Hoods/Coat/hoodblueshield.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hoods/Coat/hoodblueshield.rsi
+    sprite: Ronstation/Clothing/Head/Hoods/Coat/hoodblueshield.rsi
