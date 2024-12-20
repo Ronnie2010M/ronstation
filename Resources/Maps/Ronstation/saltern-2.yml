@@ -67,7 +67,7 @@ entities:
           version: 6
         -1,0:
           ind: -1,0
-          tiles: PAAAAAAAPAAAAAAAPAAAAAAAPAAAAAAAPAAAAAAAWQAAAAAAdgAAAAAAdgAAAAAATAAAAAAATAAAAAAATAAAAAAAdgAAAAAAdgAAAAABdgAAAAAAdgAAAAADdgAAAAADPAAAAAAAPAAAAAAAPAAAAAAAPAAAAAAAPAAAAAAAWQAAAAADdgAAAAADdgAAAAAAdgAAAAACdgAAAAABdgAAAAAAdgAAAAADdgAAAAACdgAAAAAAdgAAAAADdgAAAAABeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAZAAAAAABZAAAAAADZAAAAAABeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACWQAAAAABWQAAAAADWQAAAAABWQAAAAABZAAAAAAAWQAAAAAAWQAAAAABWQAAAAACWQAAAAABWQAAAAACWQAAAAACWQAAAAABWQAAAAABWQAAAAABWQAAAAAATAAAAAAAWQAAAAADTAAAAAAATAAAAAAAWQAAAAAAZAAAAAAATAAAAAAAWQAAAAAATAAAAAAATAAAAAAAWQAAAAADTAAAAAAATAAAAAAAWQAAAAADWQAAAAADTAAAAAAAWQAAAAACWQAAAAAAWQAAAAACWQAAAAABWQAAAAADZAAAAAAAWQAAAAAAWQAAAAABWQAAAAABWQAAAAAAWQAAAAABWQAAAAABWQAAAAABWQAAAAAAWQAAAAACWQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAIgAAAAAAIgAAAAAAeQAAAAAAeQAAAAAAWQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAAAWQAAAAADeQAAAAAAIgAAAAAAeQAAAAAAWQAAAAACWQAAAAADeQAAAAAACQAAAAAACQAAAAAAeQAAAAAAdgAAAAAAdgAAAAAAdgAAAAAAYAAAAAAAeQAAAAAAWQAAAAADWQAAAAABeQAAAAAAIgAAAAAAeQAAAAAAWQAAAAABWQAAAAABeQAAAAAACQAAAAAACQAAAAAAeQAAAAAAdgAAAAAAdgAAAAAAdgAAAAAAYAAAAAAAeQAAAAAAeQAAAAAAWQAAAAAAeQAAAAAAIgAAAAAAeQAAAAAAWQAAAAAAeQAAAAAAeQAAAAAAIgAAAAAAIgAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAYAAAAAAAYAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAYAAAAAAAeQAAAAAAJAAAAAAAJAAAAAAAJAAAAAAAJAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAAWQAAAAACWQAAAAADeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAAeQAAAAAAHQAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAeQAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAAeQAAAAAAHQAAAAABHgAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAeQAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAAeQAAAAAAHQAAAAAAeQAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAIgAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAA
+          tiles: PAAAAAAAPAAAAAAAPAAAAAAAPAAAAAAAPAAAAAAAWQAAAAAAdgAAAAAAdgAAAAAATAAAAAAATAAAAAAATAAAAAAAdgAAAAAAdgAAAAABdgAAAAAAdgAAAAADdgAAAAADPAAAAAAAPAAAAAAAPAAAAAAAPAAAAAAAPAAAAAAAWQAAAAADdgAAAAADdgAAAAAAdgAAAAACdgAAAAABdgAAAAAAdgAAAAADdgAAAAACdgAAAAAAdgAAAAADdgAAAAABeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAZAAAAAABZAAAAAADZAAAAAABeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACWQAAAAABWQAAAAADWQAAAAABWQAAAAABZAAAAAAAWQAAAAAAWQAAAAABWQAAAAACWQAAAAABWQAAAAACWQAAAAACWQAAAAABWQAAAAABWQAAAAABWQAAAAAATAAAAAAAWQAAAAADTAAAAAAATAAAAAAAWQAAAAAAZAAAAAAATAAAAAAAWQAAAAAATAAAAAAATAAAAAAAWQAAAAADTAAAAAAATAAAAAAAWQAAAAADWQAAAAADTAAAAAAAWQAAAAACWQAAAAAAWQAAAAACWQAAAAABWQAAAAADZAAAAAAAWQAAAAAAWQAAAAABWQAAAAABWQAAAAAAWQAAAAABWQAAAAABWQAAAAABWQAAAAAAWQAAAAACWQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAIgAAAAAAIgAAAAAAeQAAAAAAeQAAAAAAWQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAAAWQAAAAADeQAAAAAAIgAAAAAAeQAAAAAAWQAAAAACWQAAAAADeQAAAAAAAwAAAAAAAwAAAAAAeQAAAAAAdgAAAAAAdgAAAAAAdgAAAAAAYAAAAAAAeQAAAAAAWQAAAAADWQAAAAABeQAAAAAAIgAAAAAAeQAAAAAAWQAAAAABWQAAAAABeQAAAAAAAwAAAAAAAwAAAAAAeQAAAAAAdgAAAAAAdgAAAAAAdgAAAAAAYAAAAAAAeQAAAAAAeQAAAAAAWQAAAAAAeQAAAAAAIgAAAAAAeQAAAAAAWQAAAAAAeQAAAAAAeQAAAAAAIgAAAAAAIgAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAYAAAAAAAYAAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAYAAAAAAAeQAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAAWQAAAAACWQAAAAADeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAAeQAAAAAAHQAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAeQAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAAeQAAAAAAHQAAAAABHgAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAeQAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAAeQAAAAAAHQAAAAAAeQAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAHgAAAAAAIgAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAA
           version: 6
         0,-1:
           ind: 0,-1
@@ -75,7 +75,7 @@ entities:
           version: 6
         0,0:
           ind: 0,0
-          tiles: dgAAAAADeQAAAAAAWQAAAAAATAAAAAAAWQAAAAABWQAAAAADbAAAAAAAbAAAAAACbAAAAAABbAAAAAAAbAAAAAAAbAAAAAAAbAAAAAACeQAAAAAAbAAAAAAAbAAAAAAAdgAAAAACeQAAAAAAWQAAAAADTAAAAAAAWQAAAAACeQAAAAAAbAAAAAAAbAAAAAACbAAAAAADbAAAAAAAbAAAAAAAbAAAAAADbAAAAAADeQAAAAAAbAAAAAADbAAAAAADeQAAAAAAeQAAAAAAWQAAAAAAWQAAAAABWQAAAAABeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACZAAAAAAAWQAAAAADTAAAAAAAWQAAAAADZAAAAAAAWQAAAAAAWQAAAAAAWQAAAAADWQAAAAAAWQAAAAACZAAAAAAAWQAAAAABWQAAAAADWQAAAAACWQAAAAACTAAAAAAAZAAAAAAATAAAAAAATAAAAAAATAAAAAAAZAAAAAAATAAAAAAAWQAAAAAATAAAAAAATAAAAAAAWQAAAAAAZAAAAAAAWQAAAAABTAAAAAAATAAAAAAAWQAAAAACWQAAAAABZAAAAAAAWQAAAAADTAAAAAAAWQAAAAACZAAAAAAAWQAAAAABWQAAAAAAWQAAAAADWQAAAAABWQAAAAADZAAAAAAAWQAAAAACWQAAAAADWQAAAAABWQAAAAAAeQAAAAAAeQAAAAAAWQAAAAADWQAAAAAAWQAAAAADeQAAAAAAeQAAAAAAIgAAAAAAeQAAAAAAIgAAAAABeQAAAAAAeQAAAAAAWQAAAAAAWQAAAAACWQAAAAAAWQAAAAABdgAAAAAAeQAAAAAAWQAAAAABTAAAAAAAWQAAAAABeQAAAAAAHQAAAAACHQAAAAACHQAAAAABHQAAAAABHQAAAAADeQAAAAAAWQAAAAABWQAAAAADWQAAAAAAWQAAAAACdgAAAAAAeQAAAAAAWQAAAAACTAAAAAAAWQAAAAADeQAAAAAAHQAAAAAAHQAAAAACHQAAAAADHQAAAAACHQAAAAABeQAAAAAAeQAAAAAAWQAAAAABZAAAAAAAWQAAAAADHQAAAAAAeQAAAAAAWQAAAAAAWQAAAAABWQAAAAABeQAAAAAAHQAAAAACHQAAAAACHQAAAAAAHQAAAAADHQAAAAADeQAAAAAAWQAAAAADWQAAAAADWQAAAAADWQAAAAAAJAAAAAAAeQAAAAAAWQAAAAAATAAAAAAAWQAAAAABeQAAAAAAHQAAAAAAHQAAAAADHQAAAAABHQAAAAAAHQAAAAAAeQAAAAAAWQAAAAABWQAAAAABWQAAAAADWQAAAAAAIgAAAAADeQAAAAAAWQAAAAABTAAAAAAAWQAAAAABeQAAAAAAHQAAAAACHQAAAAAAHQAAAAACHQAAAAAAHQAAAAADeQAAAAAAWQAAAAADWQAAAAAAWQAAAAAAWQAAAAACHQAAAAADeQAAAAAAWQAAAAADWQAAAAACWQAAAAABeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAADeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAADWQAAAAAAWQAAAAABWQAAAAAAHQAAAAAAeQAAAAAAWQAAAAABWQAAAAACWQAAAAADeQAAAAAAaAAAAAAAaAAAAAAAaAAAAAAAaAAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAABeQAAAAAAWQAAAAADTAAAAAAAWQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAZAAAAAAAZAAAAAAAZAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAaAAAAAAA
+          tiles: dgAAAAADeQAAAAAAWQAAAAAATAAAAAAAWQAAAAABWQAAAAADbAAAAAAAbAAAAAACbAAAAAABbAAAAAAAbAAAAAAAbAAAAAAAbAAAAAACeQAAAAAAbAAAAAAAbAAAAAAAdgAAAAACeQAAAAAAWQAAAAADTAAAAAAAWQAAAAACeQAAAAAAbAAAAAAAbAAAAAACbAAAAAADbAAAAAAAbAAAAAAAbAAAAAADbAAAAAADeQAAAAAAbAAAAAADbAAAAAADeQAAAAAAeQAAAAAAWQAAAAAAWQAAAAABWQAAAAABeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACZAAAAAAAWQAAAAADTAAAAAAAWQAAAAADZAAAAAAAWQAAAAAAWQAAAAAAWQAAAAADWQAAAAAAWQAAAAACZAAAAAAAWQAAAAABWQAAAAADWQAAAAACWQAAAAACTAAAAAAAZAAAAAAATAAAAAAATAAAAAAATAAAAAAAZAAAAAAATAAAAAAAWQAAAAAATAAAAAAATAAAAAAAWQAAAAAAZAAAAAAAWQAAAAABTAAAAAAATAAAAAAAWQAAAAACWQAAAAABZAAAAAAAWQAAAAADTAAAAAAAWQAAAAACZAAAAAAAWQAAAAABWQAAAAAAWQAAAAADWQAAAAABWQAAAAADZAAAAAAAWQAAAAACWQAAAAADWQAAAAABWQAAAAAAeQAAAAAAeQAAAAAAWQAAAAADWQAAAAAAWQAAAAADeQAAAAAAeQAAAAAAIgAAAAAAeQAAAAAAIgAAAAABeQAAAAAAeQAAAAAAWQAAAAAAWQAAAAACWQAAAAAAWQAAAAABdgAAAAAAeQAAAAAAWQAAAAABTAAAAAAAWQAAAAABeQAAAAAAHQAAAAACHQAAAAACHQAAAAABHQAAAAABHQAAAAADeQAAAAAAWQAAAAABWQAAAAADWQAAAAAAWQAAAAACdgAAAAAAeQAAAAAAWQAAAAACTAAAAAAAWQAAAAADeQAAAAAAHQAAAAAAHQAAAAACHQAAAAADHQAAAAACHQAAAAABeQAAAAAAeQAAAAAAWQAAAAABZAAAAAAAWQAAAAADHQAAAAAAeQAAAAAAWQAAAAAAWQAAAAABWQAAAAABeQAAAAAAHQAAAAACHQAAAAACHQAAAAAAHQAAAAADHQAAAAADeQAAAAAAWQAAAAADWQAAAAADWQAAAAADWQAAAAAAAwAAAAAAeQAAAAAAWQAAAAAATAAAAAAAWQAAAAABeQAAAAAAHQAAAAAAHQAAAAADHQAAAAABHQAAAAAAHQAAAAAAeQAAAAAAWQAAAAABWQAAAAABWQAAAAADWQAAAAAAIgAAAAADeQAAAAAAWQAAAAABTAAAAAAAWQAAAAABeQAAAAAAHQAAAAACHQAAAAAAHQAAAAACHQAAAAAAHQAAAAADeQAAAAAAWQAAAAADWQAAAAAAWQAAAAAAWQAAAAACHQAAAAADeQAAAAAAWQAAAAADWQAAAAACWQAAAAABeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAADeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAADWQAAAAAAWQAAAAABWQAAAAAAHQAAAAAAeQAAAAAAWQAAAAABWQAAAAACWQAAAAADeQAAAAAAaAAAAAAAaAAAAAAAaAAAAAAAaAAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAABeQAAAAAAWQAAAAADTAAAAAAAWQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAZAAAAAAAZAAAAAAAZAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAaAAAAAAA
           version: 6
         1,0:
           ind: 1,0
@@ -843,10 +843,10 @@ entities:
           8,5:
             0: 257
             2: 14
-            4: 17408
+            3: 17408
           8,6:
             2: 62209
-            4: 4
+            3: 4
           8,7:
             2: 61183
           0,12:
@@ -899,10 +899,10 @@ entities:
             0: 53759
           11,2:
             0: 4319
-            3: 49152
+            4: 49152
           11,3:
             0: 61457
-            3: 204
+            4: 204
           11,-1:
             0: 30583
           11,4:
@@ -913,9 +913,9 @@ entities:
             0: 28791
           12,2:
             0: 119
-            3: 28672
+            4: 28672
           12,3:
-            3: 119
+            4: 119
             0: 61440
           12,-1:
             0: 29311
@@ -1354,24 +1354,24 @@ entities:
           9,5:
             2: 15
             5: 4352
-            3: 17408
+            4: 17408
           9,6:
             5: 1
             2: 63744
-            3: 4
+            4: 4
           10,5:
             2: 15
-            3: 4352
+            4: 4352
             6: 17408
           10,6:
-            3: 1
+            4: 1
             2: 62464
             6: 4
           11,5:
             2: 15
-            3: 21760
+            4: 21760
           11,6:
-            3: 1
+            4: 1
             2: 61952
             0: 4
           12,5:
@@ -1573,7 +1573,7 @@ entities:
           temperature: 293.15
           moles:
           - 0
-          - 0
+          - 6666.982
           - 0
           - 0
           - 0
@@ -1588,7 +1588,7 @@ entities:
           temperature: 293.15
           moles:
           - 0
-          - 6666.982
+          - 0
           - 0
           - 0
           - 0
@@ -1787,6 +1787,11 @@ entities:
             1429: -26,3
             2322: -27,11
         - node:
+            color: '#DE3A3A96'
+            id: BrickCornerOverlayNE
+          decals:
+            3238: -12,16
+        - node:
             color: '#EFB34196'
             id: BrickCornerOverlayNE
           decals:
@@ -1860,6 +1865,11 @@ entities:
             2294: -39,-4
             2325: -30,11
         - node:
+            color: '#DE3A3A96'
+            id: BrickCornerOverlayNW
+          decals:
+            3239: -15,16
+        - node:
             color: '#EFB34196'
             id: BrickCornerOverlayNW
           decals:
@@ -1926,6 +1936,11 @@ entities:
             2269: -36,-12
             2320: -28,7
         - node:
+            color: '#DE3A3A96'
+            id: BrickCornerOverlaySE
+          decals:
+            3236: -12,13
+        - node:
             color: '#EFB34196'
             id: BrickCornerOverlaySE
           decals:
@@ -1933,6 +1948,7 @@ entities:
             2174: 35,-5
             2183: 35,2
             2188: 32,5
+            3269: -8,7
         - node:
             color: '#FA750096'
             id: BrickCornerOverlaySE
@@ -2006,6 +2022,11 @@ entities:
             2289: -53,-12
             2295: -39,-6
             2326: -30,7
+        - node:
+            color: '#DE3A3A96'
+            id: BrickCornerOverlaySW
+          decals:
+            3243: -16,13
         - node:
             color: '#EFB34196'
             id: BrickCornerOverlaySW
@@ -2120,7 +2141,6 @@ entities:
             id: BrickLineOverlayE
           decals:
             1159: 2,14
-            1160: 2,13
             1161: 2,12
             1162: 2,11
             1163: 2,10
@@ -2238,6 +2258,14 @@ entities:
             2292: -36,-5
             2299: -36,-11
             2321: -27,9
+        - node:
+            color: '#DE3A3A96'
+            id: BrickLineOverlayE
+          decals:
+            3237: -12,14
+            3259: 0,14
+            3260: 0,13
+            3261: 0,12
         - node:
             color: '#EFB34196'
             id: BrickLineOverlayE
@@ -2424,6 +2452,12 @@ entities:
             2264: -40,-10
             2323: -29,11
             2324: -28,11
+        - node:
+            color: '#DE3A3A96'
+            id: BrickLineOverlayN
+          decals:
+            3241: -16,14
+            3245: -14,16
         - node:
             color: '#EFB34196'
             id: BrickLineOverlayN
@@ -2613,6 +2647,10 @@ entities:
             1228: -19,5
             1823: -6,5
             1824: -5,5
+            3233: -15,13
+            3234: -14,13
+            3235: -13,13
+            3242: -15,13
         - node:
             color: '#EFB34196'
             id: BrickLineOverlayS
@@ -2639,6 +2677,8 @@ entities:
             2165: 30,-5
             2179: 32,2
             2180: 34,2
+            3267: -13,7
+            3270: -9,7
         - node:
             color: '#FA750096'
             id: BrickLineOverlayS
@@ -2772,6 +2812,14 @@ entities:
             2329: -30,9
             2330: -30,8
         - node:
+            color: '#DE3A3A96'
+            id: BrickLineOverlayW
+          decals:
+            3244: -15,15
+            3262: -1,12
+            3263: -1,13
+            3264: -1,14
+        - node:
             color: '#EFB34196'
             id: BrickLineOverlayW
           decals:
@@ -2787,6 +2835,7 @@ entities:
             2171: 29,-4
             2185: 31,5
             2186: 31,4
+            3268: -14,8
         - node:
             color: '#FA750096'
             id: BrickLineOverlayW
@@ -2969,9 +3018,6 @@ entities:
           decals:
             591: 50,-29
             592: 48,-29
-            785: -8,20
-            786: -9,20
-            787: -10,20
             855: -2,53
             856: -3,53
             857: -4,53
@@ -2984,6 +3030,9 @@ entities:
             3034: -38,8
             3117: -37,0
             3118: -38,0
+            3274: -10,20
+            3275: -9,20
+            3276: -8,20
         - node:
             zIndex: 1
             color: '#FFFFFFFF'
@@ -3115,12 +3164,6 @@ entities:
         - node:
             zIndex: 2
             color: '#EFB34196'
-            id: BrickTileWhiteCornerSe
-          decals:
-            765: -8,7
-        - node:
-            zIndex: 2
-            color: '#EFB34196'
             id: BrickTileWhiteCornerSw
           decals:
             766: -14,7
@@ -3142,12 +3185,6 @@ entities:
             id: BrickTileWhiteLineE
           decals:
             767: -8,8
-        - node:
-            zIndex: 2
-            color: '#EFB34196'
-            id: BrickTileWhiteLineS
-          decals:
-            764: -13,7
         - node:
             zIndex: 2
             color: '#FFFFFFFF'
@@ -3374,7 +3411,6 @@ entities:
             color: '#FFFFFFFF'
             id: DirtLight
           decals:
-            2540: -8,19
             2541: -14,15
             2543: -9,3
             2544: -3,4
@@ -3950,6 +3986,11 @@ entities:
           decals:
             544: -15,-23
         - node:
+            color: '#DE3A3A96'
+            id: MiniTileWhiteInnerNw
+          decals:
+            3248: -15,14
+        - node:
             color: '#52B4E996'
             id: QuarterTileOverlayGreyscale
           decals:
@@ -4503,6 +4544,11 @@ entities:
             882: -2,43
             884: 2,43
         - node:
+            color: '#DE3A3A96'
+            id: WarnLineGreyscaleE
+          decals:
+            3246: -12,15
+        - node:
             color: '#334E6DC8'
             id: WarnLineGreyscaleN
           decals:
@@ -4566,6 +4612,7 @@ entities:
             1540: -5,5
             1541: -6,8
             1542: -5,8
+            3247: -13,16
         - node:
             color: '#EFB34196'
             id: WarnLineGreyscaleN
@@ -4976,6 +5023,11 @@ entities:
             3154: -6,-13
             3232: 0,7
         - node:
+            color: '#DE3A3A96'
+            id: WoodTrimThinCornerSw
+          decals:
+            3257: -10,11
+        - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinCornerSw
           decals:
@@ -5156,6 +5208,17 @@ entities:
             651: -6,-6
             652: -5,-6
         - node:
+            color: '#DE3A3A96'
+            id: WoodTrimThinLineS
+          decals:
+            3250: -9,11
+            3251: -8,11
+            3252: -7,11
+            3253: -6,11
+            3254: -5,11
+            3255: -4,11
+            3256: -3,11
+        - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinLineS
           decals:
@@ -5213,6 +5276,11 @@ entities:
             id: WoodTrimThinLineS
           decals:
             780: -36,19
+        - node:
+            color: '#DE3A3A96'
+            id: WoodTrimThinLineW
+          decals:
+            3258: -10,12
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinLineW
@@ -6581,18 +6649,6 @@ entities:
     - type: Transform
       pos: 0.5,-9.5
       parent: 31
-- proto: AirlockExternal
-  entities:
-  - uid: 8456
-    components:
-    - type: Transform
-      pos: -21.5,-26.5
-      parent: 31
-  - uid: 8525
-    components:
-    - type: Transform
-      pos: -31.5,-26.5
-      parent: 31
 - proto: AirlockExternalEngineeringLocked
   entities:
   - uid: 644
@@ -6630,6 +6686,17 @@ entities:
     components:
     - type: Transform
       pos: -40.5,0.5
+      parent: 31
+  - uid: 3871
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -31.5,-26.5
+      parent: 31
+  - uid: 3983
+    components:
+    - type: Transform
+      pos: -22.5,-26.5
       parent: 31
   - uid: 4009
     components:
@@ -6701,7 +6768,7 @@ entities:
       pos: 31.5,23.5
       parent: 31
     - type: Door
-      secondsUntilStateChange: -104838.32
+      secondsUntilStateChange: -113829.85
       state: Opening
     - type: DeviceLinkSource
       linkedPorts:
@@ -6974,6 +7041,12 @@ entities:
     - type: Transform
       pos: -21.5,3.5
       parent: 31
+  - uid: 3963
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -33.5,-30.5
+      parent: 31
   - uid: 3974
     components:
     - type: Transform
@@ -7079,11 +7152,6 @@ entities:
     - type: Transform
       pos: 43.5,-23.5
       parent: 31
-  - uid: 8719
-    components:
-    - type: Transform
-      pos: -33.5,-30.5
-      parent: 31
   - uid: 8910
     components:
     - type: Transform
@@ -7169,7 +7237,7 @@ entities:
       pos: 26.5,-19.5
       parent: 31
     - type: Door
-      secondsUntilStateChange: -86161.37
+      secondsUntilStateChange: -95152.9
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9381,6 +9449,13 @@ entities:
     - type: Transform
       pos: 28.518517,21.739876
       parent: 31
+- proto: BoxFlashbang
+  entities:
+  - uid: 8732
+    components:
+    - type: Transform
+      pos: -15.5,13.5
+      parent: 31
 - proto: BoxFolderBase
   entities:
   - uid: 10831
@@ -9619,7 +9694,7 @@ entities:
       parent: 31
 - proto: BoxHandcuff
   entities:
-  - uid: 8447
+  - uid: 8719
     components:
     - type: Transform
       pos: -15.5,13.5
@@ -26363,6 +26438,11 @@ entities:
     - type: Transform
       pos: 27.5,-12.5
       parent: 31
+  - uid: 2099
+    components:
+    - type: Transform
+      pos: -21.5,-26.5
+      parent: 31
   - uid: 2146
     components:
     - type: Transform
@@ -28014,11 +28094,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -6.5,25.5
       parent: 31
-  - uid: 9007
-    components:
-    - type: Transform
-      pos: -22.5,-26.5
-      parent: 31
   - uid: 9008
     components:
     - type: Transform
@@ -29367,6 +29442,36 @@ entities:
     - type: Transform
       pos: 0.5,-10.5
       parent: 31
+  - uid: 12845
+    components:
+    - type: Transform
+      pos: -24.5,-26.5
+      parent: 31
+  - uid: 12846
+    components:
+    - type: Transform
+      pos: -26.5,-26.5
+      parent: 31
+  - uid: 12847
+    components:
+    - type: Transform
+      pos: -27.5,-26.5
+      parent: 31
+  - uid: 12848
+    components:
+    - type: Transform
+      pos: -19.5,-26.5
+      parent: 31
+  - uid: 12849
+    components:
+    - type: Transform
+      pos: -20.5,-26.5
+      parent: 31
+  - uid: 12850
+    components:
+    - type: Transform
+      pos: -19.5,-27.5
+      parent: 31
 - proto: Cautery
   entities:
   - uid: 3040
@@ -30351,7 +30456,7 @@ entities:
       parent: 31
 - proto: ClosetBombFilled
   entities:
-  - uid: 3963
+  - uid: 12852
     components:
     - type: Transform
       pos: -11.5,16.5
@@ -32542,6 +32647,13 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+- proto: CrateSecurityRiot
+  entities:
+  - uid: 8717
+    components:
+    - type: Transform
+      pos: -15.445758,14.809851
+      parent: 31
 - proto: CrateTrashCart
   entities:
   - uid: 4318
@@ -56506,6 +56618,13 @@ entities:
     - type: Transform
       pos: 0.5,13.5
       parent: 31
+- proto: HolopadSecurityLawyer
+  entities:
+  - uid: 12844
+    components:
+    - type: Transform
+      pos: -35.5,-28.5
+      parent: 31
 - proto: HolopadSecurityPerma
   entities:
   - uid: 11334
@@ -58640,6 +58759,144 @@ entities:
       parent: 12397
     - type: Physics
       canCollide: False
+  - uid: 12851
+    components:
+    - type: Transform
+      pos: -36.226177,13.714444
+      parent: 31
+    - type: Paper
+      stampState: paper_stamp-centcom
+      stampedBy:
+      - stampedColor: '#006600FF'
+        stampedName: stamp-component-stamped-name-centcom
+      content: >-
+        [color=#19196E]█▄ █ ▀█▀
+
+        █ ▀█     █     SS14 Saltern Station[/color]
+
+        ──────────────────────────────────────
+             [head=2]NOTICE FROM [color=#5A815A]CENTRAL COMMAND[/head][/color]
+
+        To: All SS14 Saltern Station Personnel
+
+        From: Central Command
+
+        Subject: Budget Cuts
+
+
+        To Whom It May Concern,
+
+
+        Central Command, as the governing administrative body overseeing all Nanotrasen Corporation space operations and installations, is issuing this notice to inform you of upcoming budget cuts that will impact station operations.
+
+
+        Pioneering the future of space commerce, The Nanotrasen Corporation has always been your gateway to the stars. Leading the way in galactic trade, the Nanotrasen Corporation is where space meets opportunity to empower your interstellar ambitions. Navigating the cosmos with excellence and building bridges across the universe - we're charting new frontiers together as your trusted partner in space.
+
+
+        That is why, effective immediately, the station's chapel will be utilized for the purposes of a courtroom in addition to its current more spiritually inclined functions. Additionally, the local non-criminal organization known as the "Weh" gang, based on the popular childrens toy has agreed to allow us to base lawyers in their 'hideout'. These changes are made to better comply with current space law that extends certain  rights like legal representation to prisoners and suspects; addtionally, they serve as a cost cutting measure, as attempting to retrofit or build new rooms to comply with these directives is currently not in the best interest of NT operations due to aforementioined budget cuts.
+
+
+        As the galactic market leader in interstellar innovation, we trust that this will not be an inconvenience, as our stellar service relies on a zero-gravity growth these budget cuts are necessary to maintain the Nanotrasen Corporation's competitive edge in the space commerce industry. We expect all Nanotrasen facilities to comply with this directive without disruption to operations.
+
+
+        For any questions or concerns regarding the implementation of this policy, please contact your regional Central Command liaison.
+
+
+        Thank you for your continued service and dedication to the Nanotrasen Corporation.
+
+        ──────────────────────────────────────
+  - uid: 12853
+    components:
+    - type: Transform
+      pos: -4.5,12.5
+      parent: 31
+    - type: Paper
+      stampState: paper_stamp-centcom
+      stampedBy:
+      - stampedColor: '#006600FF'
+        stampedName: stamp-component-stamped-name-centcom
+      content: >-
+        [color=#19196E]█▄ █ ▀█▀
+
+        █ ▀█     █     SS14 Saltern Station[/color]
+
+        ──────────────────────────────────────
+             [head=2]NOTICE FROM [color=#5A815A]CENTRAL COMMAND[/head][/color]
+
+        To: All SS14 Saltern Station Personnel
+
+        From: Central Command
+
+        Subject: Budget Increase & Renovations
+
+
+        To Whom It May Concern,
+
+
+        Central Command, as the governing administrative body overseeing all Nanotrasen Corporation space operations and installations, is issuing this notice to inform you of upcoming budget increases that will impact station operations.
+
+
+        Pioneering the future of space commerce, The Nanotrasen Corporation has always been your gateway to the stars. Leading the way in galactic trade, the Nanotrasen Corporation is where space meets opportunity to empower your interstellar ambitions. Navigating the cosmos with excellence and building bridges across the universe - we're charting new frontiers together as your trusted partner in space.
+
+
+        That is why the station's Security Department has undergone renovations that should drastically improve our most dedicated asset protection teams moral and motivation to continue to protect and serve the interests of the Nanotrasen corporation. Notably, we have managed to acquisition a new microwave and drinks machine for security personnel, as well as holopads that will better allow for cross-station communications in certain situations.
+
+
+        As the galactic market leader in interstellar innovation, we trust that this will not be an inconvenience, as our stellar service relies on a zero-gravity growth these improvements are necessary to maintain the Nanotrasen Corporation's competitive edge in the space commerce industry and ensure protection to Nanotrasen property.
+
+
+        For any questions or concerns regarding the implementation of these renovations, please contact your regional Central Command liaison.
+
+
+        Thank you for your continued service and dedication to the Nanotrasen Corporation.
+
+        ──────────────────────────────────────
+  - uid: 12854
+    components:
+    - type: Transform
+      pos: -35.5,-25.5
+      parent: 31
+    - type: Paper
+      stampState: paper_stamp-centcom
+      stampedBy:
+      - stampedColor: '#006600FF'
+        stampedName: stamp-component-stamped-name-centcom
+      content: >-
+        [color=#19196E]█▄ █ ▀█▀
+
+        █ ▀█     █     SS14 Saltern Station[/color]
+
+        ──────────────────────────────────────
+             [head=2]NOTICE FROM [color=#5A815A]CENTRAL COMMAND[/head][/color]
+
+        To: All SS14 Saltern Station Personnel
+
+        From: Central Command
+
+        Subject: Budget Cuts
+
+
+        To Whom It May Concern,
+
+
+        Central Command, as the governing administrative body overseeing all Nanotrasen Corporation space operations and installations, is issuing this notice to inform you of upcoming budget cuts that will impact station operations.
+
+
+        Pioneering the future of space commerce, The Nanotrasen Corporation has always been your gateway to the stars. Leading the way in galactic trade, the Nanotrasen Corporation is where space meets opportunity to empower your interstellar ambitions. Navigating the cosmos with excellence and building bridges across the universe - we're charting new frontiers together as your trusted partner in space.
+
+
+        That is why, effective immediately, the station's chapel will be utilized for the purposes of a courtroom in addition to its current more spiritually inclined functions. Additionally, the local non-criminal organization known as the "Weh" gang, based on the popular childrens toy has agreed to allow us to base lawyers in their 'hideout'. These changes are made to better comply with current space law that extends certain  rights like legal representation to prisoners and suspects; addtionally, they serve as a cost cutting measure, as attempting to retrofit or build new rooms to comply with these directives is currently not in the best interest of NT operations due to aforementioined budget cuts.
+
+
+        As the galactic market leader in interstellar innovation, we trust that this will not be an inconvenience, as our stellar service relies on a zero-gravity growth these budget cuts are necessary to maintain the Nanotrasen Corporation's competitive edge in the space commerce industry. We expect all Nanotrasen facilities to comply with this directive without disruption to operations.
+
+
+        For any questions or concerns regarding the implementation of this policy, please contact your regional Central Command liaison.
+
+
+        Thank you for your continued service and dedication to the Nanotrasen Corporation.
+
+        ──────────────────────────────────────
 - proto: ParticleAcceleratorControlBoxUnfinished
   entities:
   - uid: 4569
@@ -59696,6 +59953,23 @@ entities:
     - type: Transform
       pos: -6.5,-8.5
       parent: 31
+  - uid: 8456
+    components:
+    - type: Transform
+      pos: -32.5,-31.5
+      parent: 31
+  - uid: 8711
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -36.5,-27.5
+      parent: 31
+  - uid: 9007
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -32.5,-27.5
+      parent: 31
   - uid: 9478
     components:
     - type: Transform
@@ -59734,6 +60008,17 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -2.5,-12.5
+      parent: 31
+  - uid: 12856
+    components:
+    - type: Transform
+      pos: -30.5,-26.5
+      parent: 31
+  - uid: 12857
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -23.5,-26.5
       parent: 31
 - proto: Poweredlight
   entities:
@@ -60551,13 +60836,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -48.5,-11.5
       parent: 31
-  - uid: 8734
-    components:
-    - type: Transform
-      pos: -35.5,-23.5
-      parent: 31
-    - type: ApcPowerReceiver
-      powerLoad: 0
   - uid: 8845
     components:
     - type: Transform
@@ -60887,6 +61165,11 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -11.5,16.5
+      parent: 31
+  - uid: 8525
+    components:
+    - type: Transform
+      pos: -35.5,-23.5
       parent: 31
   - uid: 8799
     components:
@@ -61400,29 +61683,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 30.5,21.5
       parent: 31
-  - uid: 8732
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -36.5,-27.5
-      parent: 31
-    - type: ApcPowerReceiver
-      powerLoad: 0
-  - uid: 8733
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -32.5,-27.5
-      parent: 31
-    - type: ApcPowerReceiver
-      powerLoad: 0
-  - uid: 8735
-    components:
-    - type: Transform
-      pos: -32.5,-31.5
-      parent: 31
-    - type: ApcPowerReceiver
-      powerLoad: 0
   - uid: 9078
     components:
     - type: Transform
@@ -65739,6 +65999,14 @@ entities:
     - type: Transform
       pos: 61.5,-0.5
       parent: 31
+- proto: SignLawyer
+  entities:
+  - uid: 12841
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -21.5,-25.5
+      parent: 31
 - proto: SignLibrary
   entities:
   - uid: 4831
@@ -66721,6 +66989,13 @@ entities:
     - type: Transform
       pos: 11.5,24.5
       parent: 31
+- proto: SpawnMobMcGriff
+  entities:
+  - uid: 12840
+    components:
+    - type: Transform
+      pos: -1.5,8.5
+      parent: 31
 - proto: SpawnMobMonkeyPunpun
   entities:
   - uid: 10044
@@ -66958,6 +67233,18 @@ entities:
     - type: Transform
       pos: -36.5,-6.5
       parent: 31
+- proto: SpawnPointLawyer
+  entities:
+  - uid: 12842
+    components:
+    - type: Transform
+      pos: -36.5,-25.5
+      parent: 31
+  - uid: 12843
+    components:
+    - type: Transform
+      pos: -34.5,-25.5
+      parent: 31
 - proto: SpawnPointLibrarian
   entities:
   - uid: 7167
@@ -67108,11 +67395,6 @@ entities:
       parent: 31
 - proto: SpawnPointSecurityCadet
   entities:
-  - uid: 2099
-    components:
-    - type: Transform
-      pos: -13.5,16.5
-      parent: 31
   - uid: 2340
     components:
     - type: Transform
@@ -67122,6 +67404,11 @@ entities:
     components:
     - type: Transform
       pos: -13.5,15.5
+      parent: 31
+  - uid: 8713
+    components:
+    - type: Transform
+      pos: -12.5,15.5
       parent: 31
   - uid: 9580
     components:
@@ -67190,6 +67477,13 @@ entities:
     components:
     - type: Transform
       pos: 33.5,-0.5
+      parent: 31
+- proto: SpawnPointWarden
+  entities:
+  - uid: 12839
+    components:
+    - type: Transform
+      pos: -1.5,7.5
       parent: 31
 - proto: SprayBottleSpaceCleaner
   entities:
@@ -79843,17 +80137,17 @@ entities:
       parent: 31
 - proto: WeaponDisabler
   entities:
-  - uid: 3871
-    components:
-    - type: Transform
-      pos: -14.5,13.5
-      parent: 31
   - uid: 3972
     components:
     - type: Transform
       pos: -14.5,13.5
       parent: 31
-  - uid: 3983
+  - uid: 8447
+    components:
+    - type: Transform
+      pos: -14.5,13.5
+      parent: 31
+  - uid: 12855
     components:
     - type: Transform
       pos: -14.5,13.5
@@ -80050,13 +80344,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -8.5,32.5
       parent: 31
-  - uid: 8711
+  - uid: 8733
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -32.5,-32.5
       parent: 31
-  - uid: 8717
+  - uid: 8734
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -80576,12 +80870,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -33.5,-26.5
       parent: 31
-  - uid: 8713
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -32.5,-31.5
-      parent: 31
   - uid: 8714
     components:
     - type: Transform
@@ -80774,6 +81062,12 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 23.5,20.5
+      parent: 31
+  - uid: 8735
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -32.5,-31.5
       parent: 31
   - uid: 8942
     components:
