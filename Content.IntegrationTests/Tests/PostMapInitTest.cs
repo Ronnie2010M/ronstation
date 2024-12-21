@@ -64,6 +64,7 @@ namespace Content.IntegrationTests.Tests
             "Cog",
             "Gate",
             "Amber",
+            "Loop",
             "Saltern2",
             "Cluster2",
             "Atlas2"
