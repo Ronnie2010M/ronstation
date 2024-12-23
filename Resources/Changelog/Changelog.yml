@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: Winkarst-cpu
-  changes:
-  - message: Now railings render over tables.
-    type: Tweak
-  id: 7245
-  time: '2024-08-29T03:04:43.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31589
-- author: metalgearsloth
-  changes:
-  - message: Fix storage UI being buggy.
-    type: Fix
-  id: 7246
-  time: '2024-08-29T03:23:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31616
 - author: MisterMecky
   changes:
   - message: Changed strange pill possible reagents. They are no longer mostly composed
@@ -3937,3 +3923,18 @@
   id: 7744
   time: '2024-12-21T02:14:08.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/33950
+- author: JustinWinningham
+  changes:
+  - message: Wood walls no longer require girders and are built from barricades instead.
+    type: Tweak
+  id: 7745
+  time: '2024-12-21T03:28:46.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/33902
+- author: ElectroJr
+  changes:
+  - message: Toolshed console commands have been reworked. Some old commands may no
+      longer work.
+    type: Tweak
+  id: 7746
+  time: '2024-12-21T06:45:48.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/33598
