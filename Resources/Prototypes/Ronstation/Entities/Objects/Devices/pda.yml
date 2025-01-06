@@ -2,18 +2,19 @@
   parent: [ BasePDA, BaseTerragovContraband ]
   id: HeccdiverPDA
   name: heccdiver PDA
-  description: Looks a lot different than normal PDAs.
+  description: Ok, time to be a productive member of- oh cool I'm a heccdiver time to give this world a taste of managed democracy!
   components:
-  - type: Sprite
-    sprite: Ronstation/Objects/Devices/pda.rsi
   - type: Pda
     id: HeccdiverIDCard
-    state: pda-heccdiver
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-syndi
   - type: PdaBorderColor
-    borderColor: "#2F3030"
+    borderColor: "#891417"
   - type: Icon
-    sprite: Ronstation/Objects/Devices/pda.rsi
-    state: pda-heccdiver
+    state: pda-syndi
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
     preinstalled:
@@ -33,17 +34,19 @@
   name: Blueshield PDA
   description: Might allow you to see who to protect through the crew manifest.
   components:
-  - type: Sprite
-    sprite: Ronstation/Objects/Devices/pda.rsi
   - type: Pda
     id: BlueshieldIDCard
-    state: pda-blueshield
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-brigmedic #if it looks like a brigmedic ID card, it's because we don't know how to import our own sprites after the chameleon PDA pr.
   - type: PdaBorderColor
-    borderColor: "#0071B7"
-    accentHColor: "#E2E2E2"
+    borderColor: "#A32D26"
+    accentHColor: "#d7d7d0"
+    accentVColor: "#d7d7d0"
   - type: Icon
-    sprite: Ronstation/Objects/Devices/pda.rsi
-    state: pda-blueshield
+    state: pda-brigmedic
 
 - type: entity
   parent: [ BasePDA, BaseCommandContraband ]
@@ -52,14 +55,16 @@
   suffix: Central Command
   description: Might allow you to see who to protect through the crew manifest.
   components:
-  - type: Sprite
-    sprite: Ronstation/Objects/Devices/pda.rsi
   - type: Pda
-    id: CentcomBlueshieldIDCard
-    state: pda-blueshield
+    id: BlueshieldIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-brigmedic #if it looks like a brigmedic ID card, it's because we don't know how to import our own sprites after the chameleon PDA pr.
   - type: PdaBorderColor
-    borderColor: "#0071B7"
-    accentHColor: "#E2E2E2"
+    borderColor: "#A32D26"
+    accentHColor: "#d7d7d0"
+    accentVColor: "#d7d7d0"
   - type: Icon
-    sprite: Ronstation/Objects/Devices/pda.rsi
-    state: pda-blueshield
+    state: pda-brigmedic
